@@ -12,7 +12,7 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/alpine-appetite-tours">
       <App />
     </BrowserRouter>
   </React.StrictMode>

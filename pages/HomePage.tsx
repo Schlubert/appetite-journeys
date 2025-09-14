@@ -2,6 +2,7 @@ import React from 'react';
 import { TOURS_DATA } from '../constants';
 import TourCard from '../components/TourCard';
 import { Users, MapPin, ChefHat, Award } from 'lucide-react';
+import { getImagePath } from '../utils/paths';
 
 const HomePage: React.FC = () => {
   const features = [
@@ -32,7 +33,7 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] -mx-4 sm:-mx-6 lg:-mx-8 -mt-8">
         <img 
-          src="/images/banner.png" 
+          src={getImagePath('banner.png')} 
           alt="Scenic view of the Swiss Alps" 
           className="w-full h-full object-cover"
         />

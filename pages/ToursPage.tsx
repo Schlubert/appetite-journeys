@@ -1,6 +1,7 @@
 import React from "react";
 import { TOURS_DATA } from "../constants";
 import TourCard from "../components/TourCard";
+import { getImagePath } from '../utils/paths'; 
 
 const ToursPage: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const ToursPage: React.FC = () => {
             {/* Hero Banner */}
       <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8">
         <img
-          src="/images/about-banner.jpg" 
+          src={getImagePath('about-banner.jpg')} 
           alt="Scenic Swiss Alps"
           className="w-full h-full object-cover"
         />

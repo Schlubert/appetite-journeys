@@ -1,4 +1,5 @@
 // waterfallsWalnuts.ts
+import { getImagePath } from '../utils/paths';
 
 export type ItineraryStop = {
   day: number;
@@ -43,10 +44,10 @@ export const waterfallsWalnuts: Tour = {
     "This journey also crosses into Germany, Austria and Liechtenstein — plenty of opportunities to sample regional delicacies."
   ],
   heroImages: [
-    "/images/banner-waterfalls.jpg",
-    "/images/basel.jpeg",
-    "/images/stgallenlibrary2.jpg",
-    "/images/black_forest_gat.jpg"
+    getImagePath('banner-waterfalls.jpg'),
+    getImagePath('Basel.jpeg'),
+    getImagePath('stgallenlibrary2.jpg'),
+    getImagePath('black_forest_gat.jpg')
   ],
   itinerary: [
     {
@@ -60,7 +61,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Zurich city center",
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
-      images: ["/images/schaffhausen3.jpg", "/images/gottlieben1.jpeg" ]
+      images: [getImagePath('schaffhausen3.jpg'), getImagePath('gottlieben1.jpeg') ]
     },
     {
       day: 2,
@@ -73,7 +74,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/rhinefalls.jpg", "/images/schaffhausen.jpg", "/images/munotview.jpg"]
+      images: [getImagePath('rhinefalls.jpg'), getImagePath('schaffhausen.jpg'), getImagePath('munotview.jpg')]
     },
    {
       day: 3,
@@ -85,7 +86,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/gottlieben1.jpeg", "/images/gottlieben2.jpeg", "/images/Konstanz1.jpeg"]
+      images: [getImagePath('gottlieben1.jpeg'), getImagePath('gottlieben2.jpeg'), getImagePath('Konstanz1.jpeg')]
     },
     {
       day: 4,
@@ -100,7 +101,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/bodensee.jpeg", "/images/lindau.jpeg", "/images/wetliweinkeller.jpg"]
+      images: [getImagePath('bodensee.jpeg'), getImagePath('lindau.jpeg'), getImagePath('wetliweinkeller.jpg')]
     },
     {
       day: 5,
@@ -113,7 +114,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/appenzell.jpeg", "/images/santisccar.jpeg", "/images/santisbarrel.jpg"]
+      images: [getImagePath('appenzell.jpeg'), getImagePath('santisccar.jpeg'), getImagePath('santisbarrel.jpg')]
     },
     {
       day: 6,
@@ -125,7 +126,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/stgallen1.jpeg", "/images/stgallen2.jpg", "/images/abbey.jpg"]
+      images: [getImagePath('stgallen1.jpeg'), getImagePath('stgallen2.jpg'), getImagePath('abbey.jpg')]
     },
     {
       day: 7,
@@ -138,7 +139,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/vaduz.jpg", "/images/davos.jpg", "/images/engadiner.jpg"]
+      images: [getImagePath('vaduz.jpg'), getImagePath('davos.jpg'), getImagePath('engadiner.jpg')]
     },
     {
       day: 8,
@@ -153,7 +154,7 @@ export const waterfallsWalnuts: Tour = {
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       optionalActivities: ["Muottas Muragl excursion"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/st_moritz.jpg", "/images/muottas_muragl.jpg", "/images/muottas_muragl2.jpg"]
+      images: [getImagePath('st_moritz.jpg'), getImagePath('muottas_muragl.jpg'), getImagePath('muottas_muragl2.jpg')]
     },
     {
       day: 9,
@@ -166,7 +167,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/GlacierLandwasser.jpg", "/images/gexpress1.jpg", "/images/gexpress2.jpg"]
+      images: [getImagePath('GlacierLandwasser.jpg'), getImagePath('gexpress1.jpg'), getImagePath('gexpress2.jpg')]
     },
     {
       day: 10,
@@ -180,7 +181,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/andermatt.jpg", "/images/glarus.jpg", "/images/fassbind.jpeg"]
+      images: [getImagePath('andermatt.jpg'), getImagePath('glarus.jpg'), getImagePath('fassbind.jpeg')]
     },
     {
       day: 11,
@@ -193,7 +194,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/etter.jpeg", "/images/kirschtorte.jpg", "/images/kirschstaengeli.jpg"]
+      images: [getImagePath('etter.jpeg'), getImagePath('kirschtorte.jpg'), getImagePath('kirschstaengeli.jpg')]
     },
     {
       day: 12,
@@ -207,7 +208,7 @@ export const waterfallsWalnuts: Tour = {
       accommodation: "Boutique hotel in Basel city center",
       includedActivities: ["Walnut farm visit", "Old town walking tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["/images/rhinefalls2.jpg", "/images/basel1.jpg"]
+      images: [getImagePath('rhinefalls2.jpg'), getImagePath('basel1.jpg')]
     },
   ]
 };

@@ -1,5 +1,7 @@
 // data/cheeseChocolateRiviera.ts
 
+import { getImagePath } from '../utils/paths';
+
 export type ItineraryStop = {
   day: number;
   title: string;
@@ -41,9 +43,9 @@ export const cheeseChocolateRiviera: Tour = {
     "Explore the north and west of Switzerland. From lakefront to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories, this tour has it all."
   ],
   heroImages: [
-    "/images/Fumoir.jpg",
-    "/images/Basel.jpeg",
-    "/images/bern1.jpg"
+    getImagePath("Fumoir.jpg"),
+    getImagePath("Basel.jpeg"),
+    getImagePath("bern1.jpg")
   ],
   itinerary: <ItineraryStop[]>[
     {
@@ -57,9 +59,9 @@ export const cheeseChocolateRiviera: Tour = {
       accommodation: "Hotel Schweizerhof, Bahnhofplatz, Zurich",
       meals: ["Dinner"],
       images: [
-        "../images/Basel-Switzerland-Happy-to-Wander-0278.jpg",
-        "../images/IMG20250705153206.jpg",
-        "../images/IMG20250720125834.jpg"
+        getImagePath("Basel-Switzerland-Happy-to-Wander-0278.jpg"),
+        getImagePath("IMG20250705153206.jpg"),
+        getImagePath("IMG20250720125834.jpg")
       ]
     },
     {
@@ -77,7 +79,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Walking tour of Basel's Old Town"
       ],
       meals: ["Breakfast", "Dinner"],
-      images: ["../images/Basel.jpeg", "../images/BaselOldTown.jpg", "../images/Lackerli.jpeg"]
+      images: [getImagePath("Basel.jpeg"), getImagePath("BaselOldTown.jpg"), getImagePath("Lackerli.jpeg")]
     },
     {
       day: 3,
@@ -93,7 +95,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Excursion to the Black Forest (Germany) to visit Café Schäfer and taste the original Schwarzwälder Kirschtorte (Black Forest Gateau)"
       ],
       meals: ["Breakfast"],
-      images: ["../images/black_forest_gat.jpg", "../images/triberg1.jpg", "../images/triberg2.jpg"]
+      images: [getImagePath("black_forest_gat.jpg"), getImagePath("triberg1.jpg"), getImagePath("triberg2.jpg")]
     },
     {
       day: 4,
@@ -111,7 +113,10 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Slice of Nidlechüche in Murten"
       ],
       meals: ["Breakfast", "Lunch", "Dinner"],
-      images: ["../images/Fumoir.jpg", "../images/nidle.jpg", "../images/ragusa.jpg"]
+      images: [
+        getImagePath("Fumoir.jpg"), 
+        getImagePath("nidle.jpg"), 
+        getImagePath("ragusa.jpg")]
     },
     {
       day: 5,
@@ -127,7 +132,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Entry to Gruyères Castle"
       ],
       meals: ["Breakfast", "Dinner"],
-      images: ["../images/bern1.jpg", "../images/bern2.jpg", "../images/bern3.jpg"]
+      images: [
+        getImagePath("bern1.jpg"), 
+        getImagePath("bern2.jpg"), 
+        getImagePath("bern3.jpg")
+      ]
     },
     {
       day: 6,
@@ -140,7 +149,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       accommodation: "Hotel des Balances, Lucerne",
       includedActivities: ["Kambly biscuit factory visit", "Willisau distillery tour"],
       meals: ["Breakfast", "Dinner"],
-      images: ["../images/kambly.jpeg", "../images/luzern.jpg", "../images/diwisa.png"]
+      images: [
+        getImagePath("kambly.jpeg"), 
+        getImagePath("luzern.jpg"), 
+        getImagePath("diwisa.png")
+      ]
     },
     {
       day: 7,
@@ -157,7 +170,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Reichenbach Falls visit"
       ],
       meals: ["Breakfast", "Lunch"],
-      images: ["../images/hergiswil.jpg", "../images/meringue.jpg", "../images/meiringen.jpg"]
+      images: [
+        getImagePath("hergiswil.jpg"), 
+        getImagePath("meringue.jpg"), 
+        getImagePath("meiringen.jpg")
+      ]
     },
     {
       day: 8,
@@ -175,7 +192,12 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Paragliding or canyoning adventures"
       ],
       meals: ["Breakfast"],
-      images: ["../images/niesen.jpeg", "../images/niesen_view.jpg", "../images/beatus.jpg", "../images/niesenbfast.jpg"]
+      images: [
+        getImagePath("niesen.jpeg"), 
+        getImagePath("niesen_view.jpg"), 
+        getImagePath("beatus.jpg"), 
+        getImagePath("niesenbfast.jpg")
+      ]
     },
     {
       day: 9,
@@ -184,12 +206,16 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       accommodation: "Hotel Eden Palace au Lac, Montreux",
       includedActivities: ["GoldenPass Express scenic train journey"],
       meals: ["Breakfast"],
-      images: ["../images/gpass.jpg", "../images/gpass2.jpeg", "../images/gpass3.jpeg"]
+      images: [
+        getImagePath("gpass.jpg"), 
+        getImagePath("gpass2.jpeg"), 
+        getImagePath("gpass3.jpeg")
+      ]
     },
     {
       day: 10,
       title: "Vevey and Lavaux",
-      description: [`The morning is yours to explore the town of Vevey. Maybe it's the Alimentarium (Food Museum) or the Charlie Chaplin museum that takes your fancy. Or perhaps you just want to stroll along the lakefront and take in the views of the Alps across the water (hint: look out for the fork in the lake).`,
+      description: ["The morning is yours to explore the town of Vevey. Maybe it's the Alimentarium (Food Museum) or the Charlie Chaplin museum that takes your fancy. Or perhaps you just want to stroll along the lakefront and take in the views of the Alps across the water (hint: look out for the fork in the lake).",
       'In the afternoon we head for the UNESCO World Heritage site of Lavaux. Here, well take a walk through the vineyards and learn about the history of wine production in the region before finishing up with a tasting of some of the local offerings.'
       ],
       accommodation: "Hotel Eden Palace au Lac, Montreux",
@@ -199,7 +225,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Charlie Chaplin museum visit"
       ],
       meals: ["Breakfast"],
-      images: ["../images/lavaux.jpeg", "../images/lavaux2.jpg", "../images/lavaux3.jpeg"]
+      images: [
+        getImagePath("lavaux.jpeg"), 
+        getImagePath("lavaux2.jpg"), 
+        getImagePath("lavaux3.jpeg")
+      ]
     },
     {
       day: 11,
@@ -219,7 +249,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Photo with Freddie Mercury statue"
       ],
       meals: ["Breakfast", "Dinner"],
-      images: ["../images/freddie.jpeg", "../images/Cailler_3.jpg", "../images/cailler2.jpg"]
+      images: [
+        getImagePath("freddie.jpeg"), 
+        getImagePath("Cailler_3.jpg"), 
+        getImagePath("cailler2.jpg")
+      ]
     },
     {
       day: 12,
@@ -233,7 +267,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Red Cross museum visit"
       ],
       meals: ["Breakfast"],
-      images: ["../images/geneva.jpeg", "../images/geneva2.jpeg", "../images/geneva3.jpeg"]
+      images: [
+        getImagePath("geneva.jpeg"), 
+        getImagePath("geneva2.jpeg"), 
+        getImagePath("geneva3.jpeg")
+      ]
     }
   ]
 }

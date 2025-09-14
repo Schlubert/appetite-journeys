@@ -1,6 +1,8 @@
+import { getImagePath } from '../utils/paths';
+
 export const cake = {
   name: "The cake Trail",
-  heroImage: "images/cake-banner.jpg",
+  heroImage: getImagePath('banner.jpg'),
   theme: "Festive Tour",
   durationDays: 14,
   price: "COMING SOON",
@@ -19,7 +21,11 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Excursion to the Black Forest (Germany) to visit Café Schäfer and taste the original Schwarzwälder Kirschtorte (Black Forest Gateau)"
       ],
       meals: ["Breakfast"],
-      images: ["../images/black_forest_gat.jpg", "../images/triberg1.jpg", "../images/triberg2.jpg"]
+      images: [
+        getImagePath('black_forest_gat.jpg'), 
+        getImagePath('triberg1.jpg'), 
+        getImagePath('triberg2.jpg')
+      ]
     },
     // ➕ add more days as needed
   ]

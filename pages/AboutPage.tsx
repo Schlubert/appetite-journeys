@@ -1,4 +1,5 @@
 import React from "react";
+import { getImagePath } from '../utils/paths';
 
 const AboutPage: React.FC = () => {
   return (
@@ -6,7 +7,7 @@ const AboutPage: React.FC = () => {
       {/* Hero Banner */}
       <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8">
         <img
-          src="/images/about-banner.jpg" // ✅ scenic Alps or hero banner
+          src={getImagePath('about-banner.jpg')}
           alt="Scenic Swiss Alps"
           className="w-full h-full object-cover"
         />
@@ -25,7 +26,7 @@ const AboutPage: React.FC = () => {
                     {/* Esther */}
           <div>
             <img
-              src="/images/esther.jpg" // ✅ circular profile image
+              src={getImagePath('esther.jpg')} // ✅ circular profile image
               alt="Esther Gilbert"
               className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg mb-6"
             />
@@ -42,7 +43,7 @@ const AboutPage: React.FC = () => {
           {/* Kevin */}
           <div>
             <img
-              src="/images/kevin.jpg" // ✅ circular profile image
+              src={getImagePath('kevin.jpg')} // ✅ circular profile image
               alt="Kevin Gilbert"
               className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg mb-6"
             />

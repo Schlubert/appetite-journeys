@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
+import { getImagePath } from '@/utils/paths';
 
 const Navbar: React.FC = () => {
   const MountainIcon = () => (
@@ -16,7 +17,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="../images/zzzGilberts blank sml.png" 
+                src={getImagePath('zzzGilberts blank sml.png')} 
                 alt="Gilberts Tours logo" 
                 className="h-12 w-auto"
               />

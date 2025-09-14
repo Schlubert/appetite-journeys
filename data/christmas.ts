@@ -1,3 +1,4 @@
+import { getImagePath } from '../utils/paths';
 
 export type ItineraryStop = {
   day: number
@@ -12,7 +13,7 @@ export type ItineraryStop = {
 
 export const christmas = {
   name: "The Christmas Trail",
-  heroImage: "../images/christmas-banner.jpg",
+  heroImage: getImagePath('christmas-banner.jpg'),
   theme: "Festive Tour",
   durationDays: 14,
   price: "From CHF 3,260 per person",
@@ -36,8 +37,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -51,8 +52,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -66,8 +67,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -81,8 +82,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -96,8 +97,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -111,8 +112,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -126,8 +127,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -141,8 +142,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -156,8 +157,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -171,8 +172,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -186,8 +187,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -201,8 +202,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -216,8 +217,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
         {
@@ -231,8 +232,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        "../images/Basel.jpeg", 
-        "../images/bern1.jpg"
+        getImagePath('Basel.jpeg'), 
+        getImagePath('bern1.jpg')
     ]
     },
     // ➕ add more days as needed
