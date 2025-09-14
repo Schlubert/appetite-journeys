@@ -45,7 +45,8 @@ export const cheeseChocolateRiviera: Tour = {
   heroImages: [
     getImagePath("Fumoir.jpg"),
     getImagePath("Basel.jpeg"),
-    getImagePath("bern1.jpg")
+    getImagePath("bern1.jpg"),
+    getImagePath("kambly.jpeg"),
   ],
   itinerary: <ItineraryStop[]>[
     {
