@@ -1,53 +1,51 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { Tour } from "@/constants"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Tour } from '../constants';
 
 interface TourCardProps {
-  tour: Tour
+  tour: Tour;
 }
 
 const TourCard: React.FC<TourCardProps> = ({ tour }) => {
   return (
-    <Link 
-      to={tour.route}
-      className="block rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition h-full"
-    >
-      <div className="h-full flex flex-col">
-        <img
-          src={tour.heroImage}
-          alt={tour.name}
-          className="h-48 w-full object-cover"
-        />
-        <div className="p-4 flex flex-col flex-grow">
-          <div className="text-sm text-slate-500">
-            {tour.theme} · {tour.durationDays} days
-          </div>
-          <h3 className="text-xl font-bold mt-1 group-hover:text-alpine-green transition-colors">{tour.name}</h3>
-
-          <div className="flex-grow">
-            {Array.isArray(tour.summary) ? (
-              tour.summary.map((para, idx) => (
-                <p key={idx} className="text-slate-600 mt-2">
-                  {para}
-                </p>
-              ))
-            ) : (
-              <p className="text-slate-600 mt-2">{tour.summary}</p>
-            )}
-          </div>
-
-          <div className="flex justify-between items-center mt-4 bg-slate-300 p-2 rounded-lg">
-            <span className="text-sm font-semibold text-alpine-green">
-              {tour.price}
-            </span>
-            <span className="text-sm text-alpine-green font-semibold">
-              View Details →
-            </span>
-          </div>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <img 
+        src={tour.heroImage} 
+        alt={tour.name}
+        className="w-full h-56 object-cover"
+      />
+      <div className="p-6">
+        <h3 className="text-2xl font-serif font-bold text-alpine-green mb-3">
+          {tour.name}
+        </h3>
+        
+        <div className="space-y-2 mb-4">
+          {tour.summary.map((line, index) => (
+            <p 
+              key={index} 
+              className={line.className || "text-gray-700"}
+            >
+              {line.text}
+            </p>
+          ))}
         </div>
-      </div>
-    </Link>
-  )
-}
 
-export default TourCard
+        <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
+         
+          {tour.price && tour.price.length > 0 && (
+            <span className="font-semibold">{tour.price[0]}</span>
+          )}
+        </div>
+
+        <Link 
+          to={tour.route}
+          className="block w-full text-center bg-alpine-green text-white py-2 px-4 rounded hover:bg-opacity-90 transition-colors"
+        >
+          View Details
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default TourCard;

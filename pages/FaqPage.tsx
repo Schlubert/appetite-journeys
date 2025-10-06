@@ -13,13 +13,19 @@ const FAQS: FaqItem[] = [
     answer: `
       <p>We've tried to include as much as possible in the tour price while still leaving the chance for you to make the trip 'yours'. Included in the price are:</p>
       <ul class="list-disc list-inside space-y-1">
-        <li>Accommodation in 3-4 star hotels (twin share)</li>
-        <li>All breakfasts, 6 lunches, and 6 dinners</li>
-        <li>All transportation within Switzerland</li>
+        <li>Accommodation in 4 star hotels (twin share)</li>
+        <li>Daily breakfasts</li>
+        <li>Lunches and dinners provided varies by tour.</li>
+        <li>All transportation within Switzerland including air conditioned coach transport, trains, and funiculars (when as part of the tour)</li>
         <li>All activities mentioned in the itinerary</li>
         <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+        <li>Insights and explinations from a baker and chef with more than 30 years experience in the food industry</li>
         <li>All entrance fees for places visited as part of the tour</li>
-      </ul>
+        <li>All applicable taxes </li>
+        <li>Luggage transfers between hotels</li>
+        <li>Special Alpine Appetite Tours gifts</li>
+        <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
+              </ul>
     `,
   },
 
@@ -27,10 +33,10 @@ const FAQS: FaqItem[] = [
   question: "What is NOT included in the tour price?",
   answer: `
     <ul class="list-disc list-inside space-y-1">
-      <li>Travel to/from start/end points</li>
+      <li>International flights or travel to/from start/end points</li>
       <li>Travel insurance (obligatory)</li>
       <li>Visa / ETAs</li>
-      <li>Beverages</li>
+      <li>Beverages and snacks (when not as part of the activities)</li>
       <li>Personal expenses</li>
       <li>Tip kitty</li>
       <li>Optional excursions</li>

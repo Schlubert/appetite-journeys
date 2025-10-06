@@ -1,6 +1,6 @@
 // WaterfallsWalnuts.tsx
 
-import React from "react";
+import React, { useRef } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -27,6 +27,30 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, title, children }) => (
 );
 
 const WaterfallsWalnuts: React.FC = () => {
+  const [openDay, setOpenDay] = React.useState<string>("day-1");
+  const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  const handleValueChange = (value: string) => {
+    setOpenDay(value);
+    
+    // Scroll to the opened accordion item
+    if (value && dayRefs.current[value]) {
+      setTimeout(() => {
+        const element = dayRefs.current[value];
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+    }
+  };
+
   return (
     <div className="space-y-10 p-6">
       <HeroHeader
@@ -75,9 +99,18 @@ const WaterfallsWalnuts: React.FC = () => {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Daily Itinerary</h2>
-        <Accordion type="single" collapsible defaultValue="day-1">
+        <Accordion 
+          type="single" 
+          collapsible 
+          value={openDay}
+          onValueChange={handleValueChange}
+        >
           {waterfallsWalnuts.itinerary.map((day) => (
-            <AccordionItem key={day.day} value={`day-${day.day}`}>
+            <AccordionItem 
+              key={day.day} 
+              value={`day-${day.day}`}
+              ref={(el) => { dayRefs.current[`day-${day.day}`] = el; }}
+            >
               <AccordionTrigger>
                 Day {day.day}: {day.title}
               </AccordionTrigger>
@@ -121,12 +154,28 @@ const WaterfallsWalnuts: React.FC = () => {
       <section className="bg-yellow-300 border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Guided waterfall excursions and nature walks</li>
-          <li>Walnut farm visits with tastings and workshops</li>
-          <li>All scheduled transfers between stops</li>
-          <li>Handpicked boutique accommodations with breakfast</li>
-          <li>Small group size (max 12)</li>
-          <li>Professional nature guide</li>
+          <li>Accommodation in 4 star hotels (twin share)</li>
+        <li>Daily breakfasts</li>
+        <li>6 dinners</li>
+        <li>Transportation in an air conditioned coach</li>
+        <li>Goldenpass Express train, 1st class seat</li>
+        <li>Interlaken Express train, 1st class seat</li>
+        <li>Tour of Class and entry to Maison Cailler chocolate factory</li>
+        <li>Tour and dining experience at Fumoir de Champoz</li>
+        <li>and funiculars (when as part of the tour)</li>
+        <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+        <li>Insights and explinations from a baker and chef with more than 30 years experience in the food industry</li>         
+        <li>All entrance fees for places visited as part of the tour</li>
+        <li>All applicable taxes </li>
+        <li>Luggage transfers between hotels</li>
+        <li>Special Alpine Appetite Tours gifts</li>
+        <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
+        <li>Guided waterfall excursions and nature walks</li>
+        <li>Walnut farm visits with tastings and workshops</li>
+        <li>All scheduled transfers between stops</li>
+        <li>Handpicked boutique accommodations with breakfast</li>
+        <li>Small group size (max 12)</li>
+        <li>Professional nature guide</li>
         </ul>
       </section>
     </div>

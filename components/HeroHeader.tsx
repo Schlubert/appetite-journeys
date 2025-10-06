@@ -13,7 +13,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({ images, title, subtitle }) => {
     <header className="relative w-full rounded-2xl overflow-hidden border border-slate-200">
       {hasImages ? (
         <div
-          className={`grid gap-1 h-56 md:h-72 lg:h-96`}
+          className={`grid gap-1 h-56 md:h-72 lg:h-64`}
           style={{
             gridTemplateColumns: `repeat(${Math.min(
               images!.length,
@@ -32,7 +32,7 @@ const HeroHeader: React.FC<HeroHeaderProps> = ({ images, title, subtitle }) => {
           ))}
         </div>
       ) : (
-        <div className="w-full h-56 md:h-72 lg:h-96 bg-slate-200 flex items-center justify-center text-slate-500">
+        <div className="w-full h-56 md:h-72 lg:h-64 bg-slate-200 flex items-center justify-center text-slate-500">
           No images available
         </div>
       )}

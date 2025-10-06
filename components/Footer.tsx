@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer className="bg-alpine-green text-snow-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center">
-          <p className="font-serif text-lg">&copy; {new Date().getFullYear()} Alpine Appetite Tours. All Rights Reserved.</p>
+          <p className="font-serif text-lg">&copy; {new Date().getFullYear()} Alpine Appetite Tours is part of The Gilbert's Group. All Rights Reserved.</p>
           <p className="mt-2 text-sm text-gray-300">Boutique Culinary & Scenic Journeys</p>
         </div>
       </div>

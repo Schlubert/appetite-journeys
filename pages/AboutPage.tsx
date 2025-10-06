@@ -69,7 +69,7 @@ const AboutPage: React.FC = () => {
             Our Philosophy
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            At Gilbert Tours, we believe that travel is about more than just
+            At Appetite Journeys, we believe that travel is about more than just
             visiting beautiful places — it’s about creating experiences that
             leave lasting memories. Our tours are carefully designed to balance
             comfort with adventure, tradition with discovery, and fun with

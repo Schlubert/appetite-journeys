@@ -1,9 +1,10 @@
+// ContactPage.tsx
 import React, { useState } from 'react';
 import { SOCIAL_LINKS } from '../constants';
 
 const socialIconProps = {
     className: "w-8 h-8",
-    ariaHidden: true,
+    "aria-hidden": true,
 };
 
 const SocialIcons: { [key: string]: React.ReactNode } = {
@@ -22,6 +23,11 @@ const SocialIcons: { [key: string]: React.ReactNode } = {
     'YouTube': (
          <svg {...socialIconProps} viewBox="0 0 24 24" fill="currentColor">
             <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" />
+        </svg>
+    ),
+    'LinkedIn': (
+        <svg {...socialIconProps} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
         </svg>
     ),
 };
@@ -76,19 +82,17 @@ const ContactPage: React.FC = () => {
                 <div className="space-y-8">
                     <div>
                         <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-3">Contact Information</h3>
-                        <p className="text-lg text-rock-gray"><strong>Email:</strong> hello@alpineappetite.com</p>
-                        <p className="text-lg text-rock-gray"><strong>Phone:</strong> +41 22 123 45 67</p>
-                        <p className="text-lg text-rock-gray"><strong>Location:</strong> Geneva, Switzerland</p>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-4">Follow Our Journey</h3>
+                        <p className="text-lg text-rock-gray"><strong>Email:</strong> hello@appetitejourneys.com</p>
+                        <p className="text-lg text-rock-gray"><strong>Phone:</strong> +64 555 1234</p>
+                        
+                    
                         <div className="flex space-x-6">
                             {SOCIAL_LINKS.map(social => (
-                                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-rock-gray hover:text-mountain-blue transition-colors duration-300">
-                                    {SocialIcons[social.name]}
-                                    <span className="sr-only">{social.name}</span>
-                                </a>
-                            ))}
+                        <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-rock-gray hover:text-mountain-blue transition-colors duration-300">
+                      {SocialIcons[social.label]}
+                      <span className="sr-only">{social.label}</span>
+                         </a>
+                        ))}
                         </div>
                     </div>
                 </div>

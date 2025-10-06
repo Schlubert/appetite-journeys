@@ -32,11 +32,9 @@ export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   theme: "Food & Wine",
   durationDays: 12,
-  price: "From CHF 3,250 per person",
+  price: "From NZ$13,200 per person (twin share)",
   departureDates: [
-    { date: "May 12, 2025", status: "sold-out" },
-    { date: "June 23, 2025", status: "limited" },
-    { date: "Sept 14, 2025", status: "available" },
+    { date: "September 6th, 2026", status: "limited" },
   ],
   summary: [
     "Explore the East of Switzerland and discover flavours like Kirsch (Cherry Brandy), the walnut and caramel tart from Graubünden, and Swiss-made whiskey.",
@@ -54,9 +52,9 @@ export const waterfallsWalnuts: Tour = {
       day: 1,
       title: "Arrival in Zurich",
       description: [
-        'Grüezi mitenand! Welcome to Switzerland. Your adventure begins at 6 pm with a welcome meeting to meet your fellow travellers and group leader. If you arrive early, maybe visit the Swiss National Museum. If youre looking for a different type of cultural experience, then you can discover a unique and fascinating part of Zurich at the Kunsthaus Zurich.',
-        'This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.',
-        'Its very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip. If you are going to be late, please let us know.'
+        "Grüezi mitenand! Welcome to Switzerland. Your adventure begins at 6 pm with a welcome meeting to meet your fellow travellers and group leader. If you arrive early, maybe visit the Swiss National Museum. If you're looking for a different type of cultural experience, then you can discover a unique and fascinating part of Zurich at the Kunsthaus Zurich.",
+        "This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.",
+        "Its very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip. If you are going to be late, please let us know."
       ],
       accommodation: "Boutique hotel in Zurich city center",
       includedActivities: ["Welcome dinner", "Guided market visit"],

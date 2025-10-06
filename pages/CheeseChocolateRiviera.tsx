@@ -1,6 +1,6 @@
 // CheeseChocolateRiviera.tsx
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -27,6 +27,30 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, title, children }) => (
 );
 
 const CheeseChocolateRiviera: React.FC = () => {
+  const [openDay, setOpenDay] = React.useState<string>("day-1");
+  const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  const handleValueChange = (value: string) => {
+    setOpenDay(value);
+    
+    // Scroll to the opened accordion item
+    if (value && dayRefs.current[value]) {
+      setTimeout(() => {
+        const element = dayRefs.current[value];
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+    }
+  };
+
   return (
     <div className="space-y-10 p-6">
       <HeroHeader
@@ -73,9 +97,18 @@ const CheeseChocolateRiviera: React.FC = () => {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Daily Itinerary</h2>
-        <Accordion type="single" collapsible defaultValue="day-1">
+        <Accordion 
+          type="single" 
+          collapsible 
+          value={openDay}
+          onValueChange={handleValueChange}
+        >
           {cheeseChocolateRiviera.itinerary.map((day) => (
-            <AccordionItem key={day.day} value={`day-${day.day}`}>
+            <AccordionItem 
+              key={day.day} 
+              value={`day-${day.day}`}
+              ref={(el) => { dayRefs.current[`day-${day.day}`] = el; }}
+            >
               <AccordionTrigger>
                 Day {day.day}: {day.title}
               </AccordionTrigger>
@@ -114,12 +147,25 @@ const CheeseChocolateRiviera: React.FC = () => {
         </Accordion>
       </section>
 
-      <section>
+      <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Guided tastings and producer visits throughout the itinerary</li>
-          <li>Handpicked accommodations with breakfast</li>
-          <li>Small group size (max 12)</li>
+          <li>Accommodation in 4 star hotels (twin share)</li>
+        <li>Daily breakfasts</li>
+        <li>6 dinners and a multitude of Swiss delicaies along the way</li>
+        <li>Transportation in an air conditioned coach</li>
+        <li>Goldenpass Express train, 1st class seat</li>
+        <li>Interlaken Express train, 1st class seat</li>
+        <li>Chocolate making class and entry to Maison Cailler chocolate factory</li>
+        <li>Tour and dining experience at Fumoir de Champoz</li>
+        <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>         
+        <li>Walking tours of destinations including Bern, Basel, Interlaken, Luzern, and Lausanne</li>
+        <li>All applicable taxes </li>
+        <li>Luggage transfers between hotels</li>
+        <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
+        <li>Guided waterfall excursions and nature walks</li>
+        <li>Small group size (max 12)</li>
         </ul>
       </section>
     </div>

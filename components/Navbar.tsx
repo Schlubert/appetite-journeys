@@ -17,11 +17,11 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-2">
               <img 
-                src={getImagePath('zzzGilberts blank sml.png')} 
+                src={getImagePath('appetite_tours_logo.png')} 
                 alt="Gilberts Tours logo" 
-                className="h-12 w-auto"
+                className="h-20 w-auto"
               />
-          <span className="text-2xl font-bold font-serif text-alpine-green">Some Tour name and logo</span>
+          <span className="text-2xl font-bold font-serif text-alpine-green"></span>
           </Link>
           <div className="hidden md:flex items-center space-x-8">
             {NAV_LINKS.map((link) => (
