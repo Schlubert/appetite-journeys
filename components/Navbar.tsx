@@ -1,28 +1,26 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 import { getImagePath } from '@/utils/paths';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
-  const MountainIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-alpine-green" viewBox="0 0 20 20" fill="currentColor">
-      <path fillRule="evenodd" d="M10 2a.75.75 0 01.696.442l4.5 9a.75.75 0 01-1.392.696L10 6.236 6.196 12.138a.75.75 0 11-1.392-.696l4.5-9A.75.75 0 0110 2zM5.504 15.5a.75.75 0 01.625-1.06l4-1.5a.75.75 0 01.742 0l4 1.5a.75.75 0 01-.129 1.488l-10 2.5a.75.75 0 01-.734-1.428l1.496-.374z" clipRule="evenodd" />
-    </svg>
-  );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-snow-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src={getImagePath('appetite_tours_logo.png')} 
-                alt="Gilberts Tours logo" 
-                className="h-20 w-auto"
-              />
-          <span className="text-2xl font-bold font-serif text-alpine-green"></span>
+            <img
+              src={getImagePath('appetite_tours_logo.png')}
+              alt="Gilberts Tours logo"
+              className="h-20 w-auto"
+            />
           </Link>
+
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {NAV_LINKS.map((link) => (
               <NavLink
@@ -30,7 +28,9 @@ const Navbar: React.FC = () => {
                 to={link.href}
                 className={({ isActive }) =>
                   `text-lg font-semibold transition-colors duration-300 ${
-                    isActive ? 'text-swiss-red' : 'text-rock-gray hover:text-mountain-blue'
+                    isActive
+                      ? 'text-swiss-red'
+                      : 'text-rock-gray hover:text-mountain-blue'
                   }`
                 }
               >
@@ -38,7 +38,37 @@ const Navbar: React.FC = () => {
               </NavLink>
             ))}
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-alpine-green focus:outline-none"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/* Mobile dropdown menu */}
+        {isMenuOpen && (
+          <div className="md:hidden flex flex-col space-y-2 pb-4 animate-fadeIn">
+            {NAV_LINKS.map((link) => (
+              <NavLink
+                key={link.href}
+                to={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-lg text-base font-semibold transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-alpine-green text-white'
+                      : 'text-rock-gray hover:bg-gray-100 hover:text-alpine-green'
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+        )}
       </nav>
     </header>
   );
