@@ -34,10 +34,9 @@ const AboutPage: React.FC = () => {
               Esther Gilbert
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Esther’s warmth and hospitality shine through on every journey.
-              She has a keen eye for creating meaningful connections with local
-              artisans and communities, making each tour feel authentic,
-              welcoming, and unforgettable.
+              Born and raised in Switzerland Esther brings a local's perspective to every tour. Her deep knowledge of Swiss culture, history, and cuisine ensures guests experience the very best of the country and culture.</p>
+            <p className="text-gray-700 text-lg leading-relaxed mt-4">
+              With the understanding and insights that come from a lifetime in hospitality, Esther is the day to day guide for all activities. Her keen eye for creating meaningful connections with local artisans and communities, along with her fluency in the main 4 languages of Switzerland, help to make each tour welcoming, and unforgettable.
             </p>
           </div>
           {/* Kevin */}
@@ -51,11 +50,13 @@ const AboutPage: React.FC = () => {
               Kevin Gilbert
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
-              With a background in business and a lifelong passion for food and
-              travel, Kevin brings both expertise and enthusiasm to every tour.
-              He ensures every detail is thoughtfully planned, so guests can
-              relax and immerse themselves in the beauty and flavors of
-              Switzerland.
+              Kevin has spent his life in food, beverage, and hospitality. Be it as a baker, chef, pastry chef, managing hotels, wine bars, restaurants, it is fair to say that he has extensive experience.</p>
+              <p className="text-gray-700 text-lg leading-relaxed mt-4">
+              His experience in the food and beverage industry, combined with his passion for travel, makes him the perfect partner to Esther in creating unforgettable culinary journeys through Switzerland.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed mt-4">  Having judged at some the worlds most prestigious culinary competitions, and taught apprentices, bakers, and chefs around the world, Kevin brings a wealth of knowledge and expertise to every tour and is the perfect person to help translate, explain and teach the culinary side of your journey.</p>
+            <p className="text-gray-700 text-lg leading-relaxed mt-4">
+              Between them, Esther and Kevin ensure that every detail is thoughtfully planned, so guests can relax and immerse themselves in the beauty and flavours of Switzerland.
             </p>
           </div>
 

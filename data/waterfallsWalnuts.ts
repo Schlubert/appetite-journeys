@@ -32,7 +32,7 @@ export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   theme: "Food & Wine",
   durationDays: 12,
-  price: "From NZ$13,200 per person (twin share)",
+  price: "From NZ$13,500 per person (twin share)",
   departureDates: [
     { date: "September 6th, 2026", status: "limited" },
   ],
@@ -42,10 +42,9 @@ export const waterfallsWalnuts: Tour = {
     "This journey also crosses into Germany, Austria and Liechtenstein — plenty of opportunities to sample regional delicacies."
   ],
   heroImages: [
-    getImagePath('banner-waterfalls.jpg'),
-    getImagePath('Basel.jpeg'),
-    getImagePath('stgallenlibrary2.jpg'),
-    getImagePath('black_forest_gat.jpg')
+    getImagePath('davos.jpg'),
+    getImagePath('kirschstaengeli.jpg'),
+    getImagePath('stgallenlibrary2.jpg')
   ],
   itinerary: [
     {

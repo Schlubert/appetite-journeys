@@ -150,22 +150,35 @@ const CheeseChocolateRiviera: React.FC = () => {
       <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Accommodation in 4 star hotels (twin share)</li>
+          <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li> <li>Accommodation in 4-5 star hotels (twin share)</li>
         <li>Daily breakfasts</li>
         <li>6 dinners and a multitude of Swiss delicaies along the way</li>
-        <li>Transportation in an air conditioned coach</li>
-        <li>Goldenpass Express train, 1st class seat</li>
-        <li>Interlaken Express train, 1st class seat</li>
-        <li>Chocolate making class and entry to Maison Cailler chocolate factory</li>
-        <li>Tour and dining experience at Fumoir de Champoz</li>
-        <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
-        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>         
-        <li>Walking tours of destinations including Bern, Basel, Interlaken, Luzern, and Lausanne</li>
+        <li>Activites and entries including:
+        <ul className="list-[circle] pl-6 mt-1 space-y-1">
+          <li>Transportation in an air conditioned coach</li>
+          <li>Goldenpass Express train, 1st class seat</li>
+          <li>Interlaken Express train, 1st class seat</li>
+          <li>Chocolate making class and entry to Maison Cailler chocolate factory</li>
+          <li>Tour and dining experience at Fumoir de Champoz</li>
+          <li>Entry to Glasi Hergiswil and glass blowing experience</li>
+          <li>Bakery tour and tasting in Willisau</li>
+          <li>Cultural show in Luzern</li>
+          <li>Funicular and dinner on Harder Kulm</li>
+          <li>Boat journey on Lake Geneva (Lac Léman) </li>
+          <li>Vineyard tour of the World Heritage listed Lavaux Terraces</li></ul></li>
+        <li>Optional additions of:
+          <ul className="list-[circle] pl-6 mt-1 space-y-1"> 
+            <li>Winery and Farmshop tour</li>
+            <li>Funicular to the top of Neisen (the Swiss Pyramid)</li>
+            <li>Entry to the St. Beatus Caves</li></ul></li>
+            
+        <li>Guided walking tours of destinations including Bern, Basel, Interlaken, Luzern, and Lausanne</li>
         <li>All applicable taxes </li>
         <li>Luggage transfers between hotels</li>
         <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
-        <li>Guided waterfall excursions and nature walks</li>
         <li>Small group size (max 12)</li>
+        <li>A few extra surprises and mementos along the way</li>
         </ul>
       </section>
     </div>

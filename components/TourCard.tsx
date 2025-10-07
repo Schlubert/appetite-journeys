@@ -32,9 +32,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
 
         <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
          
-          {tour.price && tour.price.length > 0 && (
-            <span className="font-semibold">{tour.price[0]}</span>
-          )}
         </div>
 
         <Link 

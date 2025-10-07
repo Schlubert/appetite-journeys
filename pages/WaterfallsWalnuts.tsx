@@ -151,31 +151,35 @@ const WaterfallsWalnuts: React.FC = () => {
         </Accordion>
       </section>
 
-      <section className="bg-yellow-300 border border-slate-200 rounded-xl p-6 shadow-sm">
+       <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Accommodation in 4 star hotels (twin share)</li>
+          <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li> <li>Accommodation in 4-5 star hotels (twin share)</li>
         <li>Daily breakfasts</li>
-        <li>6 dinners</li>
-        <li>Transportation in an air conditioned coach</li>
-        <li>Goldenpass Express train, 1st class seat</li>
-        <li>Interlaken Express train, 1st class seat</li>
-        <li>Tour of Class and entry to Maison Cailler chocolate factory</li>
-        <li>Tour and dining experience at Fumoir de Champoz</li>
-        <li>and funiculars (when as part of the tour)</li>
-        <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
-        <li>Insights and explinations from a baker and chef with more than 30 years experience in the food industry</li>         
-        <li>All entrance fees for places visited as part of the tour</li>
+        <li>7 dinners and a multitude of Swiss delicaies along the way</li>
+        <li>Activites and entries including:
+        <ul className="list-[circle] pl-6 mt-1 space-y-1">
+          <li>Transportation in an air conditioned coach</li>
+          <li>Glacier Express train, 1st class seat</li>
+          <li>Chocolate making class and entry to Gottlieben Huppe chocolate factory</li>
+          <li>Cake and chocolate making class in Zug</li>
+          <li>Boat journey on the Bodensee</li>
+          <li>Cablecar up Säntis</li>
+          <li>Entry to Library and Museum of the Abbey of St. Gall</li>
+          <li>Tours and tastings at 3 distilleries, 1 Brewery, and a winery</li>
+          </ul></li>
+        <li>Optional additions of:
+          <ul className="list-[circle] pl-6 mt-1 space-y-1"> 
+            <li>Funicular up to Muottas Muragl</li>
+            <li>Wine tasting followed by dinner at a 2 Michelin starred restaurant</li></ul></li>
+            
+        <li>Guided walking tours of destinations including Shaffhausen, St. Gallen, and Appensell</li>
         <li>All applicable taxes </li>
         <li>Luggage transfers between hotels</li>
-        <li>Special Alpine Appetite Tours gifts</li>
         <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
-        <li>Guided waterfall excursions and nature walks</li>
-        <li>Walnut farm visits with tastings and workshops</li>
-        <li>All scheduled transfers between stops</li>
-        <li>Handpicked boutique accommodations with breakfast</li>
         <li>Small group size (max 12)</li>
-        <li>Professional nature guide</li>
+        <li>A few extra surprises and mementos along the way</li>
         </ul>
       </section>
     </div>

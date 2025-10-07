@@ -13,7 +13,7 @@ const FAQS: FaqItem[] = [
     answer: `
       <p>We've tried to include as much as possible in the tour price while still leaving the chance for you to make the trip 'yours'. Included in the price are:</p>
       <ul class="list-disc list-inside space-y-1">
-        <li>Accommodation in 4 star hotels (twin share)</li>
+        <li>Accommodation in 4-5 star hotels (twin share)</li>
         <li>Daily breakfasts</li>
         <li>Lunches and dinners provided varies by tour.</li>
         <li>All transportation within Switzerland including air conditioned coach transport, trains, and funiculars (when as part of the tour)</li>

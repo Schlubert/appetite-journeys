@@ -27,7 +27,7 @@ export const TOURS_DATA: Tour[] = [
   name: "Cheese, Chocolate and the Swiss Riviera",
   summary:[
     { text:"Explore the north and west of Switzerland. From lake front to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories."},
-    { text:"From NZ$12,595", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    { text:"From NZ$12,950", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
   ],
   heroImage: getImagePath("ragusa.jpg"),
@@ -39,7 +39,7 @@ export const TOURS_DATA: Tour[] = [
     name: "Waterfalls, Whiskey, and Walnuts",
     summary: [
       { text:"Visit 3 countries and explore the East of Switzerland. From the Rhine Falls to the vineyards of Appenzell and the historic abbey in St Gallen."},
-    { text:"From NZ$13,200", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    { text:"From NZ$13,500", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
     ],
     heroImage: getImagePath("IMG20250720125834.jpg"),
@@ -47,25 +47,18 @@ export const TOURS_DATA: Tour[] = [
     departureDates: ["May 12, 2025", "June 23, 2025", "Sept 14, 2025"],
   },
   {
-    id: "christmas-trail",
-    name: "The Christmas Trail",
-    summary: [
-      { text: "Get yourself in the festive spirit with this 14-day tour of Switzerland. From Christmas markets in Zurich to the festive lights in Lucerne."},
-    { text:"Coming Soon", className: "text-lg font-semibold text-center text-alpine-green mt-4"},],
-    heroImage: getImagePath("Basel-Switzerland-Happy-to-Wander-0278.jpg"),
-    route: "/tours/christmas-trail",
-    departureDates: ["Dec 1, 2025", "Dec 8, 2025", "Dec 15, 2025"],
-  },
-  {
   id: "cake",
   name: "Cakes, Tortes, Gateaux and coffeehouses",
   summary:[
     { text:"Covering 4 countries, this 16-day tour explores the sweet side of Europe. From Vienna to Strasbourg and the Black Forest to the lakes of Switzerland."},
     { text:"Discover the cake that triggered one of the most famous culinary feuds in history and taste your way through some of Europe's best patisseries - including what is thought of as the oldest cake recipe in the world."},
-    { text:"Coming Soon", className: "text-lg font-semibold text-center text-alpine-green mt-4"},],
+    { text:"Coming Soon"},
+    { text:"Dates in May/June 2027",
+     className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    ],
   heroImage: getImagePath("black_forest_gat.jpg"),
   route: "/tours/cake",
-  departureDates: ["COMING SOON"],
+  departureDates: ["COMING May/June 2027"],
 },
 ];
 export const NAV_LINKS: NavLink[] = [
