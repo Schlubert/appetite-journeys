@@ -28,7 +28,8 @@ export const TOURS_DATA: Tour[] = [
   summary:[
     { text:"Explore the north and west of Switzerland. From lake front to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories."},
     { text:"From NZ$12,950", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
-    { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
+    { text:"per person (twin share).", className: "text-md italic text-center text-alpine-green" },
+    { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
   ],
   heroImage: getImagePath("ragusa.jpg"),
   route: "/tours/cheese-chocolate-trail",
@@ -41,7 +42,8 @@ export const TOURS_DATA: Tour[] = [
       { text:"Visit 3 countries and explore the East of Switzerland. From the Rhine Falls to the vineyards of Appenzell and the historic abbey in St Gallen."},
     { text:"From NZ$13,500", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
-    ],
+    { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
+  ],
     heroImage: getImagePath("IMG20250720125834.jpg"),
     route: "/tours/waterfalls",
     departureDates: ["May 12, 2025", "June 23, 2025", "Sept 14, 2025"],
@@ -52,7 +54,7 @@ export const TOURS_DATA: Tour[] = [
   summary:[
     { text:"Covering 4 countries, this 16-day tour explores the sweet side of Europe. From Vienna to Strasbourg and the Black Forest to the lakes of Switzerland."},
     { text:"Discover the cake that triggered one of the most famous culinary feuds in history and taste your way through some of Europe's best patisseries - including what is thought of as the oldest cake recipe in the world."},
-    { text:"Coming Soon"},
+    { text:"Coming Soon", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:"Dates in May/June 2027",
      className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     ],
