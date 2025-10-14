@@ -42,7 +42,7 @@ export const cheeseChocolateRiviera: Tour = {
   summary: [
     "Explore the north and west of Switzerland. From lakefront to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories, this tour has it all.",
     "Discover the cities of Zurich, Basel, Bern, Lucerne, Interlaken, Montreux and Geneva as well as the towns of Murten and Vevey. Experience the UNESCO World Heritage sites of Bern and Lavaux. Ride on the GoldenPass Express and the Interlaken Express. Visit traditional smokehouses, glass factories, biscuit manufacturers, wineries and more.",
-    "Indulge in Swiss specialities such as fondue, raclette, rösti, läckerli, Nidlechüche, Kafi Lutz and of course, chocolate.",
+    "Indulge in Swiss specialities such as fondue, raclette, rösti, läckerli, Nidlechueche, Kafi Lutz and of course, chocolate.",
     "With a mix of included activities and free time to explore on your own, this tour offers the perfect balance of structure and flexibility.",
     "Join us for an unforgettable journey through one of Europe's most beautiful and delicious countries."
   ],
@@ -105,16 +105,16 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       day: 4,
       title: "Basel to Bern",
       description:[ 
-        "Today, we head to the UNESCO World Heritage Site of Bern. Switzerland's capital city and one of the most photographed cities in the world.",
-        "On the way, we'll stop in on a smokehouse that has been operating a traditional-style operation for more than 300 years. Then, on towards our first chocolate stop – Camille Bloch – makers of some chocolate creations such as Ragusa and Torino.",
-        "Our final stop on the journey is Murten, an amazingly picturesque village and home of the Nidlechüche. Nobody makes it better than here. ",
+        "Today, we head to the UNESCO World Heritage Site of Bern. Considered Switzerland's capital, it is one of the most photographed cities in the world.",
+        "On the way, we'll stop in on a smokehouse that has been operating a traditional-style operation for more than 300 years. Then, on towards our first chocolate stop – Camille Bloch – makers of chocolate creations such as Ragusa and Torino.",
+        "Our final stop on the journey is Murten, an amazingly picturesque village and home of the Nidlechueche. Nobody makes it better than here. ",
         "After we arrive at the hotel, there is a little time to relax and recharge before heading off to restaurant where you can try iconic dishes like fondue and raclette, or regional ones like the rösti."
       ],
       accommodation: "Hotel NH Bern The Bristol, Bern",
       includedActivities: [
         "Fumoir Champoz tasting",
         "Visit to Camille Bloch chocolate factory",
-        "Slice of Nidlechüche in Murten"
+        "Slice of Nidlechueche in Murten"
       ],
       meals: ["Breakfast", "Lunch", "Dinner"],
       images: [
@@ -146,10 +146,10 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       day: 6,
       title: "Bern to Lucerne",
       description:[ 
-      "Today, we head from the beautiful city of Bern to what is often described as one of the most attractive destinations in Europe – Luzern(Lucerne).",
+      "Today, we head from the beautiful city of Bern to what is often described as one of the most attractive destinations in Europe – Luzern (Lucerne).",
       "Home to the subject of more photos that probably any other wooden bridge in the world (Chapel Bridge); the Lion Monument; and outstanding views from the Musegg Wall, Luzern is like a scene from a fairytale.",
       "On the way we’ll explore more of the Swiss love for biscuits at the country’s largest biscuit manufacturer – Kambly. Sample from their huge array of biscuits before heading off to discover the secrets behind the Willisauer Ringli, still being made the same way since 1848.",
-      "Then we go in search of something to wash it down at the Willisau distillery where you will tour their facility, taste some of their wares, and learn how to make a Kafi Lutz – Think of it as the Swiss version of an Irish coffee but with more rules.",
+      "Then we go in search of something to wash it down at the Willisau distillery where you will tour their facility, taste some of their wares, and learn how to make a Kafi Lutz – think of it as the Swiss version of an Irish coffee but with more rules.",
       "Our day finishes with a stroll along the lakefront on the way to dinner and a show of traditional Swiss entertainment."
       ],
       accommodation: "AMERON Luzern Hotel Flora, Luzern",
@@ -165,7 +165,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       day: 7,
       title: "Lucerne to Interlaken",
       description: [
-        "After leaving Luzern we first head for the glass manufacturer found in many a Swiss household –Glasi Hergiswil. Operating since 1817, Hergiswil offer a wide array of offerings in their outlet store as well as being able to view the masters at work.",
+        "After leaving Luzern we first head for the glass manufacturer found in many a Swiss household – Glasi Hergiswil. Operating since 1817, Hergiswil offer a wide array of product in their outlet store as well as being able to view the masters at work.",
         "We then catch the Interlaken Express from Luzern. On the way, we’ll make a quick detour to the Reichenbach Falls made famous in the Sherlock Holmes stories, and enjoy afternoon tea in the birthplace of meringues – Meiringen.",
         "After looking around the beautiful town of Meiringen we’ll head towards our final stop for the night in Interlaken."
         ],
@@ -188,7 +188,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       title: "Interlaken Free Day",
       description:[ 
         "Your chance to explore the town of Interlaken in your own way and at your own pace. Maybe you want to head up Mount Pilatus or take a boat ride on Lake Thun or Lake Brienz. If you're feeling adventurous, then why not try paragliding or canyoning.",
-      "If those aren't your thing, you can choose to join us on a day trip around the lake, enjoy breakfast at the top of the pyramid of Switzerland -Mount Niesen- with one of the steepest funiculars in Switzerland (68% incline), then a stop in Thun before heading to the St. Beatus caves.",
+      "If those aren't your thing, you can choose to join us on a day trip around the lake, enjoy breakfast at the top of the pyramid of Switzerland - Mount Niesen - with one of the steepest funiculars in Switzerland (68% incline), then a stop in Thun before heading to the St. Beatus caves.",
       "If you would like to join us on this excursion, please let us know as there is an extra charge associated with it."
       ],
       accommodation: "Hotel Du Nord, Interlaken",
@@ -209,7 +209,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
     {
       day: 9,
       title: "Interlaken to Montreux",
-      description:[ "Board the GoldenPass Express, one of Switzerland's most picturesque train routes. The journey on the panoramic train of the GoldenPass Express takes you through the Bernese Oberland before arriving in Montreux. After wandering through Montreaux, we take to the water and take the ferry to Laussane."],
+      description:[ "Board the GoldenPass Express, one of Switzerland's most picturesque train routes. The journey on the panoramic train of the GoldenPass Express takes you through the Bernese Oberland before arriving in Montreux. After wandering through Montreux, we take to the water and take the ferry to Laussane."],
       accommodation: "De la Paix, Lausanne",
       includedActivities: ["GoldenPass Express scenic train journey"],
       meals: ["Breakfast", "Lunch"],

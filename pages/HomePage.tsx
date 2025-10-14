@@ -110,7 +110,8 @@ const HomePage: React.FC = () => {
 
         {/* Tours Section */}
         <section id="tours" className="scroll-mt-20">
-          <h2 className="text-5xl font-serif font-bold text-center text-alpine-green mb-12">Our Featured Tours</h2>
+          <h2 className="text-5xl font-serif font-bold text-center text-alpine-green mb-3">Our Featured Tours</h2>
+          <p className="text-5x1 text-gray-600 mt-3 text-center mb-6"> Designed for travellers with taste.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {TOURS_DATA.slice(0, 3).map((tour) => (
               <TourCard key={tour.id} tour={tour} />
@@ -145,7 +146,7 @@ const HomePage: React.FC = () => {
 
             <div className="mt-16 text-center">
               <div className="bg-white rounded-xl p-10 max-w-4xl mx-auto shadow-lg">
-                <h3 className="text-3xl font-serif font-bold text-alpine-green mb-4">The Gilbert's Tours Promise</h3>
+                <h3 className="text-3xl font-serif font-bold text-alpine-green mb-4">The Appetite Journey’s Promise</h3>
                 <p className="text-lg text-rock-gray leading-relaxed">
                   Every tour is crafted with the eyes of a local, and the expertise of more than 30 years in the international culinary industry. We don't just show you Switzerland - we help you taste, feel, and understand it. From the distiller who becomes your friend to the chocolatier who shares family recipes, these are connections that last long after you return home.
                 </p>

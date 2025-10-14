@@ -11,6 +11,8 @@ import ToursPage from "./pages/ToursPage";
 import ChristmasTrailPage from "./pages/ChristmasTrail";
 import Cake from "./pages/Cake";
 import ScrollToTop from "./components/ScrollToTop"
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App(): React.ReactNode {
   return (
@@ -26,6 +28,8 @@ function App(): React.ReactNode {
         <Route path="/tours/christmas-trail" element={<ChristmasTrailPage />} />
         <Route path="/tours/cake" element={<Cake />} />
         <Route path="/tours" element={<ToursPage />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
 
       </Routes>
     </Layout>

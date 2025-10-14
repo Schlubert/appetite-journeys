@@ -69,6 +69,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Terms & Conditions', href: '/terms' },
 ];
 export const SOCIAL_LINKS: SocialLink[] = [
     { label: 'Facebook', href: 'https://www.facebook.com/schlubert1' },

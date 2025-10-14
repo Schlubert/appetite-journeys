@@ -19,7 +19,7 @@ const FAQS: FaqItem[] = [
         <li>All transportation within Switzerland including air conditioned coach transport, trains, and funiculars (when as part of the tour)</li>
         <li>All activities mentioned in the itinerary</li>
         <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
-        <li>Insights and explinations from a baker and chef with more than 30 years experience in the food industry</li>
+        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
         <li>All entrance fees for places visited as part of the tour</li>
         <li>All applicable taxes </li>
         <li>Luggage transfers between hotels</li>
@@ -45,13 +45,32 @@ const FAQS: FaqItem[] = [
   `
 },
 {
+    question: "What are the payment terms?",
+    answer: `
+    <ul class="list-disc list-inside space-y-1">
+      <li>All pricing is correct as at October 2025</li>
+      <li>Prices are subject to change based on exchange rate fluctuations</li>
+      <li>Payment Method: 
+      <ul class="list-[circle] pl-6 mt-1 space-y-1">
+        <li>Bank Transfer</li>
+        <li>All payments are made in New Zealand dollars</li>
+        <li>20% deposit is required at time of booking (non-refundable*)</li>
+        <li>Final balance is due 90 days before departure.</ul></li>
+      
+    </ul> 
+    <p class="mt-4 text-xs italic text-gray-600"> 
+        *For more information on our cancellation policy, please see our Terms and Conditions.
+    </p>
+    `
+  
+  },
+  
+{
     question: "What fitness level is required?",
     answer: "To enjoy this trip, you’ll need to be able to spend time on your feet and regularly walk for 3-4 hours without assistance, including regular stints walking uphill. Daily activities might include: walking on uneven and hilly ground, getting on and off various forms of transportation, climbing stairs. You may also encounter over-the-bath showers in some of the accommodations. It will be impossible to enjoy your trip if you’re not able to do a walking tour for a full afternoon and be able to keep up with the group. Unfortunately, this tour cannot accommodate people requiring a walking aid."
   },
+  
   {
-    question: "What are the payment terms?",
-    answer: "Final price may change depending on currency fluctuations. 25% deposit. Bank deposit or credit card [how would we do this]. Final balance 120 days before departure."
-  },  {
     question: "How many people are on the tour?",
     answer: "Our tours are intimate and personalized, with a maximum of 12 guests per group. That being said, we do require a minimum of 8 guests to run a tour. If we do not reach this minimum, you will be offered a full refund or the option to transfer to another tour."
   },

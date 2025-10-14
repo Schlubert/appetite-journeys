@@ -82,9 +82,8 @@ const ContactPage: React.FC = () => {
                 <div className="space-y-8">
                     <div>
                         <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-3">Contact Information</h3>
-                        <p className="text-lg text-rock-gray"><strong>Email:</strong> hello@appetitejourneys.com</p>
-                        <p className="text-lg text-rock-gray"><strong>Phone:</strong> +64 555 1234</p>
-                        
+                        <p className="text-lg text-rock-gray mb-3"><strong>Email:</strong> hello@appetitejourneys.com</p>
+                                            
                     
                         <div className="flex space-x-6">
                             {SOCIAL_LINKS.map(social => (
