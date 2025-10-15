@@ -2,6 +2,7 @@ import React from "react";
 import { TOURS_DATA } from "../constants";
 import TourCard from "../components/TourCard";
 import { getImagePath } from '../utils/paths'; 
+import BookNowButton from "@/components/BookNowButton";
 
 const ToursPage: React.FC = () => {
   return (
@@ -27,8 +28,11 @@ const ToursPage: React.FC = () => {
           From alpine peaks to charming villages, food trails to festive
           adventures — explore our handcrafted tours designed to showcase the
           best of Switzerland.
-        </p>
+        <div className="sm:absolute sm:right-0 sm:top-3/4 sm:-translate-y-0 mt-0 sm:mt-0">
+      <BookNowButton size="md" />
+    </div></p>
       </div>
+      
 
       {/* Grid of tours */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -11,6 +11,7 @@ import ImageGallery from "@/components/ImageGallery";
 import HeroHeader from "@/components/HeroHeader";
 import { waterfallsWalnuts } from "@/data/waterfallsWalnuts";
 import { Bed, CheckCircle2, PlusCircle, Utensils } from "lucide-react";
+import BookNowButton from "@/components/BookNowButton";
 
 type InfoItemProps = {
   icon: React.ReactNode;
@@ -94,6 +95,9 @@ const WaterfallsWalnuts: React.FC = () => {
               })}
             </ul>
           </div>
+          <div className="text-center mt-6">
+  <BookNowButton size="lg" />
+</div>
         </aside>
       </div>
 

@@ -11,6 +11,7 @@ import ImageGallery from "@/components/ImageGallery";
 import HeroHeader from "@/components/HeroHeader";
 import { cheeseChocolateRiviera } from "@/data/cheeseChocolateRiviera";
 import { Bed, CheckCircle2, PlusCircle, Utensils } from "lucide-react";
+import BookNowButton from "@/components/BookNowButton";
 
 type InfoItemProps = {
   icon: React.ReactNode;
@@ -88,10 +89,13 @@ const CheeseChocolateRiviera: React.FC = () => {
                     {isSold && <span className="ml-2 text-red-600 font-semibold">Sold Out</span>}
                     {isLimited && <span className="ml-2 text-orange-600 font-semibold">Limited</span>}
                   </li>
+                  
                 );
               })}
             </ul>
-          </div>
+          </div><div className="text-center mt-6">
+  <BookNowButton size="md" />
+</div>
         </aside>
       </div>
 

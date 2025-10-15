@@ -13,6 +13,7 @@ import Cake from "./pages/Cake";
 import ScrollToTop from "./components/ScrollToTop"
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import BookingForm from "./pages/BookingForm";
 
 function App(): React.ReactNode {
   return (
@@ -30,6 +31,7 @@ function App(): React.ReactNode {
         <Route path="/tours" element={<ToursPage />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/book" element={<BookingForm />} />
 
       </Routes>
     </Layout>

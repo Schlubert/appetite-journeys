@@ -6,6 +6,7 @@ import FloatingContactButton from '../components/FloatingContactButton';
 import SocialMediaSection from '../components/SocialMediaSection';
 import { Users, MapPin, ChefHat, Award } from 'lucide-react';
 import { getImagePath } from '../utils/paths';
+import BookNowButton from "@/components/BookNowButton";
 
 const HomePage: React.FC = () => {
   // Signal to navbar that we're on homepage
@@ -109,15 +110,32 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Tours Section */}
-        <section id="tours" className="scroll-mt-20">
-          <h2 className="text-5xl font-serif font-bold text-center text-alpine-green mb-3">Our Featured Tours</h2>
-          <p className="text-5x1 text-gray-600 mt-3 text-center mb-6"> Designed for travellers with taste.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {TOURS_DATA.slice(0, 3).map((tour) => (
-              <TourCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </section>
+<section id="tours" className="scroll-mt-20 relative">
+  <div className="text-center mb-3 relative">
+    {/* Title */}
+    <h2 className="text-5xl font-serif font-bold text-alpine-green mb-2">
+      Our Featured Tours
+    </h2>
+
+    {/* Subtitle */}
+    <p className="text-lg text-gray-600 mb-6">
+      Designed for travellers with taste.
+    </p>
+
+    {/* Book Now button (floats right on desktop, below on mobile) */}
+    <div className="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 mt-4 sm:mt-0">
+      <BookNowButton size="sm" />
+    </div>
+  </div>
+
+  {/* Tour cards */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {TOURS_DATA.slice(0, 3).map((tour) => (
+      <TourCard key={tour.id} tour={tour} />
+    ))}
+  </div>
+</section>
+
 
         {/* Social Media Section */}
         <SocialMediaSection />
