@@ -23,10 +23,28 @@ const TOURS: Tour[] = [
     name: 'The Grand Alpine Feast',
     dates: ['September 10, 2026', 'September 24, 2026'],
   },
-  // Add more tours here if needed
 ];
 
-// --- Form Data Interface for TypeScript (Highly Recommended) ---
+// --- Configuration: Which fields are required ---
+const REQUIRED_FIELDS = {
+  fullName: true,
+  email: true,
+  phone: true,
+  tour: true,
+  departureDate: true,
+  travellers: true,
+  message: false,
+  roomOption: true,
+  otherTravelerNames: true, // Required when travellers > 1
+  emergencyContact: true,
+  emergencyPhone: true,
+  birthDate: true,
+  passportNumber: false,
+  passportExpiry: false,
+  passportCountry: false,
+};
+
+// --- Form Data Interface ---
 interface FormData {
     fullName: string;
     email: string;
@@ -34,11 +52,11 @@ interface FormData {
     tour: string;
     departureDate: string;
     travellers: string;
-    dietary: string;
     message: string;
     roomOption: string;
-    otherTravelerNames: string[]; // Updated to array of strings
+    otherTravelerNames: string[];
     emergencyContact: string;
+    emergencyPhone: string;
     birthDate: string;
     passportNumber: string;
     passportExpiry: string;
@@ -50,14 +68,14 @@ const BookingForm: React.FC = () => {
     fullName: "",
     email: "",
     phone: "",
-    tour: "", // Stores the selected tour ID
-    departureDate: "", // Stores the selected date string
+    tour: "",
+    departureDate: "",
     travellers: "1",
-    dietary: "",
     message: "",
     roomOption: "",
-    otherTravelerNames: [], // Array to hold names of traveler #2, #3, etc.
+    otherTravelerNames: [],
     emergencyContact: "",
+    emergencyPhone: "",
     birthDate: "",
     passportNumber: "",
     passportExpiry: "",
@@ -85,7 +103,7 @@ const BookingForm: React.FC = () => {
       setFormData(prevData => ({
         ...prevData,
         tour: value,
-        departureDate: "", // Reset date when tour changes 
+        departureDate: "",
       }));
     } else if (name === 'travellers') {
         const newCount = parseInt(value);
@@ -94,10 +112,14 @@ const BookingForm: React.FC = () => {
         // Create a new array of the correct size, preserving existing names if possible
         const newNames = Array(newCount - 1).fill('').map((_, i) => currentNames[i] || '');
         
+        // Reset room option if changing to single traveler
+        const newRoomOption = newCount === 1 ? 'single' : formData.roomOption;
+        
         setFormData(prevData => ({
             ...prevData,
             travellers: value,
             otherTravelerNames: newNames,
+            roomOption: newRoomOption,
         }));
     } else {
       setFormData(prevData => ({ 
@@ -119,6 +141,10 @@ const BookingForm: React.FC = () => {
     return selectedTour ? selectedTour.dates : [];
   }, [formData.tour]);
 
+  // Helper function to render required indicator
+  const RequiredIndicator = () => (
+    <span className="text-red-500 ml-1">*</span>
+  );
 
   if (submitted) {
     return (
@@ -134,14 +160,22 @@ const BookingForm: React.FC = () => {
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-8 lg:px-20">
       <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 sm:p-10">
-        <h1 className="text-3xl font-serif font-bold text-alpine-green text-center mb-6">
+        <h1 className="text-3xl font-serif font-bold text-alpine-green text-center mb-2">
           Book Your Swiss Journey
         </h1>
+        <p className="text-sm text-slate-600 text-center mb-6">
+          Fields marked with <span className="text-red-500">*</span> are required
+        </p>
+        
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Full Name */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Full Name (Lead Traveler)</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Full Name (Lead Traveler)
+              {REQUIRED_FIELDS.fullName && <RequiredIndicator />}
+            </label>
             <input
-              required
+              required={REQUIRED_FIELDS.fullName}
               type="text"
               name="fullName"
               value={formData.fullName}
@@ -151,11 +185,15 @@ const BookingForm: React.FC = () => {
             />
           </div>
 
+          {/* Email & Phone */}
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Email
+                {REQUIRED_FIELDS.email && <RequiredIndicator />}
+              </label>
               <input
-                required
+                required={REQUIRED_FIELDS.email}
                 type="email"
                 name="email"
                 value={formData.email}
@@ -164,8 +202,12 @@ const BookingForm: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Phone
+                {REQUIRED_FIELDS.phone && <RequiredIndicator />}
+              </label>
               <input
+                required={REQUIRED_FIELDS.phone}
                 type="tel"
                 name="phone"
                 value={formData.phone}
@@ -175,15 +217,19 @@ const BookingForm: React.FC = () => {
             </div>
           </div>
 
+          {/* Tour & Departure Date */}
           <div className="grid sm:grid-cols-2 gap-5">
             {/* Tour Dropdown */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Tour</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Tour
+                {REQUIRED_FIELDS.tour && <RequiredIndicator />}
+              </label>
               <select
                 name="tour"
                 value={formData.tour}
                 onChange={handleChange}
-                required
+                required={REQUIRED_FIELDS.tour}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               >
                 <option value="" disabled>Select a tour</option>
@@ -199,6 +245,7 @@ const BookingForm: React.FC = () => {
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">
                 Departure Date
+                {REQUIRED_FIELDS.departureDate && <RequiredIndicator />}
               </label>
               
               <div className="space-y-3">
@@ -214,8 +261,8 @@ const BookingForm: React.FC = () => {
                         flex items-center p-3 rounded-lg border cursor-pointer 
                         transition-colors duration-200 
                         ${formData.departureDate === date 
-                          ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green shadow-inner' // Selected styles
-                          : 'border-slate-300 hover:bg-slate-50' // Unselected styles
+                          ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green shadow-inner'
+                          : 'border-slate-300 hover:bg-slate-50'
                         }
                       `}
                     >
@@ -223,7 +270,7 @@ const BookingForm: React.FC = () => {
                         type="radio"
                         name="departureDate"
                         value={date}
-                        required
+                        required={REQUIRED_FIELDS.departureDate}
                         checked={formData.departureDate === date}
                         onChange={handleChange}
                         className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-3"
@@ -242,11 +289,15 @@ const BookingForm: React.FC = () => {
 
           {/* Number of Travellers */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Number of Travellers</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Number of Travellers
+              {REQUIRED_FIELDS.travellers && <RequiredIndicator />}
+            </label>
             <select
               name="travellers"
               value={formData.travellers}
               onChange={handleChange}
+              required={REQUIRED_FIELDS.travellers}
               className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
             >
               {[1, 2, 3, 4, 5, 6].map((num) => (
@@ -256,22 +307,25 @@ const BookingForm: React.FC = () => {
           </div>
 
           {/* --- DYNAMIC OTHER TRAVELERS NAMES SECTION --- */}
-          {formData.travellers > "1" && (
+          {parseInt(formData.travellers) > 1 && (
             <div className="space-y-4 pt-3 border-t">
-              <h2 className="text-xl font-serif font-bold text-slate-700">Other Traveler Names</h2>
+              <h2 className="text-xl font-serif font-bold text-slate-700">
+                Other Traveler Names
+                {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
+              </h2>
               <p className="text-sm text-slate-600">Please provide the full name for each additional traveler in your group.</p>
               
-              {/* Loop from 0 up to (Total Travelers - 1) */}
               {[...Array(parseInt(formData.travellers) - 1)].map((_, index) => (
                 <div key={index}>
                   <label className="block text-sm font-medium text-slate-700 mb-1">
                     Full Name of Traveler #{index + 2}
+                    {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
                   </label>
                   <input
                     type="text"
                     value={formData.otherTravelerNames[index] || ''}
                     onChange={(e) => handleOtherTravellerChange(index, e.target.value)}
-                    required
+                    required={REQUIRED_FIELDS.otherTravelerNames}
                     className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
                     placeholder={`Full Name of Traveler ${index + 2}`}
                   />
@@ -282,27 +336,32 @@ const BookingForm: React.FC = () => {
           
           {/* --- Room Option Selection --- */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Room Preference</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Room Preference
+              {REQUIRED_FIELDS.roomOption && <RequiredIndicator />}
+            </label>
             <div className="flex space-x-4">
-              {/* Twin Share Option */}
-              <label className={`
-                  flex items-center p-3 rounded-lg border cursor-pointer flex-1
-                  ${formData.roomOption === 'twin' 
-                    ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
-                    : 'border-slate-300 hover:bg-slate-50'
-                  }
-              `}>
-                <input
-                  type="radio"
-                  name="roomOption"
-                  value="twin"
-                  checked={formData.roomOption === 'twin'}
-                  onChange={handleChange}
-                  required
-                  className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
-                />
-                <span className="text-slate-900 font-medium">Twin Share</span>
-              </label>
+              {/* Only show Twin Share if travellers > 1 */}
+              {parseInt(formData.travellers) > 1 && (
+                <label className={`
+                    flex items-center p-3 rounded-lg border cursor-pointer flex-1
+                    ${formData.roomOption === 'twin' 
+                      ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
+                      : 'border-slate-300 hover:bg-slate-50'
+                    }
+                `}>
+                  <input
+                    type="radio"
+                    name="roomOption"
+                    value="twin"
+                    checked={formData.roomOption === 'twin'}
+                    onChange={handleChange}
+                    required={REQUIRED_FIELDS.roomOption}
+                    className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                  />
+                  <span className="text-slate-900 font-medium">Twin Share</span>
+                </label>
+              )}
 
               {/* Single Occupancy Option */}
               <label className={`
@@ -318,7 +377,7 @@ const BookingForm: React.FC = () => {
                   value="single"
                   checked={formData.roomOption === 'single'}
                   onChange={handleChange}
-                  required
+                  required={REQUIRED_FIELDS.roomOption}
                   className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
                 />
                 <span className="text-slate-900 font-medium">Single Supplement</span>
@@ -326,105 +385,124 @@ const BookingForm: React.FC = () => {
             </div>
           </div>
 
-          {/* Conditional: Travel Partner Name (Only shows if Travellers > 1 and Room Option is Twin) */}
-          {(formData.travellers > "1" && formData.roomOption === 'twin') && (
-              <div className="text-sm text-red-500 italic p-3 border border-red-200 rounded-lg">
-                The **Travel Partner's Name** field you previously had is now handled by the **"Other Traveler Names"** section above. Please remove the old code for `travelPartnerName` from your `formData` initialization.
-              </div>
-          )}
-
-
           <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Essential Traveller Details</h2>
 
           {/* Emergency Contact */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Emergency Contact (Name & Phone)</label>
-            <input
-              type="text"
-              name="emergencyContact"
-              value={formData.emergencyContact}
-              onChange={handleChange}
-              placeholder="e.g. Jane Smith, +1 555 123 4567"
-              required
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-            />
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Emergency Contact Name
+                {REQUIRED_FIELDS.emergencyContact && <RequiredIndicator />}
+              </label>
+              <input
+                type="text"
+                name="emergencyContact"
+                value={formData.emergencyContact}
+                onChange={handleChange}
+                placeholder="e.g. Jane Smith"
+                required={REQUIRED_FIELDS.emergencyContact}
+                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Emergency Contact Phone
+                {REQUIRED_FIELDS.emergencyPhone && <RequiredIndicator />}
+              </label>
+              <input
+                type="tel"
+                name="emergencyPhone"
+                value={formData.emergencyPhone}
+                onChange={handleChange}
+                placeholder="e.g. +1 555 123 4567"
+                required={REQUIRED_FIELDS.emergencyPhone}
+                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+              />
+            </div>
           </div>
 
           {/* Birth Date */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Date of Birth</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Date of Birth
+              {REQUIRED_FIELDS.birthDate && <RequiredIndicator />}
+            </label>
             <input
               type="date"
               name="birthDate"
               value={formData.birthDate}
               onChange={handleChange}
-              required
+              required={REQUIRED_FIELDS.birthDate}
               className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
             />
           </div>
-
 
           <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Passport Information</h2>
 
           <div className="grid sm:grid-cols-3 gap-5">
             {/* Passport Number */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Passport Number</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Passport Number
+                {REQUIRED_FIELDS.passportNumber && <RequiredIndicator />}
+              </label>
               <input
                 type="text"
                 name="passportNumber"
                 value={formData.passportNumber}
                 onChange={handleChange}
                 placeholder="e.g. A1234567"
+                required={REQUIRED_FIELDS.passportNumber}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               />
             </div>
 
             {/* Passport Expiry */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Passport Expiry Date</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Passport Expiry Date
+                {REQUIRED_FIELDS.passportExpiry && <RequiredIndicator />}
+              </label>
               <input
                 type="month" 
                 name="passportExpiry"
                 value={formData.passportExpiry}
                 onChange={handleChange}
+                required={REQUIRED_FIELDS.passportExpiry}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               />
             </div>
 
             {/* Passport Country */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Issuing Country</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Issuing Country
+                {REQUIRED_FIELDS.passportCountry && <RequiredIndicator />}
+              </label>
               <input
                 type="text"
                 name="passportCountry"
                 value={formData.passportCountry}
                 onChange={handleChange}
                 placeholder="e.g. New Zealand"
+                required={REQUIRED_FIELDS.passportCountry}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               />
             </div>
           </div>
 
+          {/* Additional Notes */}
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Dietary Requirements</label>
-            <input
-              type="text"
-              name="dietary"
-              value={formData.dietary}
-              onChange={handleChange}
-              placeholder="e.g. Vegetarian, Gluten Free"
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Additional Notes</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Additional Notes
+              {REQUIRED_FIELDS.message && <RequiredIndicator />}
+            </label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows={4}
+              required={REQUIRED_FIELDS.message}
               className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               placeholder="Any special requests or comments?"
             />
