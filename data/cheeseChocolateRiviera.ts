@@ -22,7 +22,8 @@ export type Tour = {
   name: string;
   theme: string;
   durationDays: number;
-  price?: string;
+  price?: string[];
+  singleSupplement?: string;
   departureDates?: DepartureDate[];
   summary: string[]; // array of paragraphs
   heroImages: string[];
@@ -33,7 +34,9 @@ export const cheeseChocolateRiviera: Tour = {
   name: "Cheese, Chocolate and the Swiss Riviera",
   theme: "Food & Wine",
   durationDays: 12,
-  price: "From NZ$12,950 per person (twin share)",
+  price: ["From NZ$13,500", "per person (twin share)"],
+
+  singleSupplement: "NZ$4,650",
   departureDates: [
     { date: "August 16th, 2026", status: "sold-out" },
     { date: "September 20th, 2026", status: "available" },
@@ -59,9 +62,11 @@ export const cheeseChocolateRiviera: Tour = {
       description:[
         "Grüezi mitenand! Welcome to Switzerland. Your adventure begins at 6 pm with a welcome meeting to meet your fellow travellers and group leader. If you arrive early, maybe visit the Swiss National Museum. If you're looking for a different type of cultural experience, then you can discover a unique and fascinating part of Zurich at the Kunsthaus Zurich.",
         "This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.",
-        "It's very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip. If you are going to be late, please let us know."
+        "It's very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip."
       ],
       accommodation: "Radisson Blu Hotel, Zurich Airport",
+      includedActivities: ["Welcome dinner"],
+      optionalActivities: ["-"],
       meals: ["Dinner"],
       images: [
         getImagePath("ragusa.jpg"),
@@ -83,6 +88,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Bakery visits and läckerli tastings",
         "Walking tour of Basel's Old Town"
       ],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath("Basel.jpeg"), getImagePath("BaselOldTown.jpg"), getImagePath("Lackerli.jpeg")]
     },
@@ -95,6 +101,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
 "If you would like to join us on this excursion, please let us know as there is an extra charge associated with it."
 ],
       accommodation: "Hotel Märthof, Basel",
+      includedActivities: ["-"],
       optionalActivities: [
         "Excursion to some of the wineries and farm shops in the Basel-Landschaft region"
       ],
@@ -116,6 +123,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Visit to Camille Bloch chocolate factory",
         "Slice of Nidlechueche in Murten"
       ],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Lunch", "Dinner"],
       images: [
         getImagePath("Fumoir.jpg"), 
@@ -132,9 +140,8 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       accommodation: "Hotel NH Bern The Bristol, Bern",
       includedActivities: [
         "Walking tour of Bern's Old Town",
-        "",
-        ""
       ],
+      optionalActivities: ["-"],
       meals: ["Breakfast"],
       images: [
         getImagePath("bern1.jpg"), 
@@ -154,6 +161,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       ],
       accommodation: "AMERON Luzern Hotel Flora, Luzern",
       includedActivities: ["Kambly biscuit factory visit", "Willisau distillery tour and class","Bakery tour and tasting", "Cultural dinner with entertainment"],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [
         getImagePath("kambly.jpeg"), 
@@ -176,6 +184,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Reichenbach Falls visit (weather permitting)",
         "Dinner above Interlaken, at Harder Kulm"
       ],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [
         getImagePath("hergiswil.jpg"), 
@@ -192,6 +201,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       "If you would like to join us on this excursion, please let us know as there is an extra charge associated with it."
       ],
       accommodation: "Hotel Du Nord, Interlaken",
+      includedActivities: ["-"],
       optionalActivities: [
         "Mount Niesen funicular and breakfast excursion",
         "A visit to Thun",
@@ -212,6 +222,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       description:[ "Board the GoldenPass Express, one of Switzerland's most picturesque train routes. The journey on the panoramic train of the GoldenPass Express takes you through the Bernese Oberland before arriving in Montreux. After wandering through Montreux, we take to the water and take the ferry to Laussane."],
       accommodation: "De la Paix, Lausanne",
       includedActivities: ["GoldenPass Express scenic train journey"],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Lunch"],
       images: [
         getImagePath("gpass.jpg"), 
@@ -222,11 +233,12 @@ If those don't interest you, then you can take a walk along the Rhine river or v
     {
       day: 10,
       title: "Vevey and Lavaux",
-      description: ["The morning is yours to explore the town of Vevey. Maybe it's the Alimentarium (Food Museum) or the Charlie Chaplin museum that takes your fancy. Or perhaps you just want to stroll along the lakefront and take in the views of the Alps across the water (hint: look out for the fork in the lake).",
+      description: ["The morning is yours to explore the area. Maybe it's the Alimentarium (Food Museum) or the Charlie Chaplin museum - both nearby in Vevey - that takes your fancy. Or perhaps you just want to visit the Olympic Museum before finding a spot on the lake front and anjoy the view. There is plenty to choose from. ",
       "In the afternoon we head for the UNESCO World Heritage site of Lavaux. Here, we'll take a walk through the vineyards and learn about the history of wine production in the region before finishing up with a tasting of some of the local offerings."
       ],
       accommodation: "De la Paix, Lausanne",
       includedActivities: ["Lavaux vineyard walk", "Wine tasting session"],
+      optionalActivities: ["-"],
       
       meals: ["Breakfast"],
       images: [
@@ -248,6 +260,7 @@ If those don't interest you, then you can take a walk along the Rhine river or v
         "Make your own chocolate bar",
         "Farewell dinner with entertainment"
       ],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [
         getImagePath("freddie.jpeg"), 
@@ -261,8 +274,9 @@ If those don't interest you, then you can take a walk along the Rhine river or v
       description:[ 
       "After the last group breakfast, and a chance to say goodbye to your new friends, we head to Geneva where the tour, sadly, ends.",
       "If you have time before your flight, then maybe visit the United Nations headquarters or the Red Cross museum"
-        ],
-      
+        ],      
+      includedActivities: ["Transfer to Geneva airport or train station"],
+      optionalActivities: ["-"],
       meals: ["Breakfast"],
       images: [
         getImagePath("geneva.jpeg"), 

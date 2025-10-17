@@ -1,38 +1,124 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+
+// --- Tour Data Structure ---
+interface Tour {
+  id: string;
+  name: string;
+  dates: string[];
+}
+
+const TOURS: Tour[] = [
+  {
+    id: 'cheese-chocolate',
+    name: 'Cheese, Chocolate & the Swiss Riviera',
+    dates: ['October 1, 2026', 'October 15, 2026'],
+  },
+  {
+    id: 'waterfalls-whiskey',
+    name: 'Waterfalls, walnuts & whiskey',
+    dates: ['November 5, 2026', 'November 19, 2026'],
+  },
+  {
+    id: 'alpine-feast',
+    name: 'The Grand Alpine Feast',
+    dates: ['September 10, 2026', 'September 24, 2026'],
+  },
+  // Add more tours here if needed
+];
+
+// --- Form Data Interface for TypeScript (Highly Recommended) ---
+interface FormData {
+    fullName: string;
+    email: string;
+    phone: string;
+    tour: string;
+    departureDate: string;
+    travellers: string;
+    dietary: string;
+    message: string;
+    roomOption: string;
+    otherTravelerNames: string[]; // Updated to array of strings
+    emergencyContact: string;
+    birthDate: string;
+    passportNumber: string;
+    passportExpiry: string;
+    passportCountry: string;
+}
 
 const BookingForm: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
     phone: "",
-    tour: "",
-    departureDate: "",
+    tour: "", // Stores the selected tour ID
+    departureDate: "", // Stores the selected date string
     travellers: "1",
     dietary: "",
     message: "",
     roomOption: "",
-    travelPartnerName: "",
+    otherTravelerNames: [], // Array to hold names of traveler #2, #3, etc.
     emergencyContact: "",
     birthDate: "",
     passportNumber: "",
     passportExpiry: "",
     passportCountry: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
 
+  // --- HANDLER FOR DYNAMIC TRAVELER NAMES ---
+  const handleOtherTravellerChange = (index: number, value: string) => {
+    setFormData(prevData => {
+      const newNames = [...prevData.otherTravelerNames];
+      newNames[index] = value;
+      return { 
+        ...prevData, 
+        otherTravelerNames: newNames 
+      };
+    });
+  };
+
+  // --- MODIFIED GENERAL CHANGE HANDLER ---
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === 'tour') {
+      setFormData(prevData => ({
+        ...prevData,
+        tour: value,
+        departureDate: "", // Reset date when tour changes 
+      }));
+    } else if (name === 'travellers') {
+        const newCount = parseInt(value);
+        const currentNames = formData.otherTravelerNames;
+        
+        // Create a new array of the correct size, preserving existing names if possible
+        const newNames = Array(newCount - 1).fill('').map((_, i) => currentNames[i] || '');
+        
+        setFormData(prevData => ({
+            ...prevData,
+            travellers: value,
+            otherTravelerNames: newNames,
+        }));
+    } else {
+      setFormData(prevData => ({ 
+        ...prevData, 
+        [name]: value 
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Example: EmailJS, form backend, or API endpoint
-    // Replace this with actual submission logic later.
     console.log("Booking submitted:", formData);
     setSubmitted(true);
   };
+
+  // --- Dynamic Dates Calculation ---
+  const currentTourDates = useMemo(() => {
+    const selectedTour = TOURS.find(tour => tour.id === formData.tour);
+    return selectedTour ? selectedTour.dates : [];
+  }, [formData.tour]);
+
 
   if (submitted) {
     return (
@@ -53,13 +139,14 @@ const BookingForm: React.FC = () => {
         </h1>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Full Name (Lead Traveler)</label>
             <input
               required
               type="text"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
+              placeholder="Your full name"
               className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
             />
           </div>
@@ -89,6 +176,7 @@ const BookingForm: React.FC = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
+            {/* Tour Dropdown */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Tour</label>
               <select
@@ -98,23 +186,61 @@ const BookingForm: React.FC = () => {
                 required
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               >
-                <option value="">Select a tour</option>
-                <option>Cheese, Chocolate & Riviera</option>
-                <option>Waterfalls & Whiskey</option>
+                <option value="" disabled>Select a tour</option>
+                {TOURS.map(tour => (
+                    <option key={tour.id} value={tour.id}>
+                        {tour.name}
+                    </option>
+                ))}
               </select>
             </div>
+
+            {/* Departure Date Radio Buttons */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Departure Date</label>
-              <input
-                type="date"
-                name="departureDate"
-                value={formData.departureDate}
-                onChange={handleChange}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Departure Date
+              </label>
+              
+              <div className="space-y-3">
+                {formData.tour === "" ? (
+                    <p className="text-sm text-slate-500 italic py-3 px-3 border border-slate-200 rounded-lg">
+                        Please select a tour first to see available dates.
+                    </p>
+                ) : currentTourDates.length > 0 ? (
+                  currentTourDates.map((date, index) => (
+                    <label 
+                      key={index}
+                      className={`
+                        flex items-center p-3 rounded-lg border cursor-pointer 
+                        transition-colors duration-200 
+                        ${formData.departureDate === date 
+                          ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green shadow-inner' // Selected styles
+                          : 'border-slate-300 hover:bg-slate-50' // Unselected styles
+                        }
+                      `}
+                    >
+                      <input
+                        type="radio"
+                        name="departureDate"
+                        value={date}
+                        required
+                        checked={formData.departureDate === date}
+                        onChange={handleChange}
+                        className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-3"
+                      />
+                      <span className="text-slate-900 font-medium">
+                        {date}
+                      </span>
+                    </label>
+                  ))
+                ) : (
+                    <p className="text-sm text-red-500 italic">No available dates for this tour.</p>
+                )}
+              </div>
             </div>
           </div>
 
+          {/* Number of Travellers */}
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">Number of Travellers</label>
             <select
@@ -127,6 +253,157 @@ const BookingForm: React.FC = () => {
                 <option key={num}>{num}</option>
               ))}
             </select>
+          </div>
+
+          {/* --- DYNAMIC OTHER TRAVELERS NAMES SECTION --- */}
+          {formData.travellers > "1" && (
+            <div className="space-y-4 pt-3 border-t">
+              <h2 className="text-xl font-serif font-bold text-slate-700">Other Traveler Names</h2>
+              <p className="text-sm text-slate-600">Please provide the full name for each additional traveler in your group.</p>
+              
+              {/* Loop from 0 up to (Total Travelers - 1) */}
+              {[...Array(parseInt(formData.travellers) - 1)].map((_, index) => (
+                <div key={index}>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Full Name of Traveler #{index + 2}
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.otherTravelerNames[index] || ''}
+                    onChange={(e) => handleOtherTravellerChange(index, e.target.value)}
+                    required
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                    placeholder={`Full Name of Traveler ${index + 2}`}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* --- Room Option Selection --- */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Room Preference</label>
+            <div className="flex space-x-4">
+              {/* Twin Share Option */}
+              <label className={`
+                  flex items-center p-3 rounded-lg border cursor-pointer flex-1
+                  ${formData.roomOption === 'twin' 
+                    ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
+                    : 'border-slate-300 hover:bg-slate-50'
+                  }
+              `}>
+                <input
+                  type="radio"
+                  name="roomOption"
+                  value="twin"
+                  checked={formData.roomOption === 'twin'}
+                  onChange={handleChange}
+                  required
+                  className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                />
+                <span className="text-slate-900 font-medium">Twin Share</span>
+              </label>
+
+              {/* Single Occupancy Option */}
+              <label className={`
+                  flex items-center p-3 rounded-lg border cursor-pointer flex-1
+                  ${formData.roomOption === 'single' 
+                    ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
+                    : 'border-slate-300 hover:bg-slate-50'
+                  }
+              `}>
+                <input
+                  type="radio"
+                  name="roomOption"
+                  value="single"
+                  checked={formData.roomOption === 'single'}
+                  onChange={handleChange}
+                  required
+                  className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                />
+                <span className="text-slate-900 font-medium">Single Supplement</span>
+              </label>
+            </div>
+          </div>
+
+          {/* Conditional: Travel Partner Name (Only shows if Travellers > 1 and Room Option is Twin) */}
+          {(formData.travellers > "1" && formData.roomOption === 'twin') && (
+              <div className="text-sm text-red-500 italic p-3 border border-red-200 rounded-lg">
+                The **Travel Partner's Name** field you previously had is now handled by the **"Other Traveler Names"** section above. Please remove the old code for `travelPartnerName` from your `formData` initialization.
+              </div>
+          )}
+
+
+          <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Essential Traveller Details</h2>
+
+          {/* Emergency Contact */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Emergency Contact (Name & Phone)</label>
+            <input
+              type="text"
+              name="emergencyContact"
+              value={formData.emergencyContact}
+              onChange={handleChange}
+              placeholder="e.g. Jane Smith, +1 555 123 4567"
+              required
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+            />
+          </div>
+
+          {/* Birth Date */}
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Date of Birth</label>
+            <input
+              type="date"
+              name="birthDate"
+              value={formData.birthDate}
+              onChange={handleChange}
+              required
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+            />
+          </div>
+
+
+          <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Passport Information</h2>
+
+          <div className="grid sm:grid-cols-3 gap-5">
+            {/* Passport Number */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Passport Number</label>
+              <input
+                type="text"
+                name="passportNumber"
+                value={formData.passportNumber}
+                onChange={handleChange}
+                placeholder="e.g. A1234567"
+                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+              />
+            </div>
+
+            {/* Passport Expiry */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Passport Expiry Date</label>
+              <input
+                type="month" 
+                name="passportExpiry"
+                value={formData.passportExpiry}
+                onChange={handleChange}
+                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+              />
+            </div>
+
+            {/* Passport Country */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Issuing Country</label>
+              <input
+                type="text"
+                name="passportCountry"
+                value={formData.passportCountry}
+                onChange={handleChange}
+                placeholder="e.g. New Zealand"
+                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+              />
+            </div>
           </div>
 
           <div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import ContentDisplay from '../components/ContentDisplay';
 
@@ -67,7 +67,7 @@ const FAQS: FaqItem[] = [
   
 {
     question: "What fitness level is required?",
-    answer: "To enjoy this trip, you’ll need to be able to spend time on your feet and regularly walk for 3-4 hours without assistance, including regular stints walking uphill. Daily activities might include: walking on uneven and hilly ground, getting on and off various forms of transportation, climbing stairs. You may also encounter over-the-bath showers in some of the accommodations. It will be impossible to enjoy your trip if you’re not able to do a walking tour for a full afternoon and be able to keep up with the group. Unfortunately, this tour cannot accommodate people requiring a walking aid."
+    answer: "To enjoy this trip, youâ€™ll need to be able to spend time on your feet and regularly walk for 3-4 hours without assistance, including regular stints walking uphill. Daily activities might include: walking on uneven and hilly ground, getting on and off various forms of transportation, climbing stairs. You may also encounter over-the-bath showers in some of the accommodations. It will be impossible to enjoy your trip if youâ€™re not able to do a walking tour for a full afternoon and be able to keep up with the group. Unfortunately, this tour cannot accommodate people requiring a walking aid."
   },
   
   {
@@ -83,6 +83,29 @@ const FAQS: FaqItem[] = [
 
 const FaqPage: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
+  const handleToggle = (index: number) => {
+    const newIndex = openIndex === index ? null : index;
+    setOpenIndex(newIndex);
+
+    // Scroll to the opened FAQ item
+    if (newIndex !== null && faqRefs.current[newIndex]) {
+      setTimeout(() => {
+        const element = faqRefs.current[newIndex];
+        if (element) {
+          const navbarHeight = 80; // Adjust this value based on your navbar height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50); // Small delay to allow the accordion to expand first
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl">
@@ -96,11 +119,12 @@ const FaqPage: React.FC = () => {
           return (
             <div
               key={index}
+              ref={(el) => { faqRefs.current[index] = el; }}
               className="border border-gray-200 rounded-xl overflow-hidden shadow-sm transition hover:shadow-md"
             >
               <button
                 className="w-full flex items-center justify-between px-6 py-4 bg-gradient-to-r from-white to-gray-50 hover:from-gray-50 focus:outline-none"
-                onClick={() => setOpenIndex(isOpen ? null : index)}
+                onClick={() => handleToggle(index)}
               >
                 <h2 className="text-xl md:text-2xl font-serif font-semibold text-mountain-blue text-left">
                   {faq.question}

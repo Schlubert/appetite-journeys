@@ -73,10 +73,22 @@ const WaterfallsWalnuts: React.FC = () => {
 
         <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
           <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
-          {waterfallsWalnuts.price && (
-            <p className="text-slate-700"><strong>Price:</strong> {waterfallsWalnuts.price}</p>
-          )}
+          {waterfallsWalnuts.price && Array.isArray(waterfallsWalnuts.price) && (
+  <div className="text-slate-700">
+    <p>
+      <strong>Price:</strong> {waterfallsWalnuts.price[0]}
+    </p>
+    {waterfallsWalnuts.price[1] && (
+      <p className="ml-6 text-sm text-slate-600">{waterfallsWalnuts.price[1]}</p>
+    )}
+  </div>
+)}
 
+{waterfallsWalnuts.singleSupplement && (
+    <p className="text-slate-700">
+      <strong>Single Supplement:</strong> {waterfallsWalnuts.singleSupplement}
+    </p>
+  )}
           <div className="mt-3">
             <strong>Departure Dates:</strong>
             <ul className="mt-2 space-y-1">
@@ -158,7 +170,7 @@ const WaterfallsWalnuts: React.FC = () => {
        <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Services of an experienced tour leader fluent in the languages of Switzerland</li>
+          <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the main languages of Switzerland</li>
         <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li> <li>Accommodation in 4-5 star hotels (twin share)</li>
         <li>Daily breakfasts</li>
         <li>7 dinners and a multitude of Swiss delicaies along the way</li>
@@ -166,25 +178,28 @@ const WaterfallsWalnuts: React.FC = () => {
         <ul className="list-[circle] pl-6 mt-1 space-y-1">
           <li>Transportation in an air conditioned coach</li>
           <li>Glacier Express train, 1st class seat</li>
-          <li>Chocolate making class and entry to Gottlieben Huppe chocolate factory</li>
+          <li>Chocolate making class and entry to Gottlieben Hüppen chocolate factory</li>
           <li>Cake and chocolate making class in Zug</li>
           <li>Boat journey on the Bodensee</li>
           <li>Cablecar up Säntis</li>
-          <li>Entry to Library and Museum of the Abbey of St. Gall</li>
+          <li>Entry to Library and Museum of the Abbey of St. Gallen</li>
           <li>Tours and tastings at 3 distilleries, 1 Brewery, and a winery</li>
-          </ul></li>
-        <li>Optional additions of:
+          <li>Guided walking tours of destinations including Shaffhausen, St Gallen, and Appenzell</li>
+          <li>All applicable taxes </li>
+          <li>Luggage transfers between hotels</li>
+          <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
+          <li>Small group size (max 12)</li>
+          <li>A few extra surprises and mementos along the way</li>
+          <li>
+            Optional additions of:
           <ul className="list-[circle] pl-6 mt-1 space-y-1"> 
             <li>Funicular up to Muottas Muragl</li>
-            <li>Wine tasting followed by dinner at a 2 Michelin starred restaurant</li></ul></li>
-            
-        <li>Guided walking tours of destinations including Shaffhausen, St. Gallen, and Appensell</li>
-        <li>All applicable taxes </li>
-        <li>Luggage transfers between hotels</li>
-        <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
-        <li>Small group size (max 12)</li>
-        <li>A few extra surprises and mementos along the way</li>
+            <li>Wine tasting followed by dinner at a 2 Michelin starred restaurant</li>
         </ul>
+        </li>
+        </ul>
+        </li>
+        </ul>        
       </section>
     </div>
   );

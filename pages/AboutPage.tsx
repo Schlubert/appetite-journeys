@@ -19,7 +19,12 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-
+<section className="text-gray-700 text-lg leading-relaxed mt-4 mx-8 lg:mx-16">
+             <p>Between them, Esther and Kevin ensure that every detail is thoughtfully planned, so guests can relax and immerse themselves in the beauty and flavours of Switzerland.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed mt-4">
+            Both bring something special to each tour. Whether it is the insights of someone born and raised in Switzerland, or the knowledge from a lifetime in food and hospitality, their unique understanding of the food and culture of this area means that each tour is an enjoyable, rewarding, and tasty exploration.</p>
+            </section>
       {/* Profiles Section */}
       <section className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
@@ -55,16 +60,11 @@ const AboutPage: React.FC = () => {
               His experience in the food and beverage industry, combined with his passion for travel, makes him the perfect partner to Esther in creating unforgettable culinary journeys through Switzerland.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mt-4">  Having judged at some the worlds most prestigious culinary competitions, and taught apprentices, bakers, and chefs around the world, Kevin brings a wealth of knowledge and expertise to every tour and is the perfect person to help translate, explain and teach the culinary side of your journey.</p>
-            <p className="text-gray-700 text-lg leading-relaxed mt-4">
-              Between them, Esther and Kevin ensure that every detail is thoughtfully planned, so guests can relax and immerse themselves in the beauty and flavours of Switzerland.
-            </p>
-          </div>
-
-
-        </div>
+                      </div>
+      </div>
       </section>
             {/* Philosophy Section */}
-      <section className="bg-snow-white py-16 px-6 lg:px-12">
+      <section className="bg-snow-white py-6 px-6 lg:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-alpine-green mb-6">
             Our Philosophy

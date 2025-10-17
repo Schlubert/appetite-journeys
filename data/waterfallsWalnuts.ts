@@ -21,9 +21,10 @@ export type Tour = {
   name: string;
   theme: string;
   durationDays: number;
-  price?: string;
+  price?: string[];
+  singleSupplement?: string;
   departureDates?: DepartureDate[];
-  summary: string[]; // array of paragraphs
+  summary: string[];
   heroImages: string[];
   itinerary: ItineraryStop[];
 };
@@ -32,7 +33,10 @@ export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   theme: "Food & Wine",
   durationDays: 12,
-  price: "From NZ$13,500 per person (twin share)",
+  price: ["From NZ$13,500",
+          "per person (twin share)"
+        ],
+  singleSupplement: "NZ$4,750",
   departureDates: [
     { date: "September 6th, 2026", status: "limited" },
   ],
@@ -53,10 +57,11 @@ export const waterfallsWalnuts: Tour = {
       description: [
         "Grüezi mitenand! Welcome to Switzerland. Your adventure begins at 6 pm with a welcome meeting to meet your fellow travellers and group leader. If you arrive early, maybe visit the Swiss National Museum. If you're looking for a different type of cultural experience, then you can discover a unique and fascinating part of Zurich at the Kunsthaus Zurich.",
         "This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.",
-        "Its very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip. If you are going to be late, please let us know."
+        "Its very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip."
       ],
-      accommodation: "Boutique hotel in Zurich city center",
-      includedActivities: ["Welcome dinner", "Guided market visit"],
+      accommodation: "Radisson Blu Hotel, Zurich Airport",
+      includedActivities: ["Welcome dinner"],
+      optionalActivities: ["-"],
       meals: ["Dinner"],
       images: [getImagePath('schaffhausen3.jpg'), getImagePath('gottlieben1.jpeg') ]
     },
@@ -68,89 +73,94 @@ export const waterfallsWalnuts: Tour = {
       "Stein am Rhein is our next, and last stop for the day. Complete with timber-framed houses, some of which date back as far as the 15th century, Stein a. R. is a feast for the eyes.",
       "After arriving at the hotel, the rest of the day is yours to relax and wander the streets and discover this beautiful place before dinner at a restaurant that offers some local specialties."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Hotel Constantia, Konstanz",
+      includedActivities: [""],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('rhinefalls.jpg'), getImagePath('schaffhausen.jpg'), getImagePath('munotview.jpg')]
     },
    {
       day: 3,
-      title: "Morning course at Gottlieben Huppe Afternoon Freetime in Konstanz ",
+      title: "Chocolate making course and Konstanz visit",
       description: [
         "A short drive to the nearby village of Gottlieben, where we will have the first of our chocolate-making classes at the renowned Huppe chocolatier.",
         "All chocolated up, we head to Konstanz, just across the border in Germany. Here you can explore the old town, visit the Sea Life Centre, or simply relax by the lake."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
-      meals: ["Breakfast", "Dinner"],
+      accommodation: "Hotel Constantia, Konstanz",
+      includedActivities: [""],
+      optionalActivities: ["-"],
+      meals: ["Breakfast"],
       images: [getImagePath('gottlieben1.jpeg'), getImagePath('gottlieben2.jpeg'), getImagePath('Konstanz1.jpeg')]
     },
     {
       day: 4,
-      title: "Gottlieben to St Gallen (Boat from Knstanz to Lindau – Lunch at Wissingers – wine tour at Wetli Winery",
+      title: "Konstanz to St Gallen",
       description: [
         "Today we take to the water as we board a boat to travel across Lake Constance to the Bavarian town of Lindau.",
         "After lunch in the old town of Lindau island, we rejoin the bus and make our way, through Austria and back into Switzerland, to the Wetli Winery and a tour of their cellar, the world of winemaking and, of course, some tastings.",
         "Then, relax as we head to our hotel in St Gallen, where the rest of the evening is free to relax",
-        "If fine dining is something that appeals, then you have the option of joining us for wine tasting in the hotel cellar followed by a gourmet dinner at the hotel's two Michelin-starred restaurant.",
-        "Please let us know in advance if you would like to join this optional activity as there is an extra charge associated with it."
+       
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
-      meals: ["Breakfast", "Dinner"],
+      accommodation: "Einstein St.Gallen",
+      includedActivities: ["Boat trip on Lake Constance","Lunch at Wissingers im Schlechterbräu", "Winery Tour and tasting"],
+      optionalActivities: ["-"],
+      meals: ["Breakfast","Lunch",],
       images: [getImagePath('bodensee.jpeg'), getImagePath('lindau.jpeg'), getImagePath('wetliweinkeller.jpg')]
     },
     {
       day: 5,
-      title: "Säntis then Appensell and the brewer/distillery",
+      title: "Säntis then Appenzell and the brewer/distillery",
       description: [
         "Today we head 'up'. A short drive through the hills of the Appenzeller countryside, we arrive at the foot of Säntis. At more than 2.5 km (1.5 miles) above sea level, it provides spectacular views of six countries on a clear day. The cable car takes us to the summit where we can enjoy a coffee and a slice of cake while taking in the views.",
-        "Back to the bus and on to Appensell for a late lunch, before heading off to Brauerei Locher - home of both Appenzeller beer and Säntis whiskey. We will have a tour of the brewery and distillery, followed by some tastings.",
-        "Then it's back to St Gallen for a free evening to relax."
+        "Back to the bus and on to Appenzell for a late lunch, before heading off to Brauerei Locher - home of both Appenzeller beer and Säntis whiskey. We will have a tour of the brewery and distillery, followed by some tastings.",
+        "Then it's back to St Gallen for a free evening to relax.",
+        "If fine dining is something that appeals, then you have the option of joining us for wine tasting in the hotel cellar followed by a gourmet dinner at the hotel's two Michelin-starred restaurant.",
+        "Please let us know in advance if you would like to join this optional activity as there is an extra charge associated with it."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Einstein St.Gallen",
+      includedActivities: ["Cable car up Säntis", "Tour & tasting at Appenzeller brewery/distillery"],
+      optionalActivities: ["2-michelin star dinner at Einstein hotel"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('appenzell.jpeg'), getImagePath('santisccar.jpeg'), getImagePath('santisbarrel.jpg')]
     },
     {
       day: 6,
-      title: "Abbey then free time",
+      title: "Old town and Abbey tour then free time",
       description: [
         "A more relaxed day today, with a visit to the UNESCO World Heritage-listed Abbey of St Gallen, founded in 612 AD. The library is one of the oldest and most beautiful in the world, and contains more than 170,000 texts, some dating back to the 8th century.",
         "After the visit, the rest of the day is free to explore St Gallen at your own pace. Maybe visit the Textile Museum, or simply wander the streets and discover the many shops and cafes."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
-      meals: ["Breakfast", "Dinner"],
+      accommodation: "Einstein St.Gallen",
+      includedActivities: ["Walking tour of Old town St. Gallen", "'All Abbey Pass' for Abbey of St Gallen"],
+      optionalActivities: ["-"],
+      meals: ["Breakfast",],
       images: [getImagePath('stgallen1.jpeg'), getImagePath('stgallen2.jpg'), getImagePath('abbey.jpg')]
     },
     {
       day: 7,
-      title: "To St Moritz via Vaduz and Davos (Bundner Nusstorte)",
+      title: "To St Moritz via Liechtenstein",
       description: [
         "Heading south, we cross into the tiny country of Liechtenstein, and its capital Vaduz. After a short stop to explore the old town and maybe grab a coffee, we cross back into Switzerland and the Graubünden region where we arrive in Davos for lunch.",
         "After lunch, there is time to explore Davos, before we continue our journey to St Moritz, our home for the next couple of nights. On the way, we will stop at a bakery to sample the famous Bündner Nusstorte (walnut and caramel tart)."
         
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Soldanella Boutique Hotel, St Moritz",
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('vaduz.jpg'), getImagePath('davos.jpg'), getImagePath('engadiner.jpg')]
     },
     {
       day: 8,
-      title: "St. Moritz free day (Muottas Muragl optional)",
+      title: "St. Moritz free day",
       description: [
         "Today is for you to explore and enjoy the luxury alpine resort of St Moritz.",
         "Maybe you wish to relax and pamper yourself at one of the many spas, or perhaps take a walk around the lake, or indulge in some shopping. The choice is yours but remember to keep your eyes open for celebrities, as St Moritz is a favourite destination for the rich and famous.",
         "If you would like to join us for an optional excursion to Muottas Muragl, please let us know in advance. The funicular takes you up to a viewpoint with stunning views of the Engadin valley and the surrounding mountains. There is a restaurant at the top where you can enjoy a coffee or a meal while taking in the views, or spread your legs, and take one of the many walking trails that start from the top.",
         "Please note that there is an extra charge for this optional activity."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Soldanella Boutique Hotel, St Moritz",
       optionalActivities: ["Muottas Muragl excursion"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast",],
       images: [getImagePath('st_moritz.jpg'), getImagePath('muottas_muragl.jpg'), getImagePath('muottas_muragl2.jpg')]
     },
     {
@@ -161,8 +171,9 @@ export const waterfallsWalnuts: Tour = {
         "Arriving in Andermatt, we'll be collected by the bus and taken to our hotel. For those wanting to stretch their legs, there is a short walk from the hotel to the village centre where you can explore the shops and cafes.",
         "Dinner, this evening, is at a local restaurant that specialises in Swiss cuisine and is very weell known for its cheese fondue."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Radisson Blu Hotel Reussen, Andermatt",
+      includedActivities: ["1st-Class Glacier Express seat",],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('GlacierLandwasser.jpg'), getImagePath('gexpress1.jpg'), getImagePath('gexpress2.jpg')]
     },
@@ -170,26 +181,28 @@ export const waterfallsWalnuts: Tour = {
       day: 10,
       title: "Andermatt to Zug via Glarus and Oberarth",
       description: [
-        "Leaving Andermatt we head towards Zug and through the territory if William Tell. We’ll stop in on the statue memorializing the legend in the town where he made is stand – Altdorf before grabbing some lunch.",
+        "Leaving Andermatt we head towards Zug and through the territory of William Tell. We’ll stop in on the statue memorializing the legend in the town where he made his stand – Altdorf – before grabbing some lunch.",
         "Next is the smallest cantonal capital in Switzerland that dates back to the 9th century and is one of the last places that still practice Landsgemeindeplatz - Glarus.",
         "We then head to the oldest distillery in Switzerland, take a tour and taste our way through some of their offerings - be sure to try their Chrüter (Kevin's favourite is the honey one).",
         "Relax as we then head to our stop for the night - Zug."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Residence Hotel, Zug",
+      includedActivities: ["Tour & tasting at Fassbind distillery", "Visit to Glarus", "Visit to Altdorf"],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('andermatt.jpg'), getImagePath('glarus.jpg'), getImagePath('fassbind.jpeg')]
     },
     {
       day: 11,
-      title: "Zug (class at Speck in the morning, Etter in the afternoon) Final Dinner",
+      title: "Zug & final dinner",
       description: [
-        "After breakfast we head to the workshop at Speck where we’ll learn how to make two iconic Swiss desserts – the Zuger Kirschtorte and the Kirsch Stangeli. Both contain cherries and alcohol (Kirsch) and are synonymous with the canton of Zug.",
+        "After breakfast we head to the workshop at Speck where we’ll learn how to make two iconic Swiss desserts – the Zuger Kirschtorte and the Kirschstängeli. Both contain cherries and alcohol (Kirsch) and are synonymous with the canton of Zug.",
         "In the afternoon we'll head to Etter, a distillery that specialises in fruit brandies. We will see how they make their products and taste a few of them.",
         "Then it's time for our farewell dinner."
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
+      accommodation: "Residence Hotel, Zug",
+      includedActivities: ["Combined course at a confiserie", "Tour and tasting a Etter distillery"],
+      optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('etter.jpeg'), getImagePath('kirschtorte.jpg'), getImagePath('kirschstaengeli.jpg')]
     },
@@ -199,12 +212,12 @@ export const waterfallsWalnuts: Tour = {
       description: [
         "After the last group breakfast, and a chance to say goodbye to your new friends, we head to Zurich where the tour, sadly, ends. ",
         "If you have a late flight, consider a visit to the Lindt Home of Chocolate, or the beautiful lakeside city of Rapperswil, known as the town of roses.",
-        "We hope to see you again on another of our tours. Auf Wiederluege!"
+        "We hope to see you again on another of our tours. Uf widerluege!"
      
       ],
-      accommodation: "Boutique hotel in Basel city center",
-      includedActivities: ["Walnut farm visit", "Old town walking tour"],
-      meals: ["Breakfast", "Dinner"],
+      includedActivities: ["Return to Zurich airport or train station"],
+      optionalActivities: ["-"],
+      meals: ["Breakfast"],
       images: [getImagePath('rhinefalls2.jpg'), getImagePath('basel1.jpg')]
     },
   ]
