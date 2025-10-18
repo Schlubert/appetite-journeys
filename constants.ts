@@ -27,7 +27,7 @@ export const TOURS_DATA: Tour[] = [
   name: "Cheese, Chocolate and the Swiss Riviera",
   summary:[
     { text:"Explore the north and west of Switzerland. From lake front to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories."},
-    { text:"From NZ$12,950", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    { text:"From NZ$13,800", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:"per person (twin share).", className: "text-md italic text-center text-alpine-green" },
     { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
   ],
@@ -40,7 +40,7 @@ export const TOURS_DATA: Tour[] = [
     name: "Waterfalls, Whiskey, and Walnuts",
     summary: [
       { text:"Visit 3 countries and explore the East of Switzerland. From the Rhine Falls to the vineyards of Appenzell and the historic abbey in St Gallen."},
-    { text:"From NZ$13,500", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    { text:"From NZ$13,800", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
     { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
     { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
   ],
