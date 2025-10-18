@@ -1,5 +1,15 @@
-// waterfallsWalnuts.ts
-import { getImagePath } from '../utils/paths';
+// data/waterfallsWalnuts.ts
+import { getImagePath } from "../utils/paths";
+
+export type OptionalActivity = {
+  name: string;
+  description: string;
+  price: string;
+  duration?: string;
+  included?: string[];
+  images?: string[];
+  bookingNote?: string;
+};
 
 export type ItineraryStop = {
   day: number;
@@ -8,6 +18,7 @@ export type ItineraryStop = {
   accommodation?: string;
   includedActivities?: string[];
   optionalActivities?: string[];
+  optionalActivitiesDetailed?: OptionalActivity[];
   meals?: string[];
   images?: string[];
 };
@@ -33,22 +44,18 @@ export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   theme: "Food & Wine",
   durationDays: 12,
-  price: ["From NZ$13,800",
-          "per person (twin share)"
-        ],
+  price: ["From NZ$13,800", "per person (twin share)"],
   singleSupplement: "NZ$4,750",
-  departureDates: [
-    { date: "September 13th, 2026", status: "limited" },
-  ],
+  departureDates: [{ date: "September 13th, 2026", status: "limited" }],
   summary: [
     "Explore the East of Switzerland and discover flavours like Kirsch (Cherry Brandy), the walnut and caramel tart from Graubünden, and Swiss-made whiskey.",
     "Along the way we'll learn how to make liqueur-filled chocolates, taste a slightly boozy cake, and sample wines from the country's easternmost wineries.",
-    "This journey also crosses into Germany, Austria and Liechtenstein — plenty of opportunities to sample regional delicacies."
+    "This journey also crosses into Germany, Austria and Liechtenstein — plenty of opportunities to sample regional delicacies.",
   ],
   heroImages: [
-    getImagePath('davos.jpg'),
-    getImagePath('kirschstaengeli.jpg'),
-    getImagePath('stgallenlibrary2.jpg')
+    getImagePath("davos.jpg"),
+    getImagePath("kirschstaengeli.jpg"),
+    getImagePath("stgallenlibrary2.jpg"),
   ],
   itinerary: [
     {
@@ -106,22 +113,35 @@ export const waterfallsWalnuts: Tour = {
       optionalActivities: ["-"],
       meals: ["Breakfast","Lunch",],
       images: [getImagePath('bodensee.jpeg'), getImagePath('lindau.jpeg'), getImagePath('wetliweinkeller.jpg')]
-    },
-    {
+    },{
       day: 5,
       title: "Säntis then Appenzell and the brewer/distillery",
       description: [
-        "Today we head 'up'. A short drive through the hills of the Appenzeller countryside, we arrive at the foot of Säntis. At more than 2.5 km (1.5 miles) above sea level, it provides spectacular views of six countries on a clear day. The cable car takes us to the summit where we can enjoy a coffee and a slice of cake while taking in the views.",
-        "Back to the bus and on to Appenzell for a late lunch, before heading off to Brauerei Locher - home of both Appenzeller beer and Säntis whiskey. We will have a tour of the brewery and distillery, followed by some tastings.",
-        "Then it's back to St Gallen for a free evening to relax.",
+        "Today we head 'up'...",
         "If fine dining is something that appeals, then you have the option of joining us for wine tasting in the hotel cellar followed by a gourmet dinner at the hotel's two Michelin-starred restaurant.",
-        "Please let us know in advance if you would like to join this optional activity as there is an extra charge associated with it."
       ],
       accommodation: "Einstein St.Gallen",
       includedActivities: ["Cable car up Säntis", "Tour & tasting at Appenzeller brewery/distillery"],
-      optionalActivities: ["2-michelin star dinner at Einstein hotel"],
+      optionalActivities: ["2 Michelin-star dinner at Einstein hotel"],
+      optionalActivitiesDetailed: [
+        {
+          name: "Einstein Gourmet Dinner Experience",
+          description:
+            "Begin with a private wine tasting in the hotel's cellar before indulging in a multi-course tasting menu crafted by the Einstein Gourmet team (2 Michelin Stars, 18 GaultMillau points). An unforgettable evening of flavour and finesse in St Gallen.",
+          price: "NZ$420 per person",
+          duration: "3–4 hours",
+          included: [
+            "Private wine tasting with sommelier",
+            "7-course tasting menu",
+            "Paired wines",
+            "Coffee and petit fours",
+          ],
+          bookingNote:
+            "Limited availability. Must be booked at least 14 days in advance. Formal dress required.",
+        },
+      ],
       meals: ["Breakfast", "Dinner"],
-      images: [getImagePath('appenzell.jpeg'), getImagePath('santisccar.jpeg'), getImagePath('santisbarrel.jpg')]
+      images: [getImagePath("appenzell.jpeg"), getImagePath("santisccar.jpeg"), getImagePath("santisbarrel.jpg")],
     },
     {
       day: 6,
@@ -151,17 +171,30 @@ export const waterfallsWalnuts: Tour = {
     },
     {
       day: 8,
-      title: "St. Moritz free day",
+      title: "St. Moritz Free Day",
       description: [
-        "Today is for you to explore and enjoy the luxury alpine resort of St Moritz.",
-        "Maybe you wish to relax and pamper yourself at one of the many spas, or perhaps take a walk around the lake, or indulge in some shopping. The choice is yours but remember to keep your eyes open for celebrities, as St Moritz is a favourite destination for the rich and famous.",
-        "If you would like to join us for an optional excursion to Muottas Muragl, please let us know in advance. The funicular takes you up to a viewpoint with stunning views of the Engadin valley and the surrounding mountains. There is a restaurant at the top where you can enjoy a coffee or a meal while taking in the views, or spread your legs, and take one of the many walking trails that start from the top.",
-        "Please note that there is an extra charge for this optional activity."
+        "Your day to relax or join an optional excursion to Muottas Muragl for panoramic views of the Engadin valley.",
       ],
       accommodation: "Soldanella Boutique Hotel, St Moritz",
-      optionalActivities: ["Muottas Muragl excursion"],
-      meals: ["Breakfast",],
-      images: [getImagePath('st_moritz.jpg'), getImagePath('muottas_muragl.jpg'), getImagePath('muottas_muragl2.jpg')]
+      optionalActivities: ["Muottas Muragl funicular and scenic lunch"],
+      optionalActivitiesDetailed: [
+        {
+          name: "Muottas Muragl Scenic Experience",
+          description:
+            "Ride the historic funicular to 2,456 meters for breathtaking alpine views. Enjoy a gourmet lunch at the panoramic restaurant or explore one of several summit walking trails.",
+          price: "NZ$195 per person",
+          duration: "Half day (4–5 hours)",
+          included: [
+            "Return funicular tickets",
+            "Lunch at panoramic restaurant",
+            "Local guide and transfers",
+          ],
+          bookingNote:
+            "Weather dependent. Operates May–October. Warm clothing recommended.",
+        },
+      ],
+      meals: ["Breakfast"],
+      images: [getImagePath("muottas_muragl.jpg"), getImagePath("muottas_muragl2.jpg")],
     },
     {
       day: 9,
