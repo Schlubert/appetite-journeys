@@ -171,7 +171,8 @@ const WaterfallsWalnuts: React.FC = () => {
         <h2 className="text-2xl font-bold mb-2">What's Included</h2>
         <ul className="list-disc pl-5 text-slate-700 space-y-1">
           <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the main languages of Switzerland</li>
-        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li> <li>Accommodation in 4-5 star hotels (twin share)</li>
+        <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li> 
+        <li>Hotel accommodation (twin share)</li>
         <li>Daily breakfasts</li>
         <li>7 dinners and a multitude of Swiss delicaies along the way</li>
         <li>Activites and entries including:

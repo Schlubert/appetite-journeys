@@ -18,11 +18,7 @@ const TOURS: Tour[] = [
     name: 'Waterfalls, walnuts & whiskey',
     dates: ['November 5, 2026', 'November 19, 2026'],
   },
-  {
-    id: 'alpine-feast',
-    name: 'The Grand Alpine Feast',
-    dates: ['September 10, 2026', 'September 24, 2026'],
-  },
+  
 ];
 
 // --- Configuration: Which fields are required ---
@@ -38,10 +34,7 @@ const REQUIRED_FIELDS = {
   otherTravelerNames: true, // Required when travellers > 1
   emergencyContact: true,
   emergencyPhone: true,
-  birthDate: true,
-  passportNumber: false,
-  passportExpiry: false,
-  passportCountry: false,
+
 };
 
 // --- Form Data Interface ---
@@ -420,77 +413,7 @@ const BookingForm: React.FC = () => {
               />
             </div>
           </div>
-
-          {/* Birth Date */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Date of Birth
-              {REQUIRED_FIELDS.birthDate && <RequiredIndicator />}
-            </label>
-            <input
-              type="date"
-              name="birthDate"
-              value={formData.birthDate}
-              onChange={handleChange}
-              required={REQUIRED_FIELDS.birthDate}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-            />
-          </div>
-
-          <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Passport Information</h2>
-
-          <div className="grid sm:grid-cols-3 gap-5">
-            {/* Passport Number */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Passport Number
-                {REQUIRED_FIELDS.passportNumber && <RequiredIndicator />}
-              </label>
-              <input
-                type="text"
-                name="passportNumber"
-                value={formData.passportNumber}
-                onChange={handleChange}
-                placeholder="e.g. A1234567"
-                required={REQUIRED_FIELDS.passportNumber}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
-            </div>
-
-            {/* Passport Expiry */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Passport Expiry Date
-                {REQUIRED_FIELDS.passportExpiry && <RequiredIndicator />}
-              </label>
-              <input
-                type="month" 
-                name="passportExpiry"
-                value={formData.passportExpiry}
-                onChange={handleChange}
-                required={REQUIRED_FIELDS.passportExpiry}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
-            </div>
-
-            {/* Passport Country */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Issuing Country
-                {REQUIRED_FIELDS.passportCountry && <RequiredIndicator />}
-              </label>
-              <input
-                type="text"
-                name="passportCountry"
-                value={formData.passportCountry}
-                onChange={handleChange}
-                placeholder="e.g. New Zealand"
-                required={REQUIRED_FIELDS.passportCountry}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
-            </div>
-          </div>
-
+          
           {/* Additional Notes */}
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
