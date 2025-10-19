@@ -13,7 +13,7 @@ const FAQS: FaqItem[] = [
     answer: `
       <p>We've tried to include as much as possible in the tour price while still leaving the chance for you to make the trip 'yours'. Included in the price are:</p>
       <ul class="list-disc list-inside space-y-1">
-        <li>Accommodation in 4-5 star hotels (twin share)</li>
+        <li>Hotel accommodation (twin share)</li>
         <li>Daily breakfasts</li>
         <li>Lunches and dinners provided varies by tour.</li>
         <li>All transportation within Switzerland including air conditioned coach transport, trains, and funiculars (when as part of the tour)</li>
@@ -67,7 +67,7 @@ const FAQS: FaqItem[] = [
   
 {
     question: "What fitness level is required?",
-    answer: "To enjoy this trip, youâ€™ll need to be able to spend time on your feet and regularly walk for 3-4 hours without assistance, including regular stints walking uphill. Daily activities might include: walking on uneven and hilly ground, getting on and off various forms of transportation, climbing stairs. You may also encounter over-the-bath showers in some of the accommodations. It will be impossible to enjoy your trip if youâ€™re not able to do a walking tour for a full afternoon and be able to keep up with the group. Unfortunately, this tour cannot accommodate people requiring a walking aid."
+    answer: "To enjoy this trip, you'll need to be able to spend time on your feet and regularly walk for 3-4 hours without assistance, including regular stints walking uphill. Daily activities might include: walking on uneven and hilly ground, getting on and off various forms of transportation, climbing stairs. You may also encounter over-the-bath showers in some of the accommodations. It will be impossible to enjoy your trip if you're not able to do a walking tour for a full afternoon and be able to keep up with the group. Unfortunately, this tour cannot accommodate people requiring a walking aid."
   },
   
   {
