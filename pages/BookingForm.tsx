@@ -124,8 +124,22 @@ const BookingForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Booking submitted:", formData);
-    setSubmitted(true);
+    
+    // Netlify Forms submission
+    const form = e.currentTarget as HTMLFormElement;
+    const formDataToSend = new FormData(form);
+    
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formDataToSend as any).toString()
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting the form. Please try again.");
+    }
   };
 
   // --- Dynamic Dates Calculation ---
@@ -160,7 +174,13 @@ const BookingForm: React.FC = () => {
           Fields marked with <span className="text-red-500">*</span> are required
         </p>
         
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5" name="booking-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="booking-form" />
+          <input type="hidden" name="bot-field" />
+          
+          {/* Hidden field to capture all traveler names */}
+          <input type="hidden" name="otherTravelerNames" value={formData.otherTravelerNames.join(', ')} />
+          
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">
@@ -316,6 +336,7 @@ const BookingForm: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    name={`traveler-${index + 2}`}
                     value={formData.otherTravelerNames[index] || ''}
                     onChange={(e) => handleOtherTravellerChange(index, e.target.value)}
                     required={REQUIRED_FIELDS.otherTravelerNames}

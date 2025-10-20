@@ -22,7 +22,7 @@ const SocialIcons: { [key: string]: React.ReactNode } = {
     ),
     'YouTube': (
          <svg {...socialIconProps} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" />
+            <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768 C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" />
         </svg>
     ),
     'LinkedIn': (
@@ -36,9 +36,23 @@ const SocialIcons: { [key: string]: React.ReactNode } = {
 const ContactPage: React.FC = () => {
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSubmitted(true);
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString()
+            });
+            setSubmitted(true);
+        } catch (error) {
+            console.error("Form submission error:", error);
+            alert("There was an error submitting the form. Please try again.");
+        }
     };
 
     return (
@@ -56,7 +70,10 @@ const ContactPage: React.FC = () => {
                             <p className="mt-2 text-center">Your message has been sent. We'll get back to you shortly.</p>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact-form" />
+                            <input type="hidden" name="bot-field" />
+                            
                             <div>
                                 <label htmlFor="name" className="block text-lg font-semibold text-rock-gray mb-2">Full Name</label>
                                 <input type="text" id="name" name="name" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mountain-blue focus:border-mountain-blue transition" />
@@ -82,7 +99,7 @@ const ContactPage: React.FC = () => {
                 <div className="space-y-8">
                     <div>
                         <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-3">Contact Information</h3>
-                        <p className="text-lg text-rock-gray mb-3"><strong>Email:</strong> hello@appetitejourneys.com</p>
+                        <p className="text-lg text-rock-gray mb-3"><strong>Email:</strong> office@appetitejourneys.nz</p>
                                             
                     
                         <div className="flex space-x-6">
