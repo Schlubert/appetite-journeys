@@ -12,5 +12,35 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- your existing head content -->
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Hidden forms for Netlify detection - ADD THESE -->
+    <form name="booking-form" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="tour" />
+      <input type="text" name="departureDate" />
+      <input type="text" name="travellers" />
+      <input type="text" name="roomOption" />
+      <input type="text" name="otherTravelerNames" />
+      <input type="text" name="emergencyContact" />
+      <input type="tel" name="emergencyPhone" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
