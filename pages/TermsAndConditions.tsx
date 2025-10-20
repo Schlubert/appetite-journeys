@@ -186,23 +186,52 @@ const TermsAndConditions: React.FC = () => {
 
         {/* Section 20 */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">20. No refunds</h2>
+          <h2 className="text-2xl font-semibold mb-3">20. Respect</h2>
           <p>
-            There will be no refunds provided where a guest does not use all parts of a tour. This includes early departure (for any reason), or choosing to not partake in accommodation, travel or meals provided as part of the itinerary.
+            we ask you to be kind and show respect. Rude, aggressive or abusive behaviour will not be tolerated, and if we are unable to resolve any issues, may result in cancellation of a booking. Unacceptable behaviour includes, but is not limited to: bullying, use of offensive language, threats and discrimination | making ongoing unreasonable demands and/or complaints | generally disruptive behaviour and/or causing communication problems.
           </p>
         </section>
 
         {/* Section 21 */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">21. Legal jurisdiction</h2>
+          <h2 className="text-2xl font-semibold mb-3">21. Values</h2>
           <p>
-            These terms and conditions, and any contract to which they apply, are governed by New Zealand law.
+            you are expected to join us in demonstrating high values. This includes, but is not limited to: respecting the environment, local cultures, guides, and other guests | dressing or behaving appropriately according to local customs.
+          </p>
+        </section>
+        {/* Section 22 */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">22. Safety</h2>
+          <p>
+            we prioritise the group’s safety and enjoyment. We may need to take action, or ask a guest to leave a tour, where behaviour puts anyone at risk. This includes, but is not limited to: ignoring instructions from guides | engaging in reckless, illegal or dangerous behaviour | unmanaged mental health issues that might pose a risk. Dangerous and/or illegal activity will result in immediate removal from the tour, and possible reporting to local authorities.
+          </p>
+        </section>
+        {/* Section 23 */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">23. No refunds</h2>
+          <p>
+             there will be no refunds provided where a guest does not use all parts of a tour. This includes early departure (for any reason), or choosing to not partake in accommodation, travel or meals provided as part of the itinerary.
+          </p>
+        </section>
+        {/* Section 24 */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">24. Voiding of agreement</h2>
+          <p>
+            your contract with us may be terminated without notice if you do not comply with all reasonable and legal requests. This includes, but is not limited to: not signing required liability waivers | providing false information during the booking process | using suspicious or fraudulent payment methods | not meeting payment deadlines or providing necessary documents | failing to have a valid passport, visas, or necessary permits | not sharing essential safety and trip coordination information with us (eg. passport copy, flight itinerary, emergency contact details, and certificate of travel insurance).
           </p>
         </section>
 
-        {/* Section 22 */}
+{/* Section 25 */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">22. Disclaimers</h2>
+          <h2 className="text-2xl font-semibold mb-3">25. Legal jurisdiction</h2>
+          <p>
+            these terms and conditions, and any contract to which they apply, are governed by New Zealand law.
+          </p>
+        </section>
+
+        {/* Section 26 */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3">26. Disclaimers</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
               We act solely as facilitator of travel experiences and do not own or operate any of the accommodation or activity providers used during any tour.
