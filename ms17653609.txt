@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "appetitejourneys.nz",
+  "Id": "0702def4-c51f-477b-aa9e-510cc7b5c599"
+}
