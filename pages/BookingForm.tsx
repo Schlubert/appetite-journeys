@@ -11,12 +11,12 @@ const TOURS: Tour[] = [
   {
     id: 'cheese-chocolate',
     name: 'Cheese, Chocolate & the Swiss Riviera',
-    dates: ['October 1, 2026', 'October 15, 2026'],
+    dates: ['September 27, 2026'],
   },
   {
     id: 'waterfalls-whiskey',
     name: 'Waterfalls, walnuts & whiskey',
-    dates: ['November 5, 2026', 'November 19, 2026'],
+    dates: ['September 13, 2026'],
   },
   
 ];
