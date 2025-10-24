@@ -46,7 +46,7 @@ export const cheeseChocolateRiviera: Tour = {
   name: "Cheese, Chocolate and the Swiss Riviera",
   theme: "Food & Wine",
   durationDays: 12,
-  price: ["From NZ$13,800", "per person (twin share)"],
+  price: ["From NZ$14,600", "per person (twin share)"],
   singleSupplement: "NZ$4,750",
   departureDates: [
     { date: "August 16th, 2026", status: "sold-out" },
