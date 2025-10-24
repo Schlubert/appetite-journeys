@@ -44,7 +44,7 @@ export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   theme: "Food & Wine",
   durationDays: 12,
-  price: ["From NZ$14,600", "per person (twin share)"],
+  price: ["From NZ$14,800", "per person (twin share)"],
   singleSupplement: "NZ$4,750",
   departureDates: [{ date: "September 13th, 2026", status: "limited" }],
   summary: [
