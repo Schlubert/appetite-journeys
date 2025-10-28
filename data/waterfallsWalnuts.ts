@@ -66,7 +66,7 @@ export const waterfallsWalnuts: Tour = {
         "This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.",
         "Its very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip."
       ],
-      accommodation: "Radisson Blu Hotel, Zurich Airport",
+      accommodation: "Zurich",
       includedActivities: ["Welcome dinner"],
       optionalActivities: ["-"],
       meals: ["Dinner"],
@@ -80,7 +80,7 @@ export const waterfallsWalnuts: Tour = {
       "Stein am Rhein is our next, and last stop for the day. Complete with timber-framed houses, some of which date back as far as the 15th century, Stein a. R. is a feast for the eyes.",
       "After arriving at the hotel, the rest of the day is yours to relax and wander the streets and discover this beautiful place before dinner at a restaurant that offers some local specialties."
       ],
-      accommodation: "Hotel Constantia, Konstanz",
+      accommodation: "Konstanz",
       includedActivities: [""],
       optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
@@ -93,7 +93,7 @@ export const waterfallsWalnuts: Tour = {
         "A short drive to the nearby village of Gottlieben, where we will have the first of our chocolate-making classes at the renowned Huppe chocolatier.",
         "All chocolated up, we head to Konstanz, just across the border in Germany. Here you can explore the old town, visit the Sea Life Centre, or simply relax by the lake."
       ],
-      accommodation: "Hotel Constantia, Konstanz",
+      accommodation: "Konstanz",
       includedActivities: [""],
       optionalActivities: ["-"],
       meals: ["Breakfast"],
@@ -108,7 +108,7 @@ export const waterfallsWalnuts: Tour = {
         "Then, relax as we head to our hotel in St Gallen, where the rest of the evening is free to relax",
        
       ],
-      accommodation: "Einstein St.Gallen",
+      accommodation: "St.Gallen",
       includedActivities: ["Boat trip on Lake Constance","Lunch at Wissingers im Schlechterbräu", "Winery Tour and tasting"],
       optionalActivities: ["-"],
       meals: ["Breakfast","Lunch",],
@@ -120,7 +120,7 @@ export const waterfallsWalnuts: Tour = {
         "Today we head 'up'...",
         "If fine dining is something that appeals, then you have the option of joining us for wine tasting in the hotel cellar followed by a gourmet dinner at the hotel's two Michelin-starred restaurant.",
       ],
-      accommodation: "Einstein St.Gallen",
+      accommodation: "St.Gallen",
       includedActivities: ["Cable car up Säntis", "Tour & tasting at Appenzeller brewery/distillery"],
       optionalActivities: ["2 Michelin-star dinner at Einstein hotel"],
       optionalActivitiesDetailed: [
@@ -150,7 +150,7 @@ export const waterfallsWalnuts: Tour = {
         "A more relaxed day today, with a visit to the UNESCO World Heritage-listed Abbey of St Gallen, founded in 612 AD. The library is one of the oldest and most beautiful in the world, and contains more than 170,000 texts, some dating back to the 8th century.",
         "After the visit, the rest of the day is free to explore St Gallen at your own pace. Maybe visit the Textile Museum, or simply wander the streets and discover the many shops and cafes."
       ],
-      accommodation: "Einstein St.Gallen",
+      accommodation: "St.Gallen",
       includedActivities: ["Walking tour of Old town St. Gallen", "'All Abbey Pass' for Abbey of St Gallen"],
       optionalActivities: ["-"],
       meals: ["Breakfast",],
@@ -164,7 +164,7 @@ export const waterfallsWalnuts: Tour = {
         "After lunch, there is time to explore Davos, before we continue our journey to St Moritz, our home for the next couple of nights. On the way, we will stop at a bakery to sample the famous Bündner Nusstorte (walnut and caramel tart)."
         
       ],
-      accommodation: "Soldanella Boutique Hotel, St Moritz",
+      accommodation: "St Moritz",
       optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
       images: [getImagePath('vaduz.jpg'), getImagePath('davos.jpg'), getImagePath('engadiner.jpg')]
@@ -175,7 +175,7 @@ export const waterfallsWalnuts: Tour = {
       description: [
         "Your day to relax or join an optional excursion to Muottas Muragl for panoramic views of the Engadin valley.",
       ],
-      accommodation: "Soldanella Boutique Hotel, St Moritz",
+      accommodation: "St Moritz",
       optionalActivities: ["Muottas Muragl funicular and scenic lunch"],
       optionalActivitiesDetailed: [
         {
@@ -204,7 +204,7 @@ export const waterfallsWalnuts: Tour = {
         "Arriving in Andermatt, we'll be collected by the bus and taken to our hotel. For those wanting to stretch their legs, there is a short walk from the hotel to the village centre where you can explore the shops and cafes.",
         "Dinner, this evening, is at a local restaurant that specialises in Swiss cuisine and is very weell known for its cheese fondue."
       ],
-      accommodation: "Radisson Blu Hotel Reussen, Andermatt",
+      accommodation: "Andermatt",
       includedActivities: ["1st-Class Glacier Express seat",],
       optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
@@ -219,7 +219,7 @@ export const waterfallsWalnuts: Tour = {
         "We then head to the oldest distillery in Switzerland, take a tour and taste our way through some of their offerings - be sure to try their Chrüter (Kevin's favourite is the honey one).",
         "Relax as we then head to our stop for the night - Zug."
       ],
-      accommodation: "Residence Hotel, Zug",
+      accommodation: "Luzern",
       includedActivities: ["Tour & tasting at Fassbind distillery", "Visit to Glarus", "Visit to Altdorf"],
       optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],
@@ -233,7 +233,7 @@ export const waterfallsWalnuts: Tour = {
         "In the afternoon we'll head to Etter, a distillery that specialises in fruit brandies. We will see how they make their products and taste a few of them.",
         "Then it's time for our farewell dinner."
       ],
-      accommodation: "Residence Hotel, Zug",
+      accommodation: "Luzern",
       includedActivities: ["Combined course at a confiserie", "Tour and tasting a Etter distillery"],
       optionalActivities: ["-"],
       meals: ["Breakfast", "Dinner"],

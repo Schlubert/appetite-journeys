@@ -74,7 +74,7 @@ export const cheeseChocolateRiviera: Tour = {
         "This evening, celebrate the beginning of a new adventure with a welcome dinner with your group and learn about what the next 12 days have in store.",
         "It's very important that you attend the welcome meeting as we will be going through information that will help you make the most of your trip."
       ],
-      accommodation: "Radisson Blu Hotel, Zurich Airport",
+      accommodation: "Zurich",
       includedActivities: ["Welcome dinner"],
       optionalActivities: ["-"],
       meals: ["Dinner"],
@@ -93,13 +93,13 @@ export const cheeseChocolateRiviera: Tour = {
         "After arriving at the hotel, we'll go for a walking tour of some of the highlights of the old town before having some free time to explore.",
         "Then, dinner at a restaurant that offers some local specialties."
       ],
-      accommodation: "Hotel Märthof, Basel",
+      accommodation: "Basel",
       includedActivities: [
         "Bakery visits and läckerli tastings",
         "Walking tour of Basel's Old Town"
       ],
       optionalActivities: ["-"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast"],
       images: [getImagePath("Basel.jpeg"), getImagePath("BaselOldTown.jpg"), getImagePath("Lackerli.jpeg")]
     },
     {
@@ -110,7 +110,7 @@ export const cheeseChocolateRiviera: Tour = {
         "You also have the opportunity to join us for a tour of some local wineries and farm shops.",
         "If you would like to join us on this excursion, please let us know as there is an extra charge associated with it."
       ],
-      accommodation: "Hotel Märthof, Basel",
+      accommodation: "Basel",
       includedActivities: ["-"],
       optionalActivities: [
         "Excursion to some of the wineries and farm shops in the Basel-Landschaft region"
@@ -144,7 +144,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Our final stop on the journey is Murten, an amazingly picturesque village and home of the Nidlechueche. Nobody makes it better than here.",
         "After we arrive at the hotel, there is a little time to relax and recharge before heading off to restaurant where you can try iconic dishes like fondue and raclette, or regional ones like the rösti."
       ],
-      accommodation: "Hotel NH Bern The Bristol, Bern",
+      accommodation: "Bern",
       includedActivities: [
         "Fumoir Champoz tasting",
         "Visit to Camille Bloch chocolate factory",
@@ -165,7 +165,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Start with breakfast overlooking the Aare River and the city before a walking tour of the highlights of the old city including seeing the bears that give the city its name.",
         "The rest of the day is for you to explore this picturesque city."
       ],
-      accommodation: "Hotel NH Bern The Bristol, Bern",
+      accommodation: "Bern",
       includedActivities: [
         "Walking tour of Bern's Old Town",
       ],
@@ -187,7 +187,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Then we go in search of something to wash it down at the Willisau distillery where you will tour their facility, taste some of their wares, and learn how to make a Kafi Lutz – think of it as the Swiss version of an Irish coffee but with more rules.",
         "Our day finishes with a stroll along the lakefront on the way to dinner and a show of traditional Swiss entertainment."
       ],
-      accommodation: "AMERON Luzern Hotel Flora, Luzern",
+      accommodation: "Luzern",
       includedActivities: [
         "Kambly biscuit factory visit", 
         "Willisau distillery tour and class",
@@ -210,7 +210,7 @@ export const cheeseChocolateRiviera: Tour = {
         "We then catch the Interlaken Express from Luzern. On the way, we'll make a quick detour to the Reichenbach Falls made famous in the Sherlock Holmes stories, and enjoy afternoon tea in the birthplace of meringues – Meiringen.",
         "After looking around the beautiful town of Meiringen we'll head towards our final stop for the night in Interlaken."
       ],
-      accommodation: "Hotel Du Nord, Interlaken",
+      accommodation: "Interlaken",
       includedActivities: [
         "Glasi Hergiswil glass factory visit",
         "Interlaken Express Train",
@@ -218,7 +218,7 @@ export const cheeseChocolateRiviera: Tour = {
         "Dinner above Interlaken, at Harder Kulm"
       ],
       optionalActivities: ["-"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast"],
       images: [
         getImagePath("hergiswil.jpg"), 
         getImagePath("meringue.jpg"), 
@@ -233,7 +233,7 @@ export const cheeseChocolateRiviera: Tour = {
         "If those aren't your thing, you can choose to join us on a day trip around the lake, enjoy breakfast at the top of the pyramid of Switzerland - Mount Niesen - with one of the steepest funiculars in Switzerland (68% incline), then a stop in Thun before heading to the St. Beatus caves.",
         "If you would like to join us on this excursion, please let us know as there is an extra charge associated with it."
       ],
-      accommodation: "Hotel Du Nord, Interlaken",
+      accommodation: "Interlaken",
       includedActivities: ["-"],
       optionalActivities: [
         "Mount Niesen funicular and breakfast excursion",
@@ -272,7 +272,7 @@ export const cheeseChocolateRiviera: Tour = {
       description:[ 
         "Board the GoldenPass Express, one of Switzerland's most picturesque train routes. The journey on the panoramic train of the GoldenPass Express takes you through the Bernese Oberland before arriving in Montreux. After wandering through Montreux, we take to the water and take the ferry to Lausanne."
       ],
-      accommodation: "De la Paix, Lausanne",
+      accommodation: "Lausanne",
       includedActivities: ["GoldenPass Express scenic train journey"],
       optionalActivities: ["-"],
       meals: ["Breakfast", "Lunch"],
@@ -289,7 +289,7 @@ export const cheeseChocolateRiviera: Tour = {
         "The morning is yours to explore the area. Maybe it's the Alimentarium (Food Museum) or the Charlie Chaplin museum - both nearby in Vevey - that takes your fancy. Or perhaps you just want to visit the Olympic Museum before finding a spot on the lake front and enjoy the view. There is plenty to choose from.",
         "In the afternoon we head for the UNESCO World Heritage site of Lavaux. Here, we'll take a walk through the vineyards and learn about the history of wine production in the region before finishing up with a tasting of some of the local offerings."
       ],
-      accommodation: "De la Paix, Lausanne",
+      accommodation: "Lausanne",
       includedActivities: ["Lavaux vineyard walk", "Wine tasting session"],
       optionalActivities: ["-"],
       meals: ["Breakfast"],
@@ -307,7 +307,7 @@ export const cheeseChocolateRiviera: Tour = {
         "We'll then head to Maison Cailler – Switzerland's oldest chocolate factory and the place that invented milk chocolate. Here, you'll learn about the history of chocolate in Switzerland and how it's made, before having the opportunity to make your own chocolate bar.",
         "Finally, we head back to Montreux for a farewell dinner with the group"
       ],
-      accommodation: "De la Paix, Lausanne",
+      accommodation: "Lausanne",
       includedActivities: [
         "Maison Cailler chocolate experience",
         "Make your own chocolate bar",

@@ -312,7 +312,7 @@ const CheeseChocolateRiviera: React.FC = () => {
           <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
           <li>Hotel accommodation (twin share)</li>
           <li>Daily breakfasts</li>
-          <li>6 dinners and a multitude of Swiss delicacies along the way</li>
+          <li>4 dinners and a multitude of Swiss delicacies along the way</li>
 
           <li>
             Activities and entries including:
