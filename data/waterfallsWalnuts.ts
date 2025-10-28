@@ -45,7 +45,7 @@ export const waterfallsWalnuts: Tour = {
   theme: "Food & Wine",
   durationDays: 12,
   price: ["From NZ$14,800", "per person (twin share)"],
-  singleSupplement: "NZ$4,750",
+  singleSupplement: "NZ$5,775",
   departureDates: [{ date: "September 13th, 2026", status: "limited" }],
   summary: [
     "Explore the East of Switzerland and discover flavours like Kirsch (Cherry Brandy), the walnut and caramel tart from Graubünden, and Swiss-made whiskey.",

@@ -47,7 +47,7 @@ export const cheeseChocolateRiviera: Tour = {
   theme: "Food & Wine",
   durationDays: 12,
   price: ["From NZ$14,800", "per person (twin share)"],
-  singleSupplement: "NZ$4,750",
+  singleSupplement: "NZ$5,775",
   departureDates: [
     { date: "August 16th, 2026", status: "sold-out" },
     { date: "September 27th, 2026", status: "available" },
