@@ -1,3 +1,5 @@
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React, { useState, useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import ContentDisplay from '../components/ContentDisplay';
@@ -108,6 +110,8 @@ const FaqPage: React.FC = () => {
   };
 
   return (
+    <>
+    <SEO {...seoConfig.faq} />
     <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl">
       <h1 className="text-4xl md:text-5xl font-serif font-bold text-alpine-green mb-12 text-center">
         Frequently Asked Questions
@@ -145,6 +149,7 @@ const FaqPage: React.FC = () => {
         })}
       </div>
     </div>
+    </>
   );
 };
 

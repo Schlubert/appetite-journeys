@@ -1,3 +1,5 @@
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React, { useState, useMemo } from "react";
 
 // --- Tour Data Structure ---
@@ -165,6 +167,8 @@ const BookingForm: React.FC = () => {
   }
 
   return (
+    <>
+    <SEO {...seoConfig.booking} />
     <div className="bg-gray-50 py-12 px-4 sm:px-8 lg:px-20">
       <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 sm:p-10">
         <h1 className="text-3xl font-serif font-bold text-alpine-green text-center mb-2">
@@ -461,6 +465,7 @@ const BookingForm: React.FC = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,8 +1,12 @@
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React from "react";
 import { getImagePath } from '../utils/paths';
 
 const AboutPage: React.FC = () => {
   return (
+    <>
+    <SEO {...seoConfig.about} />
     <div className="space-y-16">
       {/* Hero Banner */}
       <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8">
@@ -83,8 +87,10 @@ const AboutPage: React.FC = () => {
             — authentic, welcoming, and unforgettable.
           </p>
         </div>
+        
       </section>
     </div>
+    </>
   );
 };
 

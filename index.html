@@ -2,12 +2,81 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appetite Journeys</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Primary Meta Tags -->
+    <title>Alpine Appetite Tours | Luxury Food & Wine Tours of Switzerland</title>
+    <meta name="title" content="Alpine Appetite Tours | Luxury Food & Wine Tours of Switzerland" />
+    <meta name="description" content="Experience Switzerland through its food and wine. Join our small-group culinary tours exploring cheese makers, chocolate factories, vineyards, and Alpine cuisine. Led by Swiss-born baker and chef with 30+ years experience." />
+    <meta name="keywords" content="Switzerland tours, Swiss food tours, chocolate tours Switzerland, cheese tours, wine tours Switzerland, culinary tours, luxury tours Switzerland, Alpine tours, Zurich tours, Lucerne tours, Interlaken tours" />
+    <meta name="author" content="Alpine Appetite Tours" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.appetitejourneys.nz/" />
+    <meta property="og:title" content="Alpine Appetite Tours | Luxury Food & Wine Tours of Switzerland" />
+    <meta property="og:description" content="Experience Switzerland through its food and wine. Join our small-group culinary tours exploring cheese makers, chocolate factories, vineyards, and Alpine cuisine." />
+    <meta property="og:image" content="https://www.appetitejourneys.nz/og-image.jpg" />
+    <meta property="og:site_name" content="Alpine Appetite Tours" />
+    <meta property="og:locale" content="en_NZ" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.appetitejourneys.nz/" />
+    <meta property="twitter:title" content="Alpine Appetite Tours | Luxury Food & Wine Tours of Switzerland" />
+    <meta property="twitter:description" content="Experience Switzerland through its food and wine. Join our small-group culinary tours exploring cheese makers, chocolate factories, vineyards, and Alpine cuisine." />
+    <meta property="twitter:image" content="https://www.appetitejourneys.nz/twitter-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.appetitejourneys.nz/" />
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="NZ" />
+    <meta name="geo.placename" content="New Zealand" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Alpine Appetite Tours",
+      "description": "Luxury food and wine tours of Switzerland led by experienced Swiss-born chef and baker",
+      "url": "https://www.appetitejourneys.nz",
+      "logo": "https://www.appetitejourneys.nz/logo.png",
+      "image": "https://www.appetitejourneys.nz/og-image.jpg",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NZ",
+        "addressLocality": "Dunedin"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Kevin Gilbert",
+        "jobTitle": "Tour Leader & Chef",
+        "description": "Baker and chef with 30+ years experience in the food industry"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "sameAs": [
+        "https://www.facebook.com/alpineappetitetours",
+        "https://www.instagram.com/alpineappetitetours"
+      ]
+    }
+    </script>
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <div id="root"></div>
@@ -24,6 +93,11 @@
       <input type="text" name="otherTravelerNames" />
       <input type="text" name="emergencyContact" />
       <input type="tel" name="emergencyPhone" />
+      <input type="date" name="birthDate" />
+      <input type="text" name="passportNumber" />
+      <input type="month" name="passportExpiry" />
+      <input type="text" name="passportCountry" />
+      <input type="text" name="dietary" />
       <textarea name="message"></textarea>
     </form>
 

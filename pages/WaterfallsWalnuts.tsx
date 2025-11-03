@@ -1,5 +1,6 @@
 // WaterfallsWalnuts.tsx
-
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React, { useRef, useState } from "react";
 import {
   Accordion,
@@ -157,6 +158,8 @@ const WaterfallsWalnuts: React.FC = () => {
   };
 
   return (
+    <>
+    <SEO {...seoConfig.waterfallsWalnuts} />
     <div className="space-y-10 p-6">
       <HeroHeader
         images={waterfallsWalnuts.heroImages}
@@ -333,6 +336,7 @@ const WaterfallsWalnuts: React.FC = () => {
         </ul>
       </section>
     </div>
+    </>
   );
 };
 

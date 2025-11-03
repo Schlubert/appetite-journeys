@@ -1,3 +1,5 @@
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React from "react";
 import { TOURS_DATA } from "../constants";
 import TourCard from "../components/TourCard";
@@ -6,6 +8,8 @@ import BookNowButton from "@/components/BookNowButton";
 
 const ToursPage: React.FC = () => {
   return (
+    <>
+    <SEO {...seoConfig.tours} />
  <div className="space-y-16">
             {/* Hero Banner */}
       <section className="relative h-[45vh] -mx-4 sm:-mx-6 lg:-mx-8">
@@ -41,6 +45,7 @@ const ToursPage: React.FC = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

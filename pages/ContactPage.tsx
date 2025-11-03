@@ -1,4 +1,6 @@
 // ContactPage.tsx
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React, { useState } from 'react';
 import { SOCIAL_LINKS } from '../constants';
 
@@ -56,6 +58,8 @@ const ContactPage: React.FC = () => {
     };
 
     return (
+        <>
+        <SEO {...seoConfig.contact} />
         <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-alpine-green mb-4 text-center">Get in Touch</h1>
             <p className="text-lg text-center text-rock-gray mb-10">We'd love to hear from you! Whether you have a question about our tours, or just want to say hello, feel free to reach out.</p>
@@ -114,6 +118,7 @@ const ContactPage: React.FC = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

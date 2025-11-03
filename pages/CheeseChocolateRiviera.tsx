@@ -1,5 +1,7 @@
 // CheeseChocolateRiviera.tsx
 
+import SEO from '../components/SEO';
+import { seoConfig } from '../config/seoConfig';
 import React, { useRef, useState } from "react";
 import {
   Accordion,
@@ -34,9 +36,8 @@ type OptionalActivityCardProps = {
 
 const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, dayNumber }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   return (
-    <div className="border-2 border-alpine-green rounded-lg overflow-hidden bg-alpine-green-50/30 hover:border-alpine-green-300 transition-all">
+        <div className="border-2 border-alpine-green rounded-lg overflow-hidden bg-alpine-green-50/30 hover:border-alpine-green-300 transition-all">
       {/* Header - Always Visible */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
@@ -170,6 +171,8 @@ const CheeseChocolateRiviera: React.FC = () => {
     }));
 
   return (
+    <>
+    <SEO {...seoConfig.cheeseChocolateRiviera} />
     <div className="space-y-10 p-6">
       <HeroHeader
         images={cheeseChocolateRiviera.heroImages}
@@ -347,8 +350,8 @@ const CheeseChocolateRiviera: React.FC = () => {
         </li>
         </ul>
       </section>   
-    
     </div>
+    </>
   );
 };
 
