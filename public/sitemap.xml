@@ -3,7 +3,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://www.appetitejourneys.nz/</loc>
+    <loc>https://appetitejourneys.nz/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Tours Overview -->
   <url>
-    <loc>https://www.appetitejourneys.nz/tours</loc>
+    <loc>https://appetitejourneys.nz/tours</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,28 +19,28 @@
   
   <!-- Individual Tours -->
   <url>
-    <loc>https://www.appetitejourneys.nz/tours/cheese-chocolate-trail</loc>
+    <loc>https://appetitejourneys.nz/tours/cheese-chocolate-trail</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.appetitejourneys.nz/tours/waterfalls</loc>
+    <loc>https://appetitejourneys.nz/tours/waterfalls</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.appetitejourneys.nz/tours/christmas-trail</loc>
+    <loc>https://appetitejourneys.nz/tours/christmas-trail</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://www.appetitejourneys.nz/tours/cake</loc>
+    <loc>https://appetitejourneys.nz/tours/cake</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -48,7 +48,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://www.appetitejourneys.nz/about</loc>
+    <loc>https://appetitejourneys.nz/about</loc>
     <lastmod>2025-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -56,7 +56,7 @@
   
   <!-- FAQ Page -->
   <url>
-    <loc>https://www.appetitejourneys.nz/faq</loc>
+    <loc>https://appetitejourneys.nz/faq</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -64,7 +64,7 @@
   
   <!-- Contact Page -->
   <url>
-    <loc>https://www.appetitejourneys.nz/contact</loc>
+    <loc>https://appetitejourneys.nz/contact</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -72,7 +72,7 @@
   
   <!-- Booking Page -->
   <url>
-    <loc>https://www.appetitejourneys.nz/book</loc>
+    <loc>https://appetitejourneys.nz/book</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -80,7 +80,7 @@
   
   <!-- Terms and Conditions -->
   <url>
-    <loc>https://www.appetitejourneys.nz/terms</loc>
+    <loc>https://appetitejourneys.nz/terms</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -88,7 +88,7 @@
   
   <!-- Privacy Policy -->
   <url>
-    <loc>https://www.appetitejourneys.nz/privacy</loc>
+    <loc>https://appetitejourneys.nz/privacy</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

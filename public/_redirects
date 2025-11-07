@@ -1,1 +1,5 @@
+# Redirect www to non-www
+https://www.appetitejourneys.nz/* https://appetitejourneys.nz/:splat 301!
+
+# SPA fallback
 /*    /index.html   200
