@@ -42,28 +42,28 @@ export const seoConfig = {
   },
 
   about: {
-    title: 'About Alpine Appetite Tours | Swiss-Born Chef & Tour Leader',
+    title: 'About Appetite Journeys | Swiss-Born Chef & Tour Leader',
     description: 'Meet Esther Gilbert, your Swiss tour guide. Born and raised in Switzerland who, along with her baker and chef husband, will take you through an unforgettable culinary journey as you discover the culture and flavours of Switzerland.',
     keywords: 'Esther Gilbert, Kevin Gilbert, Swiss tour guide, culinary tour leader',
     image: 'https://appetitejourneys.nz/images/kevin_u_esther.jpg'
   },
 
   faq: {
-    title: 'FAQ - Frequently Asked Questions | Alpine Appetite Tours',
+    title: 'FAQ - Frequently Asked Questions | Appetite Journeys',
     description: 'Get answers about our Swiss food tours. Information on pricing, inclusions, fitness requirements, group sizes.',
     keywords: 'Switzerland tour FAQ, tour information, booking information',
     image: 'https://appetitejourneys.nz/images/og-image.jpg'
   },
 
   contact: {
-    title: 'Contact Alpine Appetite Tours | Book Your Swiss Food Tour',
+    title: 'Contact Appetite Journeys | Book Your Swiss Food Tour',
     description: 'Get in touch to book your Swiss culinary adventure.',
-    keywords: 'contact Alpine Appetite Tours, book Swiss tour',
+    keywords: 'contact Appetite Journeys, book Swiss tour',
     image: 'https://appetitejourneys.nz/images/og-image.jpg'
   },
 
   booking: {
-    title: 'Book Your Swiss Food Tour | Alpine Appetite Tours',
+    title: 'Book Your Swiss Food Tour | Appetite Journeys',
     description: 'Reserve your spot on an unforgettable Swiss culinary journey. Small groups of maximum 12 guests.',
     keywords: 'book Switzerland tour, reserve Swiss food tour, 2026 tours',
     image: 'https://appetitejourneys.nz/images/og-image.jpg'

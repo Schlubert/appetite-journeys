@@ -25,7 +25,7 @@ const FAQS: FaqItem[] = [
         <li>All entrance fees for places visited as part of the tour</li>
         <li>All applicable taxes </li>
         <li>Luggage transfers between hotels</li>
-        <li>Special Alpine Appetite Tours gifts</li>
+        <li>Special Appetite Journeys gifts</li>
         <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
               </ul>
     `,
