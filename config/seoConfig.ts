@@ -4,7 +4,7 @@ export const seoConfig = {
   home: {
     title: 'Appetite Journeys | Swiss Food & Wine Tours',
     description: 'Discover Switzerland through its finest food and wine. Small-group culinary tours (max 12 guests). Explore chocolate factories, cheese makers, vineyards & Alpine cuisine. Book your 2026 Swiss food tour today.',
-    keywords: 'Switzerland tours, Swiss food tours, chocolate tours Switzerland, cheese tours, wine tours Switzerland, culinary tours, luxury tours Switzerland, small group tours, Alpine tours, Zurich tours, Lucerne tours, Interlaken tours, Bern tours, Geneva tours, Swiss Riviera',
+    keywords: 'Switzerland tours, Multi-day food tours, Switzerland food yours, Swiss food tours, chocolate tours Switzerland, cheese tours, wine tours Switzerland, culinary tours, Multi-day tours Switzerland, small group tours, Alpine tours, Zurich tours, Lucerne tours, Interlaken tours, Bern tours, Geneva tours, Swiss Riviera',
     image: 'https://appetitejourneys.nz/images/hero-composite.jpg',
     schema: {
       "@context": "https://schema.org",

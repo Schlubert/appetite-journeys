@@ -13,7 +13,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Appetite Journeys | Luxury Food & Wine Tours of Switzerland',
+  title = 'Appetite Journeys | Multi-day Food & Wine Tours of Switzerland',
   description = 'Experience Switzerland through its food and wine. Join our small-group culinary tours exploring cheese makers, chocolate factories, vineyards, and Alpine cuisine.',
   keywords = 'Switzerland tours, Swiss food tours, chocolate tours Switzerland, cheese tours, wine tours Switzerland, culinary tours',
   image = 'https://www.appetitejourneys.nz/og-image.jpg',
