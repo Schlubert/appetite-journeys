@@ -72,7 +72,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Terms & Conditions', href: '/terms' },
 ];
 export const SOCIAL_LINKS: SocialLink[] = [
-    { label: 'Facebook', href: 'https://www.facebook.com/schlubert1' },
-    { label: 'Instagram', href: 'https://www.instagram.com/your-profile' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-profile' },
+    { label: 'Instagram', href: 'https://www.instagram.com/appetite_journeys' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kevingilbertnzl/' },
 ];
