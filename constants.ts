@@ -1,8 +1,16 @@
 // constants.ts
 import { getImagePath } from './utils/paths';
+
 export interface SummaryLine {
   text: string;
-  className?: string; // optional so defaults can apply
+  className?: string;
+}
+
+// New interface for departure dates with status
+export interface DepartureDate {
+  date: string;
+  status?: 'sold-out' | 'limited' | 'available';
+  year?: number;
 }
 
 export interface Tour {
@@ -11,58 +19,97 @@ export interface Tour {
   summary: SummaryLine[];
   heroImage: string;
   route: string;
-  departureDates: string[]; 
+  price?: string; // Optional - for displaying on cards
+  departureDates: DepartureDate[]; // Changed from string[] to DepartureDate[]
+  singleSupplement?: string;
+  durationDays?: number;
 }
+
 export interface NavLink {
   label: string;
   href: string;
 }
+
 export interface SocialLink {
   label: string;
   href: string;
 }
+
 export const TOURS_DATA: Tour[] = [
-{
-  id: "cheese-chocolate-trail",
-  name: "Cheese, Chocolate and the Swiss Riviera",
-  summary:[
-    { text:"Explore the north and west of Switzerland. From lake front to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories."},
-    { text:"From NZ$14,800", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
-    { text:"per person (twin share).", className: "text-md italic text-center text-alpine-green" },
-    { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
-  ],
-  heroImage: getImagePath("ragusa.jpg"),
-  route: "/tours/cheese-chocolate-trail",
-  departureDates: ["April 5, 2025", "June 10, 2025", "Sept 8, 2025"],
-},
+  {
+    id: "cheese-chocolate-trail",
+    name: "Cheese, Chocolate and the Swiss Riviera",
+    durationDays: 12,
+    summary: [
+      { text: "Explore the flavours of northern and western Switzerland on a journey through some of Switzerland's most iconic tastes — from fondue and raclette to Läckerli, Nidlechueche, and velvety Swiss chocolate." },
+      { text: "From traditional smokehouses and biscuit manufacturers to distilleries, dairies and chocolate makers — meet the artisans behind some of Switzerland's most beloved culinary delights." },
+      { text: "With a blend of curated experiences, scenic rail journeys and free time to explore, it’s a delicious way to discover one of Europe’s most beautiful regions." },
+      { text: "From NZ$14,800", className: "text-lg font-semibold text-center text-alpine-green mt-4" },
+      { text: "per person (twin share).", className: "text-md italic text-center text-alpine-green" },
+    ],
+    heroImage: getImagePath("ragusa.jpg"),
+    route: "/tours/cheese-chocolate-trail",
+    price: "From NZ$14,800",
+    singleSupplement: "NZ$5,775",
+    departureDates: [
+      { date: "September 27, 2026", status: "available", year: 2026 },
+      { date: "April 4, 2027", status: "available", year: 2027 },
+      { date: "July 18, 2027", status: "available", year: 2027 },
+      { date: "November 14, 2027", status: "available", year: 2027 },
+      ],
+  },
   {
     id: "waterfalls",
     name: "Waterfalls, Whiskey, and Walnuts",
+    durationDays: 12,
     summary: [
-      { text:"Visit 3 countries and explore the East of Switzerland. From the Rhine Falls to the vineyards of Appenzell and the historic abbey in St Gallen."},
-    { text:"From NZ$14,800", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
-    { text:" per person (twin share).", className: "text-md italic text-center text-alpine-green" },
-    { text:"Availability: September 2026/May 2027", className: "text-md italic text-center text-alpine-green" },
-  ],
+      { text: "Journey through Eastern Switzerland and learn to craft liqueur-filled chocolates, bake a cake that unashamedly celebrates cherry brandy, and taste wines from the country’s easternmost vineyards." },
+      { text: "Admire the Rhine Falls, wander UNESCO-listed sites, and stand on a summit where you can look across six countries at once." },
+      { text: "Crossing into Germany, Austria and Liechtenstein, this tour offers plenty of chances to sample regional specialties and savour the culinary character of the region." },
+      { text: "From NZ$14,800", className: "text-lg font-semibold text-center text-alpine-green mt-4" },
+      { text: " per person (twin share).", className: "text-md italic text-center text-alpine-green" },
+    ],
     heroImage: getImagePath("IMG20250720125834.jpg"),
     route: "/tours/waterfalls",
-    departureDates: ["May 12, 2025", "June 23, 2025", "Sept 14, 2025"],
+    price: "From NZ$14,800",
+    singleSupplement: "NZ$5,775",
+    departureDates: [
+      { date: "September 13, 2026", status: "available", year: 2026 },
+      { date: "March 14, 2027", status: "available", year: 2027 },
+      { date: "July 4, 2027", status: "available", year: 2027 },
+      { date: "October 31, 2027", status: "available", year: 2027 },
+    ],
   },
   {
-  id: "cake",
-  name: "Cakes, Tortes, Gateaux and coffeehouses",
-  summary:[
-    { text:"Covering 4 countries, this 16-day tour explores the sweet side of Europe. From Vienna to Strasbourg and the Black Forest to the lakes of Switzerland."},
-    { text:"Discover the cake that triggered one of the most famous culinary feuds in history and taste your way through some of Europe's best patisseries - including what is thought of as the oldest cake recipe in the world."},
-    { text:"Coming Soon", className: "text-lg font-semibold text-center text-alpine-green mt-4"},
-    { text:"Dates in May/June 2027",
-     className: "text-lg font-semibold text-center text-alpine-green mt-4"},
+    id: "cake",
+    name: "Cakes, Tortes, Gateaux and coffeehouses",
+    summary: [
+      { text: "Covering 4 countries, this 16-day tour explores the sweet side of Europe. From Vienna to Strasbourg and the Black Forest to the lakes of Switzerland." },
+      { text: "Discover the cake that triggered one of the most famous culinary feuds in history and taste your way through some of Europe's best patisseries - including what is thought of as the oldest cake recipe in the world." },
+      { text: "Coming Soon", className: "text-lg font-semibold text-center text-alpine-green mt-4" },
     ],
-  heroImage: getImagePath("black_forest_gat.jpg"),
-  route: "/tours/cake",
-  departureDates: ["COMING May/June 2027"],
-},
+    heroImage: getImagePath("black_forest_gat.jpg"),
+    route: "/tours/cake",
+    price: "Coming Soon",
+    departureDates: [
+      { date: "June 13, 2027", status: "available", year: 2027 },
+    ],
+  },
+    {
+    id: "christmas",
+    name: "Christmas Markets",
+    summary: [
+      { text: "There is nothing quite like a European Christmas Market to get you in the festive spirit. Experience the magic of Christmas in Switzerland, Germany, Austria and France on this 16-day tour." },
+        ],
+    heroImage: getImagePath("christmas-banner.jpg"),
+    route: "/tours/christmas",
+    price: "Coming Soon",
+    departureDates: [
+      { date: "December 5, 2027", status: "available", year: 2027 },
+    ],
+  },
 ];
+
 export const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'Tours', href: '/tours' },
@@ -71,7 +118,8 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Contact', href: '/contact' },
   { label: 'Terms & Conditions', href: '/terms' },
 ];
+
 export const SOCIAL_LINKS: SocialLink[] = [
-    { label: 'Instagram', href: 'https://www.instagram.com/appetite_journeys' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kevingilbertnzl/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/appetite_journeys' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kevingilbertnzl/' },
 ];

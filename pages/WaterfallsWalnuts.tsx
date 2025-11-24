@@ -10,7 +10,11 @@ import {
 } from "@/components/ui/accordion";
 import ImageGallery from "@/components/ImageGallery";
 import HeroHeader from "@/components/HeroHeader";
+import AvailabilityDisplay from "@/components/AvailabilityDisplay";
+import TravelPartner from "@/components/TravelPartner";
+import FloatingBookButton from "@/components/FloatingBookButton";
 import { waterfallsWalnuts, OptionalActivity } from "@/data/waterfallsWalnuts";
+import { TOURS_DATA } from "@/constants";
 import {
   Bed,
   CheckCircle2,
@@ -137,6 +141,9 @@ const WaterfallsWalnuts: React.FC = () => {
   const [openDay, setOpenDay] = React.useState<string>("day-1");
   const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
+  // Get tour data from constants.ts
+  const tourData = TOURS_DATA.find(t => t.id === 'waterfalls');
+
   const handleValueChange = (value: string) => {
     setOpenDay(value);
 
@@ -159,183 +166,206 @@ const WaterfallsWalnuts: React.FC = () => {
 
   return (
     <>
-    <SEO {...seoConfig.waterfallsWalnuts} />
-    <div className="space-y-10 p-6">
-      <HeroHeader
-        images={waterfallsWalnuts.heroImages}
-        title={waterfallsWalnuts.name}
-        subtitle={`${waterfallsWalnuts.theme} · ${waterfallsWalnuts.durationDays} days`}
+      <SEO {...seoConfig.waterfallsWalnuts} />
+      
+      {/* Floating Book Button */}
+      <FloatingBookButton 
+        tourName={waterfallsWalnuts.name}
+        price={tourData?.price}
       />
+      
+      <div className="space-y-10 p-6">
+        <HeroHeader
+          images={waterfallsWalnuts.heroImages}
+          title={waterfallsWalnuts.name}
+          subtitle={`${tourData?.durationDays || 12} days`}
+        />
 
-      <h1 className="text-3xl font-extrabold">{waterfallsWalnuts.name}</h1>
+        <h1 className="text-3xl font-extrabold">{waterfallsWalnuts.name}</h1>
 
-      <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-        <div className="lg:col-span-2 space-y-3">
-          {waterfallsWalnuts.summary.map((para, idx) => (
-            <p key={idx} className="text-slate-600">
-              {para}
-            </p>
-          ))}
+        <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          <div className="lg:col-span-2 space-y-3">
+            {waterfallsWalnuts.summary.map((para, idx) => (
+              <p key={idx} className="text-slate-600">
+                {para}
+              </p>
+            ))}
+          </div>
+
+          <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
+            <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
+
+            {/* Price - from constants.ts via tourData */}
+            {tourData?.price && (
+              <div className="text-slate-700 mb-2">
+                <p>
+                  <strong>Price:</strong> {tourData.price}
+                </p>
+                <p className="ml-6 text-sm text-slate-600">per person (twin share)</p>
+              </div>
+            )}
+
+            {/* Single Supplement - from constants.ts via tourData */}
+            {tourData?.singleSupplement && (
+              <p className="text-slate-700 mb-2">
+                <strong>Single Supplement:</strong> {tourData.singleSupplement}
+              </p>
+            )}
+
+            {/* Departure Dates - from constants.ts via tourData */}
+            {tourData?.departureDates && tourData.departureDates.length > 0 && (
+              <div className="mt-3">
+                <strong>Departure Dates:</strong>
+                <ul className="mt-2 space-y-1">
+                  {tourData.departureDates.slice(0, 3).map((dep, idx) => {
+                    const isSold = dep.status === "sold-out";
+                    const isLimited = dep.status === "limited";
+                    return (
+                      <li key={idx} className="text-sm">
+                        <span className={isSold ? "line-through text-slate-500" : "text-slate-700"}>
+                          {dep.date}
+                        </span>
+                        {isSold && <span className="ml-2 text-red-600 font-semibold">Sold Out</span>}
+                        {isLimited && <span className="ml-2 text-orange-600 font-semibold">Limited</span>}
+                      </li>
+                    );
+                  })}
+                </ul>
+                {tourData.departureDates.length > 3 && (
+                  <p className="text-xs text-slate-500 mt-2">
+                    + {tourData.departureDates.length - 3} more dates available
+                  </p>
+                )}
+              </div>
+            )}
+
+            <div className="text-center mt-6">
+              <BookNowButton size="md" />
+            </div>
+          </aside>
         </div>
 
-        <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
-          <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Daily Itinerary</h2>
+          <Accordion
+            type="single"
+            collapsible
+            value={openDay}
+            onValueChange={handleValueChange}
+          >
+            {waterfallsWalnuts.itinerary.map((day) => (
+              <AccordionItem
+                key={day.day}
+                value={`day-${day.day}`}
+                ref={(el) => {
+                  dayRefs.current[`day-${day.day}`] = el;
+                }}
+              >
+                <AccordionTrigger>
+                  Day {day.day}: {day.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {day.description.map((paragraph, i) => (
+                    <p key={i} className="mb-4 text-slate-700">
+                      {paragraph}
+                    </p>
+                  ))}
 
-          {waterfallsWalnuts.price && Array.isArray(waterfallsWalnuts.price) && (
-            <div className="text-slate-700 mb-2">
-              <p>
-                <strong>Price:</strong> {waterfallsWalnuts.price[0]}
-              </p>
-              {waterfallsWalnuts.price[1] && (
-                <p className="ml-6 text-sm text-slate-600">
-                  {waterfallsWalnuts.price[1]}
-                </p>
-              )}
-            </div>
-          )}
+                  {day.optionalActivitiesDetailed && day.optionalActivitiesDetailed.length > 0 && (
+                    <div className="my-4 space-y-2">
+                      {day.optionalActivitiesDetailed.map((activity, idx) => (
+                        <OptionalActivityCard key={idx} activity={activity} dayNumber={day.day} />
+                      ))}
+                    </div>
+                  )}
 
-          {waterfallsWalnuts.singleSupplement && (
-            <p className="text-slate-700 mb-2">
-              <strong>Single Supplement:</strong> {waterfallsWalnuts.singleSupplement}
-            </p>
-          )}
+                  <ImageGallery images={day.images} />
 
-          <div className="mt-3">
-            <strong>Departure Dates:</strong>
-            <ul className="mt-2 space-y-1">
-              {waterfallsWalnuts.departureDates?.map((dep, idx) => {
-                const isSold = dep.status === "sold-out";
-                const isLimited = dep.status === "limited";
-                return (
-                  <li key={idx} className="text-sm">
-                    <span className={isSold ? "line-through text-slate-500" : "text-slate-700"}>
-                      {dep.date}
-                    </span>
-                    {isSold && <span className="ml-2 text-red-600 font-semibold">Sold Out</span>}
-                    {isLimited && <span className="ml-2 text-orange-600 font-semibold">Limited</span>}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className="text-center mt-6">
-            <BookNowButton size="md" />
-          </div>
-        </aside>
-      </div>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Daily Itinerary</h2>
-        <Accordion
-          type="single"
-          collapsible
-          value={openDay}
-          onValueChange={handleValueChange}
-        >
-          {waterfallsWalnuts.itinerary.map((day) => (
-            <AccordionItem
-              key={day.day}
-              value={`day-${day.day}`}
-              ref={(el) => {
-                dayRefs.current[`day-${day.day}`] = el;
-              }}
-            >
-              <AccordionTrigger>
-                Day {day.day}: {day.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                {day.description.map((paragraph, i) => (
-                  <p key={i} className="mb-4 text-slate-700">
-                    {paragraph}
-                  </p>
-                ))}
-
-                {day.optionalActivitiesDetailed && day.optionalActivitiesDetailed.length > 0 && (
-                  <div className="my-4 space-y-2">
-                    {day.optionalActivitiesDetailed.map((activity, idx) => (
-                      <OptionalActivityCard key={idx} activity={activity} dayNumber={day.day} />
-                    ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+                    {day.accommodation && (
+                      <InfoItem icon={<Bed />} title="Accommodation">
+                        {day.accommodation}
+                      </InfoItem>
+                    )}
+                    {day.includedActivities && (
+                      <InfoItem icon={<CheckCircle2 />} title="Included Activities">
+                        <ul className="list-disc list-inside">
+                          {day.includedActivities.map((a, idx) => (
+                            <li key={idx}>{a}</li>
+                          ))}
+                        </ul>
+                      </InfoItem>
+                    )}
+                    {day.meals && (
+                      <InfoItem icon={<Utensils />} title="Meals">
+                        <div className="space-y-1">
+                          {Array.isArray(day.meals)
+                            ? day.meals.map((m, idx) => <div key={idx}>{m}</div>)
+                            : <div>{day.meals}</div>}
+                        </div>
+                      </InfoItem>
+                    )}
+                    {day.optionalActivities && day.optionalActivities[0] !== "-" && (
+                      <InfoItem icon={<PlusCircle />} title="Optional Activities">
+                        <ul className="list-disc list-inside">
+                          {day.optionalActivities.map((a, idx) => <li key={idx}>{a}</li>)}
+                        </ul>
+                      </InfoItem>
+                    )}
                   </div>
-                )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
 
-                <ImageGallery images={day.images} />
+        <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
+          <h2 className="text-2xl font-bold mb-2">What's Included</h2>
+          <ul className="list-disc pl-5 text-slate-700 space-y-1">
+            <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the main languages of Switzerland</li>
+            <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
+            <li>Hotel accommodation (twin share)</li>
+            <li>Daily breakfasts</li>
+            <li>4 dinners and a multitude of Swiss delicacies along the way</li>
+            <li>
+              Activities and entries including:
+              <ul className="list-[circle] pl-6 mt-1 space-y-1">
+                <li>Transportation in an air conditioned coach</li>
+                <li>Glacier Express train, 1st class seat</li>
+                <li>Chocolate making class and entry to Gottlieben Hüppen chocolate factory</li>
+                <li>Cake and chocolate making class in Zug</li>
+                <li>Boat journey on the Bodensee</li>
+                <li>Cablecar up Säntis</li>
+                <li>Entry to Library and Museum of the Abbey of St. Gallen</li>
+                <li>Tours and tastings at 3 distilleries, 1 Brewery, and a winery</li>
+              </ul>
+            </li>
+            <li>Guided walking tours of destinations including Shaffhausen, St Gallen, and Appenzell</li>
+            <li>All applicable taxes</li>
+            <li>Luggage transfers between hotels</li>
+            <li>Advice and support prior to and during the tour including travel tips, plus foodie and insider recommendations</li>
+            <li>Small group size (max 12)</li>
+            <li>A few extra surprises and mementos along the way</li>
+            <li>
+              Optional additions of:
+              <ul className="list-[circle] pl-6 mt-1 space-y-1">
+                <li>Funicular up to Muottas Muragl</li>
+                <li>Wine tasting followed by dinner at a 2 Michelin starred restaurant</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        {/* Enhanced Availability Section */}
+        {tourData && tourData.departureDates && (
+          <section>
+            <AvailabilityDisplay departureDates={tourData.departureDates} compact={false} />
+          </section>
+        )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-4">
-                  {day.accommodation && (
-                    <InfoItem icon={<Bed />} title="Accommodation">
-                      {day.accommodation}
-                    </InfoItem>
-                  )}
-                  {day.includedActivities && (
-                    <InfoItem icon={<CheckCircle2 />} title="Included Activities">
-                      <ul className="list-disc list-inside">
-                        {day.includedActivities.map((a, idx) => (
-                          <li key={idx}>{a}</li>
-                        ))}
-                      </ul>
-                    </InfoItem>
-                  )}
-                  {day.meals && (
-                    <InfoItem icon={<Utensils />} title="Meals">
-                      <div className="space-y-1">
-                        {Array.isArray(day.meals)
-                          ? day.meals.map((m, idx) => <div key={idx}>{m}</div>)
-                          : <div>{day.meals}</div>}
-                      </div>
-                    </InfoItem>
-                  )}
-                  {day.optionalActivities && day.optionalActivities[0] !== "-" && (
-                    <InfoItem icon={<PlusCircle />} title="Optional Activities">
-                      <ul className="list-disc list-inside">
-                        {day.optionalActivities.map((a, idx) => <li key={idx}>{a}</li>)}
-                      </ul>
-                    </InfoItem>
-                  )}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
-
-      <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
-        <h2 className="text-2xl font-bold mb-2">What's Included</h2>
-        <ul className="list-disc pl-5 text-slate-700 space-y-1">
-          <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the main languages of Switzerland</li>
-          <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
-          <li>Hotel accommodation (twin share)</li>
-          <li>Daily breakfasts</li>
-          <li>4 dinners and a multitude of Swiss delicacies along the way</li>
-          <li>
-            Activities and entries including:
-            <ul className="list-[circle] pl-6 mt-1 space-y-1">
-              <li>Transportation in an air conditioned coach</li>
-              <li>Glacier Express train, 1st class seat</li>
-              <li>Chocolate making class and entry to Gottlieben Hüppen chocolate factory</li>
-              <li>Cake and chocolate making class in Zug</li>
-              <li>Boat journey on the Bodensee</li>
-              <li>Cablecar up Säntis</li>
-              <li>Entry to Library and Museum of the Abbey of St. Gallen</li>
-              <li>Tours and tastings at 3 distilleries, 1 Brewery, and a winery</li>
-            </ul>
-          </li>
-          <li>Guided walking tours of destinations including Shaffhausen, St Gallen, and Appenzell</li>
-          <li>All applicable taxes</li>
-          <li>Luggage transfers between hotels</li>
-          <li>Advice and support prior to and during the tour including travel tips, plus foodie and insider recommendations</li>
-          <li>Small group size (max 12)</li>
-          <li>A few extra surprises and mementos along the way</li>
-          <li>
-            Optional additions of:
-            <ul className="list-[circle] pl-6 mt-1 space-y-1">
-              <li>Funicular up to Muottas Muragl</li>
-              <li>Wine tasting followed by dinner at a 2 Michelin starred restaurant</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-    </div>
+        {/* Travel Partner Section */}
+        <TravelPartner />
+      </div>
     </>
   );
 };

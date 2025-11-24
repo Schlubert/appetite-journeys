@@ -10,7 +10,8 @@ import WaterfallsPage from './pages/WaterfallsWalnuts';
 import ToursPage from "./pages/ToursPage";
 import ChristmasTrailPage from "./pages/ChristmasTrail";
 import Cake from "./pages/Cake";
-import ScrollToTop from "./components/ScrollToTop"
+import TravelPartnersPage from "./pages/zzzTravelPartnersPage";
+import ScrollToTop from "./components/ScrollToTop";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BookingForm from "./pages/BookingForm";
@@ -29,10 +30,10 @@ function App(): React.ReactNode {
         <Route path="/tours/christmas-trail" element={<ChristmasTrailPage />} />
         <Route path="/tours/cake" element={<Cake />} />
         <Route path="/tours" element={<ToursPage />} />
+        <Route path="/travel-partners" element={<TravelPartnersPage />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/book" element={<BookingForm />} />
-
       </Routes>
     </Layout>
   );

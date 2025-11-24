@@ -1,27 +1,7 @@
 import SEO from '../components/SEO';
 import { seoConfig } from '../config/seoConfig';
 import React, { useState, useMemo } from "react";
-
-// --- Tour Data Structure ---
-interface Tour {
-  id: string;
-  name: string;
-  dates: string[];
-}
-
-const TOURS: Tour[] = [
-  {
-    id: 'cheese-chocolate',
-    name: 'Cheese, Chocolate & the Swiss Riviera',
-    dates: ['September 27, 2026'],
-  },
-  {
-    id: 'waterfalls-whiskey',
-    name: 'Waterfalls, walnuts & whiskey',
-    dates: ['September 13, 2026'],
-  },
-  
-];
+import { TOURS_DATA } from '../constants';
 
 // --- Configuration: Which fields are required ---
 const REQUIRED_FIELDS = {
@@ -33,29 +13,28 @@ const REQUIRED_FIELDS = {
   travellers: true,
   message: false,
   roomOption: true,
-  otherTravelerNames: true, // Required when travellers > 1
+  otherTravelerNames: true,
   emergencyContact: true,
   emergencyPhone: true,
-
 };
 
 // --- Form Data Interface ---
 interface FormData {
-    fullName: string;
-    email: string;
-    phone: string;
-    tour: string;
-    departureDate: string;
-    travellers: string;
-    message: string;
-    roomOption: string;
-    otherTravelerNames: string[];
-    emergencyContact: string;
-    emergencyPhone: string;
-    birthDate: string;
-    passportNumber: string;
-    passportExpiry: string;
-    passportCountry: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  tour: string;
+  departureDate: string;
+  travellers: string;
+  message: string;
+  roomOption: string;
+  otherTravelerNames: string[];
+  emergencyContact: string;
+  emergencyPhone: string;
+  birthDate: string;
+  passportNumber: string;
+  passportExpiry: string;
+  passportCountry: string;
 }
 
 const BookingForm: React.FC = () => {
@@ -101,21 +80,18 @@ const BookingForm: React.FC = () => {
         departureDate: "",
       }));
     } else if (name === 'travellers') {
-        const newCount = parseInt(value);
-        const currentNames = formData.otherTravelerNames;
-        
-        // Create a new array of the correct size, preserving existing names if possible
-        const newNames = Array(newCount - 1).fill('').map((_, i) => currentNames[i] || '');
-        
-        // Reset room option if changing to single traveler
-        const newRoomOption = newCount === 1 ? 'single' : formData.roomOption;
-        
-        setFormData(prevData => ({
-            ...prevData,
-            travellers: value,
-            otherTravelerNames: newNames,
-            roomOption: newRoomOption,
-        }));
+      const newCount = parseInt(value);
+      const currentNames = formData.otherTravelerNames;
+      
+      const newNames = Array(newCount - 1).fill('').map((_, i) => currentNames[i] || '');
+      const newRoomOption = newCount === 1 ? 'single' : formData.roomOption;
+      
+      setFormData(prevData => ({
+        ...prevData,
+        travellers: value,
+        otherTravelerNames: newNames,
+        roomOption: newRoomOption,
+      }));
     } else {
       setFormData(prevData => ({ 
         ...prevData, 
@@ -127,7 +103,6 @@ const BookingForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Netlify Forms submission
     const form = e.currentTarget as HTMLFormElement;
     const formDataToSend = new FormData(form);
     
@@ -144,10 +119,18 @@ const BookingForm: React.FC = () => {
     }
   };
 
-  // --- Dynamic Dates Calculation ---
+  // --- Dynamic Dates from constants.ts ---
   const currentTourDates = useMemo(() => {
-    const selectedTour = TOURS.find(tour => tour.id === formData.tour);
-    return selectedTour ? selectedTour.dates : [];
+    const selectedTour = TOURS_DATA.find(tour => tour.id === formData.tour);
+    if (!selectedTour || !selectedTour.departureDates) return [];
+    
+    // Filter out sold-out dates and return available dates
+    return selectedTour.departureDates
+      .filter(dep => dep.status !== 'sold-out')
+      .map(dep => ({
+        date: dep.date,
+        status: dep.status
+      }));
   }, [formData.tour]);
 
   // Helper function to render required indicator
@@ -168,303 +151,308 @@ const BookingForm: React.FC = () => {
 
   return (
     <>
-    <SEO {...seoConfig.booking} />
-    <div className="bg-gray-50 py-12 px-4 sm:px-8 lg:px-20">
-      <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 sm:p-10">
-        <h1 className="text-3xl font-serif font-bold text-alpine-green text-center mb-2">
-          Book Your Swiss Journey
-        </h1>
-        <p className="text-sm text-slate-600 text-center mb-6">
-          Fields marked with <span className="text-red-500">*</span> are required
-        </p>
-        
-        <form onSubmit={handleSubmit} className="space-y-5" name="booking-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="booking-form" />
-          <input type="hidden" name="bot-field" />
+      <SEO {...seoConfig.booking} />
+      <div className="bg-gray-50 py-12 px-4 sm:px-8 lg:px-20">
+        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 sm:p-10">
+          <h1 className="text-3xl font-serif font-bold text-alpine-green text-center mb-2">
+            Book Your Swiss Journey
+          </h1>
+          <p className="text-sm text-slate-600 text-center mb-6">
+            Fields marked with <span className="text-red-500">*</span> are required
+          </p>
           
-          {/* Hidden field to capture all traveler names */}
-          <input type="hidden" name="otherTravelerNames" value={formData.otherTravelerNames.join(', ')} />
-          
-          {/* Full Name */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Full Name (Lead Traveler)
-              {REQUIRED_FIELDS.fullName && <RequiredIndicator />}
-            </label>
-            <input
-              required={REQUIRED_FIELDS.fullName}
-              type="text"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder="Your full name"
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-            />
-          </div>
-
-          {/* Email & Phone */}
-          <div className="grid sm:grid-cols-2 gap-5">
+          <form onSubmit={handleSubmit} className="space-y-5" name="booking-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="booking-form" />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="otherTravelerNames" value={formData.otherTravelerNames.join(', ')} />
+            
+            {/* Full Name */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Email
-                {REQUIRED_FIELDS.email && <RequiredIndicator />}
+                Full Name (Lead Traveler)
+                {REQUIRED_FIELDS.fullName && <RequiredIndicator />}
               </label>
               <input
-                required={REQUIRED_FIELDS.email}
-                type="email"
-                name="email"
-                value={formData.email}
+                required={REQUIRED_FIELDS.fullName}
+                type="text"
+                name="fullName"
+                value={formData.fullName}
                 onChange={handleChange}
+                placeholder="Your full name"
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Phone
-                {REQUIRED_FIELDS.phone && <RequiredIndicator />}
-              </label>
-              <input
-                required={REQUIRED_FIELDS.phone}
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
-            </div>
-          </div>
 
-          {/* Tour & Departure Date */}
-          <div className="grid sm:grid-cols-2 gap-5">
-            {/* Tour Dropdown */}
+            {/* Email & Phone */}
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Email
+                  {REQUIRED_FIELDS.email && <RequiredIndicator />}
+                </label>
+                <input
+                  required={REQUIRED_FIELDS.email}
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Phone
+                  {REQUIRED_FIELDS.phone && <RequiredIndicator />}
+                </label>
+                <input
+                  required={REQUIRED_FIELDS.phone}
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                />
+              </div>
+            </div>
+
+            {/* Tour & Departure Date */}
+            <div className="grid sm:grid-cols-2 gap-5">
+              {/* Tour Dropdown */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Tour
+                  {REQUIRED_FIELDS.tour && <RequiredIndicator />}
+                </label>
+                <select
+                  name="tour"
+                  value={formData.tour}
+                  onChange={handleChange}
+                  required={REQUIRED_FIELDS.tour}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                >
+                  <option value="" disabled>Select a tour</option>
+                  {TOURS_DATA.map(tour => (
+                    <option key={tour.id} value={tour.id}>
+                      {tour.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Departure Date Radio Buttons */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Departure Date
+                  {REQUIRED_FIELDS.departureDate && <RequiredIndicator />}
+                </label>
+                
+                <div className="space-y-3">
+                  {formData.tour === "" ? (
+                    <p className="text-sm text-slate-500 italic py-3 px-3 border border-slate-200 rounded-lg">
+                      Please select a tour first to see available dates.
+                    </p>
+                  ) : currentTourDates.length > 0 ? (
+                    currentTourDates.map((dateInfo, index) => (
+                      <label 
+                        key={index}
+                        className={`
+                          flex items-center justify-between p-3 rounded-lg border cursor-pointer 
+                          transition-colors duration-200 
+                          ${formData.departureDate === dateInfo.date 
+                            ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green shadow-inner'
+                            : 'border-slate-300 hover:bg-slate-50'
+                          }
+                        `}
+                      >
+                        <div className="flex items-center flex-1">
+                          <input
+                            type="radio"
+                            name="departureDate"
+                            value={dateInfo.date}
+                            required={REQUIRED_FIELDS.departureDate}
+                            checked={formData.departureDate === dateInfo.date}
+                            onChange={handleChange}
+                            className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-3"
+                          />
+                          <span className="text-slate-900 font-medium">
+                            {dateInfo.date}
+                          </span>
+                        </div>
+                        {dateInfo.status === 'limited' && (
+                          <span className="text-xs font-semibold text-orange-600 ml-2">
+                            Limited
+                          </span>
+                        )}
+                      </label>
+                    ))
+                  ) : (
+                    <p className="text-sm text-red-500 italic py-3 px-3 border border-red-200 rounded-lg bg-red-50">
+                      No available dates for this tour. All dates are sold out.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Number of Travellers */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Tour
-                {REQUIRED_FIELDS.tour && <RequiredIndicator />}
+                Number of Travellers
+                {REQUIRED_FIELDS.travellers && <RequiredIndicator />}
               </label>
               <select
-                name="tour"
-                value={formData.tour}
+                name="travellers"
+                value={formData.travellers}
                 onChange={handleChange}
-                required={REQUIRED_FIELDS.tour}
+                required={REQUIRED_FIELDS.travellers}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
               >
-                <option value="" disabled>Select a tour</option>
-                {TOURS.map(tour => (
-                    <option key={tour.id} value={tour.id}>
-                        {tour.name}
-                    </option>
+                {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <option key={num}>{num}</option>
                 ))}
               </select>
             </div>
 
-            {/* Departure Date Radio Buttons */}
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Departure Date
-                {REQUIRED_FIELDS.departureDate && <RequiredIndicator />}
-              </label>
-              
-              <div className="space-y-3">
-                {formData.tour === "" ? (
-                    <p className="text-sm text-slate-500 italic py-3 px-3 border border-slate-200 rounded-lg">
-                        Please select a tour first to see available dates.
-                    </p>
-                ) : currentTourDates.length > 0 ? (
-                  currentTourDates.map((date, index) => (
-                    <label 
-                      key={index}
-                      className={`
-                        flex items-center p-3 rounded-lg border cursor-pointer 
-                        transition-colors duration-200 
-                        ${formData.departureDate === date 
-                          ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green shadow-inner'
-                          : 'border-slate-300 hover:bg-slate-50'
-                        }
-                      `}
-                    >
-                      <input
-                        type="radio"
-                        name="departureDate"
-                        value={date}
-                        required={REQUIRED_FIELDS.departureDate}
-                        checked={formData.departureDate === date}
-                        onChange={handleChange}
-                        className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-3"
-                      />
-                      <span className="text-slate-900 font-medium">
-                        {date}
-                      </span>
+            {/* Dynamic Other Travelers Names */}
+            {parseInt(formData.travellers) > 1 && (
+              <div className="space-y-4 pt-3 border-t">
+                <h2 className="text-xl font-serif font-bold text-slate-700">
+                  Other Traveler Names
+                  {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
+                </h2>
+                <p className="text-sm text-slate-600">Please provide the full name for each additional traveler in your group.</p>
+                
+                {[...Array(parseInt(formData.travellers) - 1)].map((_, index) => (
+                  <div key={index}>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Full Name of Traveler #{index + 2}
+                      {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
                     </label>
-                  ))
-                ) : (
-                    <p className="text-sm text-red-500 italic">No available dates for this tour.</p>
-                )}
+                    <input
+                      type="text"
+                      name={`traveler-${index + 2}`}
+                      value={formData.otherTravelerNames[index] || ''}
+                      onChange={(e) => handleOtherTravellerChange(index, e.target.value)}
+                      required={REQUIRED_FIELDS.otherTravelerNames}
+                      className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                      placeholder={`Full Name of Traveler ${index + 2}`}
+                    />
+                  </div>
+                ))}
               </div>
-            </div>
-          </div>
-
-          {/* Number of Travellers */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Number of Travellers
-              {REQUIRED_FIELDS.travellers && <RequiredIndicator />}
-            </label>
-            <select
-              name="travellers"
-              value={formData.travellers}
-              onChange={handleChange}
-              required={REQUIRED_FIELDS.travellers}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-            >
-              {[1, 2, 3, 4, 5, 6].map((num) => (
-                <option key={num}>{num}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* --- DYNAMIC OTHER TRAVELERS NAMES SECTION --- */}
-          {parseInt(formData.travellers) > 1 && (
-            <div className="space-y-4 pt-3 border-t">
-              <h2 className="text-xl font-serif font-bold text-slate-700">
-                Other Traveler Names
-                {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
-              </h2>
-              <p className="text-sm text-slate-600">Please provide the full name for each additional traveler in your group.</p>
-              
-              {[...Array(parseInt(formData.travellers) - 1)].map((_, index) => (
-                <div key={index}>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
-                    Full Name of Traveler #{index + 2}
-                    {REQUIRED_FIELDS.otherTravelerNames && <RequiredIndicator />}
-                  </label>
-                  <input
-                    type="text"
-                    name={`traveler-${index + 2}`}
-                    value={formData.otherTravelerNames[index] || ''}
-                    onChange={(e) => handleOtherTravellerChange(index, e.target.value)}
-                    required={REQUIRED_FIELDS.otherTravelerNames}
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-                    placeholder={`Full Name of Traveler ${index + 2}`}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-          
-          {/* --- Room Option Selection --- */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Room Preference
-              {REQUIRED_FIELDS.roomOption && <RequiredIndicator />}
-            </label>
-            <div className="flex space-x-4">
-              {/* Only show Twin Share if travellers > 1 */}
-              {parseInt(formData.travellers) > 1 && (
-                <label className={`
+            )}
+            
+            {/* Room Option Selection */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">
+                Room Preference
+                {REQUIRED_FIELDS.roomOption && <RequiredIndicator />}
+              </label>
+              <div className="flex space-x-4">
+                {parseInt(formData.travellers) > 1 && (
+                  <label className={`
                     flex items-center p-3 rounded-lg border cursor-pointer flex-1
                     ${formData.roomOption === 'twin' 
                       ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
                       : 'border-slate-300 hover:bg-slate-50'
                     }
-                `}>
-                  <input
-                    type="radio"
-                    name="roomOption"
-                    value="twin"
-                    checked={formData.roomOption === 'twin'}
-                    onChange={handleChange}
-                    required={REQUIRED_FIELDS.roomOption}
-                    className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
-                  />
-                  <span className="text-slate-900 font-medium">Twin Share</span>
-                </label>
-              )}
+                  `}>
+                    <input
+                      type="radio"
+                      name="roomOption"
+                      value="twin"
+                      checked={formData.roomOption === 'twin'}
+                      onChange={handleChange}
+                      required={REQUIRED_FIELDS.roomOption}
+                      className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                    />
+                    <span className="text-slate-900 font-medium">Twin Share</span>
+                  </label>
+                )}
 
-              {/* Single Occupancy Option */}
-              <label className={`
+                <label className={`
                   flex items-center p-3 rounded-lg border cursor-pointer flex-1
                   ${formData.roomOption === 'single' 
                     ? 'border-alpine-green bg-alpine-green/10 ring-2 ring-alpine-green' 
                     : 'border-slate-300 hover:bg-slate-50'
                   }
-              `}>
+                `}>
+                  <input
+                    type="radio"
+                    name="roomOption"
+                    value="single"
+                    checked={formData.roomOption === 'single'}
+                    onChange={handleChange}
+                    required={REQUIRED_FIELDS.roomOption}
+                    className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                  />
+                  <span className="text-slate-900 font-medium">Single Supplement</span>
+                </label>
+              </div>
+            </div>
+
+            <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Essential Traveller Details</h2>
+
+            {/* Emergency Contact */}
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Emergency Contact Name
+                  {REQUIRED_FIELDS.emergencyContact && <RequiredIndicator />}
+                </label>
                 <input
-                  type="radio"
-                  name="roomOption"
-                  value="single"
-                  checked={formData.roomOption === 'single'}
+                  type="text"
+                  name="emergencyContact"
+                  value={formData.emergencyContact}
                   onChange={handleChange}
-                  required={REQUIRED_FIELDS.roomOption}
-                  className="h-4 w-4 text-alpine-green focus:ring-alpine-green border-slate-300 mr-2"
+                  placeholder="e.g. Jane Smith"
+                  required={REQUIRED_FIELDS.emergencyContact}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
                 />
-                <span className="text-slate-900 font-medium">Single Supplement</span>
-              </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Emergency Contact Phone
+                  {REQUIRED_FIELDS.emergencyPhone && <RequiredIndicator />}
+                </label>
+                <input
+                  type="tel"
+                  name="emergencyPhone"
+                  value={formData.emergencyPhone}
+                  onChange={handleChange}
+                  placeholder="e.g. +1 555 123 4567"
+                  required={REQUIRED_FIELDS.emergencyPhone}
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                />
+              </div>
             </div>
-          </div>
-
-          <h2 className="text-xl font-serif font-bold text-slate-700 pt-3 border-t mt-5">Essential Traveller Details</h2>
-
-          {/* Emergency Contact */}
-          <div className="grid sm:grid-cols-2 gap-5">
+            
+            {/* Additional Notes */}
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Emergency Contact Name
-                {REQUIRED_FIELDS.emergencyContact && <RequiredIndicator />}
+                Additional Notes
+                {REQUIRED_FIELDS.message && <RequiredIndicator />}
               </label>
-              <input
-                type="text"
-                name="emergencyContact"
-                value={formData.emergencyContact}
+              <textarea
+                name="message"
+                value={formData.message}
                 onChange={handleChange}
-                placeholder="e.g. Jane Smith"
-                required={REQUIRED_FIELDS.emergencyContact}
+                rows={4}
+                required={REQUIRED_FIELDS.message}
                 className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
+                placeholder="Any special requests or comments?"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">
-                Emergency Contact Phone
-                {REQUIRED_FIELDS.emergencyPhone && <RequiredIndicator />}
-              </label>
-              <input
-                type="tel"
-                name="emergencyPhone"
-                value={formData.emergencyPhone}
-                onChange={handleChange}
-                placeholder="e.g. +1 555 123 4567"
-                required={REQUIRED_FIELDS.emergencyPhone}
-                className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              />
-            </div>
-          </div>
-          
-          {/* Additional Notes */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              Additional Notes
-              {REQUIRED_FIELDS.message && <RequiredIndicator />}
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              required={REQUIRED_FIELDS.message}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
-              placeholder="Any special requests or comments?"
-            />
-          </div>
 
-          <button
-            type="submit"
-            className="w-full bg-alpine-green text-white font-semibold py-3 rounded-lg shadow-md hover:bg-opacity-90 transition-all"
-          >
-            Submit Booking Enquiry
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="w-full bg-alpine-green text-white font-semibold py-3 rounded-lg shadow-md hover:bg-opacity-90 transition-all"
+            >
+              Submit Booking Enquiry
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 };

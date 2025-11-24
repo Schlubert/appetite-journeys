@@ -25,33 +25,19 @@ export type ItineraryStop = {
   images?: string[];
 };
 
-export type DepartureDate = {
-  date: string;
-  status?: "sold-out" | "limited" | "available";
-};
-
-export type Tour = {
+// Simplified Tour type - only data NOT in constants.ts
+export type TourDetails = {
   name: string;
-  theme: string;
-  durationDays: number;
-  price?: string[];
-  singleSupplement?: string;
-  departureDates?: DepartureDate[];
   summary: string[];
   heroImages: string[];
   itinerary: ItineraryStop[];
+  durationDays?: number;
+  singleSupplement?: string;
 };
 
-export const cheeseChocolateRiviera: Tour = {
+export const cheeseChocolateRiviera: TourDetails = {
   name: "Cheese, Chocolate and the Swiss Riviera",
-  theme: "Food & Wine",
   durationDays: 12,
-  price: ["From NZ$14,800", "per person (twin share)"],
-  singleSupplement: "NZ$5,775",
-  departureDates: [
-    { date: "August 16th, 2026", status: "sold-out" },
-    { date: "September 27th, 2026", status: "available" },
-  ],
   summary: [
     "Explore the north and west of Switzerland. From lakefront to mountain tops, distilleries and bakeries to cheesemakers and chocolate factories, this tour has it all.",
     "Discover the cities of Zurich, Basel, Bern, Lucerne, Interlaken, Montreux and Geneva as well as the towns of Murten and Vevey. Experience the UNESCO World Heritage sites of Bern and Lavaux. Ride on the GoldenPass Express and the Interlaken Express. Visit traditional smokehouses, glass factories, biscuit manufacturers, wineries and more.",
@@ -65,7 +51,7 @@ export const cheeseChocolateRiviera: Tour = {
     getImagePath("bern1.jpg"),
     getImagePath("kambly.jpeg"),
   ],
-  itinerary: <ItineraryStop[]>[
+  itinerary: [
     {
       day: 1,
       title: "Arrival in Zurich",
@@ -127,8 +113,7 @@ export const cheeseChocolateRiviera: Tour = {
             "Wine tasting of 4-5 regional wines",
             "Visit to traditional farm shop"
           ],
-          images: [
-          ],
+          images: [],
           bookingNote: "Minimum 4 participants required. Must be booked at least 7 days in advance. Not suitable for children under 18."
         }
       ],
@@ -253,8 +238,7 @@ export const cheeseChocolateRiviera: Tour = {
             "Entry to St. Beatus Caves",
             "Tour escort throughout the day"
           ],
-          images: [
-          ],
+          images: [],
           bookingNote: "Weather dependent. Funicular operates May-October (weather permitting). Warm jacket recommended even in summer. Not recommended for those with mobility issues or claustrophobia. Minimum 6 participants required."
         }
       ],

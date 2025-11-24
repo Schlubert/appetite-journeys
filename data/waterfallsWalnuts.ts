@@ -30,7 +30,6 @@ export type DepartureDate = {
 
 export type Tour = {
   name: string;
-  theme: string;
   durationDays: number;
   price?: string[];
   singleSupplement?: string;
@@ -42,14 +41,15 @@ export type Tour = {
 
 export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
-  theme: "Food & Wine",
   durationDays: 12,
   price: ["From NZ$14,800", "per person (twin share)"],
   singleSupplement: "NZ$5,775",
   departureDates: [{ date: "September 13th, 2026", status: "limited" }],
   summary: [
     "Explore the East of Switzerland and discover flavours like Kirsch (Cherry Brandy), the walnut and caramel tart from Graubünden, and Swiss-made whiskey.",
-    "Along the way we'll learn how to make liqueur-filled chocolates, taste a slightly boozy cake, and sample wines from the country's easternmost wineries.",
+    "Along the way we'll learn how to make liqueur-filled chocolates, create a 'slightly' boozy cake celebrating cherries, and sample wines from the country's easternmost wineries among many other culinary delights.",
+    "Stand in awe of the mighty Rhine Falls, explore UNESCO World Heritage-listed sites, and take in stunning alpine scenery.",
+    "Gaze over 6 countries at once from the summit of the highest peak in the Alpstein massif.",
     "This journey also crosses into Germany, Austria and Liechtenstein — plenty of opportunities to sample regional delicacies.",
   ],
   heroImages: [
