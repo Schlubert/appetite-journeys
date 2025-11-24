@@ -35,7 +35,7 @@ const AboutPage: React.FC = () => {
                     {/* Esther */}
           <div>
             <img
-              src={getImagePath('esther.jpg')} // ✅ circular profile image
+              src={getImagePath('esther.jpg')} 
               alt="Esther Gilbert"
               className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg mb-6"
             />
@@ -46,6 +46,9 @@ const AboutPage: React.FC = () => {
               Born and raised in Switzerland Esther brings a local's perspective to every tour. Her deep knowledge of Swiss culture, history, and cuisine ensures guests experience the very best of the country and culture.</p>
             <p className="text-gray-700 text-lg leading-relaxed mt-4">
               With the understanding and insights that come from a lifetime in hospitality, Esther is the day to day guide for all activities. Her keen eye for creating meaningful connections with local artisans and communities, along with her fluency in the main 4 languages of Switzerland, help to make each tour welcoming, and unforgettable.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed mt-4">
+              Her knowledge of, and passion for, Swiss food and culture means that every experience is authentic, engaging, and delicious.
             </p>
           </div>
           {/* Kevin */}

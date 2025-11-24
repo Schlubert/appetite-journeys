@@ -14,7 +14,7 @@ import AvailabilityDisplay from "@/components/AvailabilityDisplay";
 import TravelPartner from "@/components/TravelPartner";
 import FloatingBookButton from "@/components/FloatingBookButton";
 import { cheeseChocolateRiviera, OptionalActivity } from "@/data/cheeseChocolateRiviera";
-import { TOURS_DATA } from "../constants";
+import { TOURS_DATA } from "@/constants";
 import { Bed, CheckCircle2, PlusCircle, Utensils, ChevronDown, ChevronUp, Clock, Check, AlertCircle } from "lucide-react";
 import BookNowButton from "@/components/BookNowButton";
 
