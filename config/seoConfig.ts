@@ -40,6 +40,12 @@ export const seoConfig = {
     keywords: 'Swiss Riviera tour, chocolate tour Switzerland, cheese tour Switzerland',
     image: 'https://appetitejourneys.nz/images/waterfallswalnuts.jpg'
   },
+  cake: {
+    title: 'Cakes, Tortes, Gateaux and Coffeehouses | 17-Day Culinary Journey',
+    description: 'Explore the sweet side of Europe on this 17-day food tour. From NZ$20,950.',
+    keywords: 'Cakes tour Europe, Tortes tour Europe, Gateaux tour Europe, Coffeehouses tour Europe',
+    image: 'https://appetitejourneys.nz/images/black_forest_gat.jpg'
+  },
 
   about: {
     title: 'About Appetite Journeys | Swiss-Born Chef & Tour Leader',

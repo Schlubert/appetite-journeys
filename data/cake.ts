@@ -38,7 +38,7 @@ export const cakes: TourDetails = {
   ],
   summary: [
     "Indulge your sweet tooth on a delectable 17-day journey through Central Europe, exploring the rich culinary traditions of Switzerland, France, Germany, and Austria. From the iconic Black Forest Cake in Germany to the exquisite Sachertorte in Austria, this tour is a celebration of the region's most famous cakes and pastries.",
-    "Along the way, immerse yourself in the local culture, visit historic landmarks, and enjoy hands-on baking workshops with expert pastry chefs.",
+    "Along the way, immerse yourself in the local culture, visit historic landmarks, enjoy hands-on baking workshops, and savor the flavors of each destination.",
     "Whether you're a seasoned baker or simply a lover of all things sweet, this tour promises an unforgettable experience filled with delicious treats and cultural delights."
   ],
   itinerary: [

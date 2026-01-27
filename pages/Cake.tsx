@@ -130,7 +130,7 @@ const Cakes: React.FC = () => {
   const [openDay, setOpenDay] = React.useState<string>("day-1");
   const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  const tourData = TOURS_DATA.find(t => t.id === 'cakes-trail');
+  const tourData = TOURS_DATA.find(t => t.id === 'cake');
 
   const handleValueChange = (value: string) => {
     setOpenDay(value);
@@ -181,6 +181,7 @@ const Cakes: React.FC = () => {
           <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
             <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
 
+            {/* Price - from constants.ts via tourData */}
             {tourData?.price && (
               <div className="text-slate-700 mb-2">
                 <p>
@@ -190,12 +191,14 @@ const Cakes: React.FC = () => {
               </div>
             )}
 
+            {/* Single Supplement - from constants.ts via tourData */}
             {tourData?.singleSupplement && (
               <p className="text-slate-700 mb-2">
                 <strong>Single Supplement:</strong> {tourData.singleSupplement}
               </p>
             )}
 
+            {/* Departure Dates - from constants.ts via tourData */}
             {tourData?.departureDates && tourData.departureDates.length > 0 && (
               <div className="mt-3">
                 <strong>Departure Dates:</strong>
