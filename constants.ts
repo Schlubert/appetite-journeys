@@ -83,6 +83,7 @@ export const TOURS_DATA: Tour[] = [
   {
     id: "cake",
     name: "Cakes, Tortes, Gateaux and coffeehouses",
+    durationDays: 17,
     summary: [
       { text: "Covering 4 countries, this 16-day tour explores the sweet side of Europe. From Vienna to Strasbourg and the Black Forest to the lakes of Switzerland." },
       { text: "Discover the cake that triggered one of the most famous culinary feuds in history and taste your way through some of Europe's best patisseries - including what is thought of as the oldest cake recipe in the world." },
