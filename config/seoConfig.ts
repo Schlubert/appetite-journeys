@@ -30,19 +30,19 @@ export const seoConfig = {
 
   cheeseChocolateRiviera: {
     title: 'Cheese, Chocolate & Swiss Riviera Tour | 12-Day Culinary Journey',
-    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,800.',
+    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,990.',
     keywords: 'Swiss Riviera tour, chocolate tour Switzerland, cheese tour Switzerland',
     image: 'https://appetitejourneys.nz/images/cheese-chocolate-riviera.jpg'
   },
   waterfallsWalnuts: {
     title: 'Waterfalls, Whiskey, and Walnuts | 12-Day Culinary Journey',
-    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,800.',
+    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,990.',
     keywords: 'Swiss Riviera tour, chocolate tour Switzerland, cheese tour Switzerland',
     image: 'https://appetitejourneys.nz/images/waterfallswalnuts.jpg'
   },
   cake: {
     title: 'Cakes, Tortes, Gateaux and Coffeehouses | 17-Day Culinary Journey',
-    description: 'Explore the sweet side of Europe on this 17-day food tour. From NZ$20,950.',
+    description: 'Explore the sweet side of Europe on this 17-day food tour. From NZ$20,990.',
     keywords: 'Cakes tour Europe, Tortes tour Europe, Gateaux tour Europe, Coffeehouses tour Europe',
     image: 'https://appetitejourneys.nz/images/black_forest_gat.jpg'
   },

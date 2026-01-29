@@ -42,7 +42,7 @@ export type Tour = {
 export const waterfallsWalnuts: Tour = {
   name: "Waterfalls and Walnuts",
   durationDays: 12,
-  price: ["From NZ$14,800", "per person (twin share)"],
+  price: ["From NZ$14,990", "per person (twin share)"],
   singleSupplement: "NZ$5,775",
   departureDates: [{ date: "September 13th, 2026", status: "limited" }],
   summary: [
