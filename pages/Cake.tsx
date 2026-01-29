@@ -302,34 +302,31 @@ const Cakes: React.FC = () => {
         <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
           <h2 className="text-2xl font-bold mb-2">What's Included</h2>
           <ul className="list-disc pl-5 text-slate-700 space-y-1">
-            <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the main languages of Switzerland</li>
+            <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the languages of all 5 countries you'll visit</li>
             <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
             <li>Hotel accommodation (twin share)</li>
             <li>Daily breakfasts</li>
-            <li>Selected dinners and lunches featuring regional specialties</li>
+            <li>6 dinners and a multitude of delicacies along the way</li>
             <li>
               Activities and entries including:
               <ul className="list-[circle] pl-6 mt-1 space-y-1">
                 <li>Transportation in an air-conditioned coach</li>
-                <li>Scenic train journeys (1st class seats)</li>
-                <li>Baking and pastry workshops</li>
-                <li>Traditional bakery tours and tastings</li>
-                <li>Chocolate factory visits</li>
-                <li>Cheese dairy experiences</li>
-                <li>Cultural performances and shows</li>
-                <li>Guided walking tours of historic cities</li>
-                <li>Museum and heritage site entries</li>
+                <li>Cake and chocolate making class in Switzerland</li>
+                <li>Traditional Austrian dessert class in Salzurg</li>
+                <li>Linzer Torte class in Linz</li>
+                <li>Strudel making demonstration in Vienna</li>
+                <li>Tours and tastings at 3 distilleries and 2 wineries</li>
+                <li>Tour of a salt mine</li>
+                <li>Cablecar up the highest peak in Germany</li>
+                <li>Cruise on the Danube River</li>
               </ul>
             </li>
-            <li>Guided walking tours of destinations including Bern, Basel, Zurich, Lucerne, and more</li>
+            <li>Guided walking tours of destinations including Strasbourg, Salzburg, and Vienna</li>
             <li>All applicable taxes</li>
             <li>Luggage transfers between hotels</li>
             <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
             <li>Small group size (max 12)</li>
             <li>A few extra surprises and mementos along the way</li>
-            <li>
-              Optional additions available throughout the tour
-            </li>
           </ul>
         </section>   
         

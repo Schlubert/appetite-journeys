@@ -23,23 +23,40 @@ export type ItineraryStop = {
   images?: string[];
 };
 
-// Simplified Tour type - only data NOT in constants.ts
-export type TourDetails = {
+export type DepartureDate = {
+  date: string;
+  status?: "sold-out" | "limited" | "available";
+};
+
+export type Tour = {
   name: string;
-  heroImages: string[];
+  durationDays: number;
+  price?: string[];
+  singleSupplement?: string;
+  departureDates?: DepartureDate[];
   summary: string[];
+  heroImages: string[];
   itinerary: ItineraryStop[];
 };
 
-export const cakes: TourDetails = {
+export const cakes: Tour = {
   name: "The Cakes Trail",
-  heroImages: [
-    getImagePath('banner.jpg'),
+  durationDays: 17,
+  price: ["From NZ$18,990", "per person (twin share)"],
+  singleSupplement: "NZ$6,450",
+  departureDates: [
+    { date: "May 15th, 2026", status: "available" },
+    { date: "September 10th, 2026", status: "limited" }
   ],
   summary: [
     "Indulge your sweet tooth on a delectable 17-day journey through Central Europe, exploring the rich culinary traditions of Switzerland, France, Germany, and Austria. From the iconic Black Forest Cake in Germany to the exquisite Sachertorte in Austria, this tour is a celebration of the region's most famous cakes and pastries.",
     "Along the way, immerse yourself in the local culture, visit historic landmarks, enjoy hands-on baking workshops, and savor the flavors of each destination.",
     "Whether you're a seasoned baker or simply a lover of all things sweet, this tour promises an unforgettable experience filled with delicious treats and cultural delights."
+  ],
+  heroImages: [
+    getImagePath('linzer_sml.jpg'),
+    getImagePath('schoenbrunn.jpg'),
+    getImagePath('sacher1.jpg'),
   ],
   itinerary: [
     {
@@ -55,7 +72,9 @@ export const cakes: TourDetails = {
       includedActivities: ["Welcome Dinner"],      
       meals: ["Dinner"],
       images: [
-        getImagePath('abbey.jpg'),
+        getImagePath('colmar.jpg'),
+        getImagePath('hoffkeller_li2.jpg'),
+        getImagePath('stras1.jpg'),
       ]
     },
     {
@@ -69,7 +88,7 @@ export const cakes: TourDetails = {
       accommodation: "Strasbourg",
       includedActivities: ["Guided city tour", "Local bakery visit"],
       optionalActivities: ["-"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast"],
       images: [
         getImagePath('triberg2.jpg'),
         getImagePath('black_forest_gat.jpg'),
@@ -104,7 +123,7 @@ export const cakes: TourDetails = {
       accommodation: "Zug",
       includedActivities: ["Chocolate factory tour", "Tasting session"],
       optionalActivities: ["-"],
-      meals: ["Breakfast", "Lunch"],
+      meals: ["Breakfast"],
       images: [
         getImagePath('colmar.jpg'),
         getImagePath('BaselOldTown.jpg'),
@@ -151,7 +170,7 @@ export const cakes: TourDetails = {
       ],
       accommodation: "Garmisch-Partinkirchen",
       includedActivities: ["Scenic train journey", "Village exploration"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast"],
       images: [
         getImagePath('zugspitze.jpg'),
         getImagePath('zugspitze2.jpg'),
@@ -167,7 +186,7 @@ export const cakes: TourDetails = {
       ],
       accommodation: "Salzburg",
       includedActivities: ["Patisserie workshop", "Afternoon tea experience"],
-      meals: ["Breakfast", "Lunch"],
+      meals: ["Breakfast", "Dinner"],
       images: [
         getImagePath('beer_bretzel.jpg'),
         getImagePath('seebruck.jpg'),
@@ -199,7 +218,7 @@ export const cakes: TourDetails = {
       ],
       accommodation: "Salzburg",
       includedActivities: ["Cheese dairy visit", "Tasting session"],
-      meals: ["Breakfast", "Dinner"],
+      meals: ["Breakfast"],
       images: [
         getImagePath('salzburg1.jpg'),
         getImagePath('mozartkugeln.jpg'),
@@ -217,7 +236,7 @@ export const cakes: TourDetails = {
       ],
       accommodation: "Linz",
       includedActivities: ["Artisan bakery tour", "Bread making workshop"],
-      meals: ["Breakfast"],
+      meals: ["Breakfast", "Dinner"],
       images: [
         getImagePath('hallstatt.jpg'),
         getImagePath('gmunder.jpg'),
