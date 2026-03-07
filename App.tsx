@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BookingForm from "./pages/BookingForm";
+import GatewayPage from "./pages/GatewayPage";
 
 function App(): React.ReactNode {
   return (
@@ -34,6 +35,7 @@ function App(): React.ReactNode {
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/book" element={<BookingForm />} />
+        <Route path="/gateway-preview" element={<GatewayPage />} />
       </Routes>
     </Layout>
   );
