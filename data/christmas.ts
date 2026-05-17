@@ -37,8 +37,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -52,8 +52,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -67,8 +67,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -82,8 +82,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -97,8 +97,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -112,8 +112,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -127,8 +127,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -142,8 +142,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -157,8 +157,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -172,8 +172,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -187,8 +187,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -202,8 +202,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -217,8 +217,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
         {
@@ -232,8 +232,8 @@ export const christmas = {
       includedActivities: ["Welcome dinner", "Guided market visit"],
       meals: ["Dinner"],
       images: [
-        getImagePath('Basel.jpeg'), 
-        getImagePath('bern1.jpg')
+        getImagePath('ch/Basel.jpeg'), 
+        getImagePath('ch/bern1.jpg')
     ]
     },
     // ➕ add more days as needed

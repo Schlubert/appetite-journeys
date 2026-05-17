@@ -16,6 +16,10 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BookingForm from "./pages/BookingForm";
 import GatewayPage from "./pages/GatewayPage";
+import NewZealand from "./pages/NewZealand";
+import SouthernDelights from "./pages/tours/SouthernDelights";
+import SlowRoad from './pages/tours/SlowRoad';
+import DineEdin from './pages/tours/DineEdin';
 
 function App(): React.ReactNode {
   return (
@@ -36,6 +40,10 @@ function App(): React.ReactNode {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/book" element={<BookingForm />} />
         <Route path="/gateway-preview" element={<GatewayPage />} />
+        <Route path="new-zealand" element={<NewZealand />} />
+        <Route path="/tours/southern-delights" element={<SouthernDelights />} />
+        <Route path="/tours/slow-road" element={<SlowRoad />} />
+        <Route path="/tours/dine-edin" element={<DineEdin />} />
       </Routes>
     </Layout>
   );

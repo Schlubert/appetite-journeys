@@ -1,0 +1,171 @@
+{
+  "socialMedia": {
+    "followOurJourney": "Folgen Sie unserer Reise",
+    "joinUsDescription": "Begleiten Sie uns in den sozialen Medien für Reisetipps, Einblicke hinter die Kulissen und Schweizer Inspiration"    
+  },
+  "about": {
+  "heroTitle": "Lernen Sie Ihre Gastgeber kennen",
+  "philosophy": "Unsere Philosophie"
+},
+  "faq": {
+  "title": "Häufig gestellte Fragen"
+},
+  "chHome": {
+  "hero": {
+    "country": "Schweiz",
+    "tagline1": "Die Kultur schmecken.",
+    "tagline2": "Die Schönheit entdecken.",
+    "sub": "Intime kulinarische und landschaftliche Touren durch das Herz der Schweiz. Begrenzt auf 12 Gäste für eine unvergessliche Erfahrung.",
+    "cta": "Entdecken Sie unsere Touren"
+  },
+  "tours": {
+    "title": "Unsere beliebtesten Touren",
+    "sub": "Für Reisende mit Geschmack gestaltet."
+  },
+  "different": {
+    "title": "Was macht uns unterschiedlich",
+    "sub": "Wir sind nicht nur eine weitere Reiseagentur. Unsere tiefen schweizerischen Wurzeln und unsere Leidenschaft für authentische Erlebnisse schaffen Reisen, die Sie mit dem echten Schweiz verbinden."
+  },
+  "promise": {
+    "title": "Die Promise von Appetite Journeys",
+    "body": "Jede Tour wird mit den Augen eines Einheimischen gestaltet und der Expertise von über 30 Jahren in der internationalen kulinarischen Industrie. Wir zeigen Ihnen nicht nur die Schweiz - wir helfen Ihnen, sie zu schmecken, zu spüren und zu verstehen. Von dem Destiller, der zu Ihrem Freund wird, bis zum Schokoladenmacher, der Familienrezepte teilt, das sind Verbindungen, die lange nach Ihrem Rückkehr nach Hause bestehen bleiben."
+  },
+  "features": {
+    "smallGroups": {
+      "title": "Nur kleine Gruppen",
+      "description": "Maximal 12 Gäste gewährleisten personalisierte Aufmerksamkeit und authentische Erlebnisse."
+    },
+    "culinary": {
+      "title": "Kulinarische Expertise",
+      "description": "Mit über 50 Jahren kombinierter kulinarischer und Gastfreundschaftserfahrung wissen wir, was Essen und Reisen ausmacht. Wir haben das Wissen und die Kontakte, um unvergessliche Erlebnisse zu schaffen."
+    },
+    "hiddenGems": {
+      "title": "Versteckte Schätze",
+      "description": "Besuchen Sie Orte, die Touristen selten sehen - von familiengeführten Destillerien bis hin zu traditionellen Handwerkern, die jahrhundertealte Techniken praktizieren. Entdecken Sie das echte Schweiz."
+    },
+    "localKnowledge": {
+      "title": "Lokales Wissen",
+      "description": "Nutzen Sie das Wissen von jemandem, der in der Schweiz geboren und aufgewachsen ist, kombiniert mit dem Einblick eines international erfahrenden Branchenprofis."
+    }
+  }
+},
+  "toursPage": {
+  "title": "Unsere Touren",
+  "sub": "Handgefertigte Reisen für Reisende mit Geschmack.",
+  "switzerland": "Schweiz",
+  "newZealand": "Neuseeland",
+  "europe": "Europa",
+  "switzerlandSub": "Kulinarik, Wein und Kultur im Herzen der Alpen.",
+  "newZealandSub": "Kulinarische Abenteuer durch Aotearoa.",
+  "europeSub": "Mehrländer-Reisen durch Europas beste Gastronomiregionen."
+},
+  "nav": {
+  "home": "Startseite",
+  "tours": "Touren",
+  "faq": "FAQ",
+  "about": "Über uns",
+  "contact": "Kontakt",
+  "terms": "Allgemeine Geschäftsbedingungen"
+},
+"footer": {
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "privacy": "Datenschutz",
+    "copyright": "Appetite Journeys. Alle Rechte vorbehalten.",
+    "ggroup": "Teil des Gilbert's Gruppe"
+ },
+  "tourPage": {
+    "keyDetails": "Wichtige Informationen",
+    "price": "Preis",
+    "perPersonTwinShare": "pro Person im Doppelzimmer",
+    "singleSupplement": "Einzelzimmerzuschlag",
+    "departureDates": "Abreisedaten",
+    "soldOut": "Ausgebucht",
+    "limited": "Begrenzte Plätze",
+    "dailyItinerary": "Tagesprogramm",
+    "whatsIncluded": "Inbegriffen",
+    "tourRoute": "Reiseroute",
+    "day": "Tag",
+    "accommodation": "Unterkunft",
+    "includedActivities": "Inklusive Aktivitäten",
+    "optionalActivities": "Optionale Aktivitäten",
+    "meals": "Mahlzeiten",
+    "extraCharge": "Aufpreis",
+    "importantNotes": "Wichtige Hinweise",
+    "whatsIncludedLabel": "Inbegriffen",
+    "optional": "OPTIONAL",
+    "bookNow": "Jetzt buchen",
+    "duration": "Dauer",
+    "departureDatesAvailable": "Verfügbare Abreisedaten",
+    "nextDeparture": "Nächste Abreise",
+    "comingSoon": "Bald verfügbar",
+    "limitedAvailability": "Begrenzte Verfügbarkeit",
+    "available": "Verfügbar",
+    "moreDates": "weitere verfügbare Daten",
+    "lookingForDatesBeyond": "Suchen Sie nach Daten über {year} hinaus?",
+    "joinWaitlist": "Treten Sie unserer Warteliste für zukünftige Abreisen bei →",
+    "pricePerPerson": "pro Person (Doppelzimmer)",
+    "viewDetails": "Details anzeigen",
+    "departures": "Abreisen"
+
+  },
+  "gateway": {
+    "tagline": "Spezialisten für kulinarische Reisen",
+    "heroTitle": "Wohin möchten Sie reisen?",
+    "heroSub": "Exklusive Gourmetreisengestaltet für reiselustige Genießer.",
+    "chooseDestination": "Wählen Sie Ihr Reiseziel",
+    "languageNote": "Die Reise wird vollständig auf Deutsch geführt.",
+    "europeTitle": "Wählen Sie Ihr europäisches Reiseziel",
+    "europeBack": "Zurück"
+  },
+  "nzHome": {
+    "hero": {
+      "country": "Aotearoa – Neuseeland",
+      "tagline1": "Die Kultur schmecken.",
+      "tagline2": "Die Schönheit erleben.",
+      "sub": "Exklusive kulinarische und landschaftliche Reisen durch Aotearoa – Neuseeland. Begrenzt auf 12 Gäste für ein unvergessliches Erlebnis.",
+      "cta": "Unsere Reisen entdecken"
+    },
+    "tours": {
+      "title": "Unsere beliebtesten Reisen",
+      "sub": "Für Reisende mit Geschmack gestaltet."
+    },
+    "different": {
+      "title": "Was uns besonders macht",
+      "sub": "Wir sind kein gewöhnliches Reiseunternehmen. Unsere Leidenschaft für authentische Erlebnisse schafft Reisen, die Sie mit dem echten Neuseeland verbinden."
+    },
+    "promise": {
+      "title": "Das Versprechen von Appetite Journeys",
+      "body": "Jede Reise wird mit lokalem Wissen und über 50 Jahren kombinierter kulinarischer und gastgewerblicher Erfahrung gestaltet. Wir zeigen Ihnen Neuseeland nicht nurwir helfen Ihnen, es zu schmecken, zu erleben und zu verstehen."
+    },
+    "features": {
+      "smallGroups": {
+        "title": "Nur kleine Gruppen",
+        "description": "Maximal 12 Gäste sorgen für persönliche Betreuung und authentische Erlebnisse."
+      },
+      "culinary": {
+        "title": "Kulinarische Expertise",
+        "description": "Mit über 50 Jahren kombinierter Erfahrung in Kulinarik und Gastgewerbe verstehen wir die Kunst kulinarischer Reisen. Wir verfügen über das Wissen und die Kontakte, um unvergessliche Erlebnisse zu schaffen."
+      },
+      "hiddenGems": {
+        "title": "Verborgene Schätze",
+        "description": "Besuchen Sie Orte, die Touristen nur selten sehenvon familiengeführten Weingütern bis hin zu traditionellen Handwerksbetrieben. Entdecken Sie das authentische Neuseeland."
+      },
+      "localKnowledge": {
+        "title": "Lokales Wissen",
+        "description": "Profitieren Sie von der Erfahrung eines langjährigen Branchenprofis mit umfassender Kenntnis Neuseelands."
+      }  
+    }
+  },
+"contact": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Wir würden uns freuen, von Ihnen zu hören! Ob Sie eine Frage zu unseren Touren haben oder einfach nur Hallo sagen möchten, zögern Sie nicht, uns zu kontaktieren.",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "success": "Vielen Dank, dass Sie uns kontaktiert haben! Wir melden uns in Kürze bei Ihnen.",
+    "info": "Kontaktinformationen"
+  } 
+}
