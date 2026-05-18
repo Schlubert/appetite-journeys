@@ -72,7 +72,7 @@ const COPY: Record<Lang, {
       europe: {
         label: 'Multi-country',
         sub:   'Grand European food & wine tours',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
@@ -107,7 +107,7 @@ switzerland: {
       europe: {
         label: 'Multi-pays',
         sub:   'Grands circuits gastronomiques européens',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
@@ -142,7 +142,7 @@ switzerland: {
       europe: {
         label: 'Mehrere Länder',
         sub:   'Große europäische Gourmetreisen',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
