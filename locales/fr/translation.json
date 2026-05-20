@@ -1,7 +1,46 @@
 {
+  "regions": {
+    "switzerland": {
+      "countryName": "Suisse",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Découvrez la Suisse",
+      "description": "Des voyages culinaires et panoramiques intimistes au cœur de la Suisse. Limités à 12 participants pour une expérience inoubliable."
+    },
+    "europe": {
+      "countryName": "Europe",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "À travers l’Europe",
+      "description": "Découvrez le côté gourmand de l’Europe, de la Forêt-Noire aux grands cafés viennois. Un voyage à travers 5 pays riches en saveurs culinaires."
+    },
+    "newzealand": {
+      "title": "Aventures en Nouvelle-Zélande",
+      "description": "Découvrez la beauté naturelle et la riche culture culinaire d’Aotearoa. Des paysages spectaculaires aux villes dynamiques, vivez la scène gastronomique néo-zélandaise."
+    },
+    "france": {
+      "countryName": "France",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Gastronomie française",
+      "description": "Explorez quelques-uns des trésors culinaires de la France."
+    },
+    "germany": {
+      "countryName": "Allemagne",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Cuisine allemande",
+      "description": "Découvrez les saveurs de l’Allemagne."
+    },
+    "exploreTours": "Découvrez nos voyages",
+    "availableTours": "Voyages disponibles",
+    "noToursAvailable": "Aucun voyage n’est encore disponible pour cette région.",
+    "notFound": "Région introuvable",
+    "regionDoesNotExist": "La région que vous recherchez n’existe pas."
+  },
   "socialMedia": {
     "followOurJourney": "Suivez notre aventure",
-    "joinUsDescription": "Rejoignez-nous sur les réseaux sociaux pour des conseils de voyage, des moments en coulisses et de l'inspiration suisse"
+    "joinUsDescription": "Rejoignez-nous sur les réseaux sociaux pour des conseils de voyage, des coulisses et de l’inspiration suisse"
   },
 
   "about": {
@@ -60,13 +99,21 @@
   "newZealandSub": "Aventures culinaires à travers l'Aotearoa.",
   "europeSub": "Circuits multi-pays à travers les meilleures régions gastronomiques d'Europe."
 },
-  "nav": {
-    "home": "Accueil",
-    "tours": "Circuits",
-    "faq": "FAQ",
-    "about": "À propos",
-    "contact": "Contact",
-    "terms": "Conditions générales"
+"nav": {
+  "home": "Accueil",
+  "tours": "Voyages",
+  "faq": "FAQ",
+  "about": "À propos",
+  "contact": "Contact",
+  "terms": "Conditions générales",
+  "gateway": "Portail",
+  "switzerland": "Suisse",
+  "europe": "Europe",
+  "newZealand": "Nouvelle-Zélande",
+  "aboutCompany": "À propos d’Appetite Journeys",
+  "aboutSwitzerland": "À propos de la Suisse",
+  "aboutEurope": "À propos de l’Europe",
+  "aboutNewZealand": "À propos de la Nouvelle-Zélande"
   },
   "footer": {
     "about": "À propos",
@@ -121,7 +168,7 @@
   },
   "nzHome": {
     "hero": {
-      "country": "Aotearoa - Nouvelle-Zélande",
+      "country": "Nouvelle-Zélande",
       "tagline1": "Goûtez la Culture.",
       "tagline2": "Découvrez la Beauté.",
       "sub": "Des circuits gastronomiques et panoramiques intimes à travers l'Aotearoa - Nouvelle-Zélande. Limités à 12 invités pour une expérience inoubliable.",

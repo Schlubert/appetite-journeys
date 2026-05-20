@@ -76,22 +76,22 @@ const lang = (['en', 'fr', 'de'].includes(i18n.language) ? i18n.language : 'en')
                 </span>
               </div>
 
-              {/* Desktop: Flag to the left of Switzerland */}
+              {/* Desktop: Flag to the left of Country name */}
               {/* Desktop: Flag inline with headline */}
 <div className="hidden sm:flex justify-center -mb-1">
-  <span className="text-5xl md:text-6xl font-semibold drop-shadow-2xl leading-tight">
+  <span className="inline-flex items-center justify-center gap-3 text-5xl md:text-6xl font-semibold drop-shadow-2xl leading-tight">
+    <img
+      src={getImagePath("nz/nz_flag.png")}
+      alt="New Zealand flag"
+      className="h-10 md:h-12 w-auto drop-shadow-md"
+    />
     {t('nzHome.hero.country')}
   </span>
 </div>
 
 <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold drop-shadow-2xl mb-1 leading-tight">
   <span className="inline-flex items-center justify-center gap-3">
-    <img
-      src={getImagePath("nz/nz_flag.png")}
-      alt="New Zealand flag"
-      className="h-10 md:h-12 w-auto drop-shadow-md"
-    />
-    {t('nzHome.hero.tagline1')}
+   {t('nzHome.hero.tagline1')}
   </span>
   <br />{t('nzHome.hero.tagline2')}
 </h1>

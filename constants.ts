@@ -237,7 +237,7 @@ export const TOURS_DATA: Tour[] = [
   },
   {
     id: "christmas",
-    region: "switzerland",
+    region: "europe",
     name: {
       en: "Christmas Markets",
       fr: "Marchés de Noël",
@@ -355,7 +355,7 @@ export const TOURS_DATA: Tour[] = [
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', href: '/gateway-preview' },
   { label: 'Tours', href: '/tours' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },

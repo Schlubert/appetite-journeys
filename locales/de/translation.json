@@ -1,8 +1,48 @@
 {
-  "socialMedia": {
-    "followOurJourney": "Folgen Sie unserer Reise",
-    "joinUsDescription": "Begleiten Sie uns in den sozialen Medien für Reisetipps, Einblicke hinter die Kulissen und Schweizer Inspiration"    
+  "regions": {
+    "switzerland": {
+      "countryName": "Schweiz",
+      "tagline1": "Die Kultur schmecken.",
+      "tagline2": "Die Schönheit entdecken.",
+      "title": "Entdecken Sie die Schweiz",
+      "description": "Intime kulinarische und landschaftliche Reisen durch das Herz der Schweiz. Auf 12 Gäste begrenzt für ein unvergessliches Erlebnis."
+    },
+    "europe": {
+      "countryName": "Europa",
+      "tagline1": "Die Kultur schmecken.",
+      "tagline2": "Die Schönheit entdecken.",
+      "title": "Durch Europa",
+      "description": "Erleben Sie die süße Seite Europas – vom Schwarzwald bis zu den traditionellen Kaffeehäusern Wiens. Eine Reise durch 5 Länder voller kulinarischer Genüsse."
+    },
+    "newzealand": {
+      "title": "Neuseeland-Abenteuer",
+      "description": "Entdecken Sie die natürliche Schönheit und die reiche kulinarische Kultur Aotearoas. Von beeindruckenden Landschaften bis zu lebendigen Städten – erleben Sie Neuseelands Genusswelt."
+    },
+    "france": {
+      "countryName": "Frankreich",
+      "tagline1": "Die Kultur schmecken.",
+      "tagline2": "Die Schönheit entdecken.",
+      "title": "Französische Gastronomie",
+      "description": "Entdecken Sie einige der kulinarischen Schätze Frankreichs."
+    },
+    "germany": {
+      "countryName": "Deutschland",
+      "tagline1": "Die Kultur schmecken.",
+      "tagline2": "Die Schönheit entdecken.",
+      "title": "Deutsche Küche",
+      "description": "Entdecken Sie die Aromen Deutschlands."
+    },
+    "exploreTours": "Unsere Reisen entdecken",
+    "availableTours": "Verfügbare Reisen",
+    "noToursAvailable": "Für diese Region sind derzeit keine Reisen verfügbar.",
+    "notFound": "Region nicht gefunden",
+    "regionDoesNotExist": "Die gesuchte Region existiert nicht."
   },
+  "socialMedia": {
+    "followOurJourney": "Begleiten Sie unsere Reise",
+    "joinUsDescription": "Folgen Sie uns in den sozialen Medien für Reisetipps, Einblicke hinter die Kulissen und Schweizer Inspiration"
+  },
+
   "about": {
   "heroTitle": "Lernen Sie Ihre Gastgeber kennen",
   "philosophy": "Unsere Philosophie"
@@ -59,14 +99,23 @@
   "newZealandSub": "Kulinarische Abenteuer durch Aotearoa.",
   "europeSub": "Mehrländer-Reisen durch Europas beste Gastronomiregionen."
 },
-  "nav": {
+ "nav": {
   "home": "Startseite",
-  "tours": "Touren",
+  "tours": "Reisen",
   "faq": "FAQ",
   "about": "Über uns",
   "contact": "Kontakt",
-  "terms": "Allgemeine Geschäftsbedingungen"
+  "terms": "Allgemeine Geschäftsbedingungen",
+  "gateway": "Portal",
+  "switzerland": "Schweiz",
+  "europe": "Europa",
+  "newZealand": "Neuseeland",
+  "aboutCompany": "Über Appetite Journeys",
+  "aboutSwitzerland": "Über die Schweiz",
+  "aboutEurope": "Über Europa",
+  "aboutNewZealand": "Über Neuseeland"
 },
+
 "footer": {
     "about": "Über uns",
     "contact": "Kontakt",
@@ -121,7 +170,7 @@
   },
   "nzHome": {
     "hero": {
-      "country": "Aotearoa – Neuseeland",
+      "country": "Neuseeland",
       "tagline1": "Die Kultur schmecken.",
       "tagline2": "Die Schönheit erleben.",
       "sub": "Exklusive kulinarische und landschaftliche Reisen durch Aotearoa – Neuseeland. Begrenzt auf 12 Gäste für ein unvergessliches Erlebnis.",

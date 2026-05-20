@@ -1,4 +1,44 @@
-{  
+{ 
+  
+  "regions": {
+    "switzerland": {
+      "countryName": "Switzerland",
+      "tagline1": "Taste the Culture.",
+      "tagline2": "See the Beauty.",
+      "title": "Discover Switzerland",
+      "description": "Intimate culinary and scenic tours through the heart of Switzerland. Limited to 12 guests for an unforgettable experience."
+    },
+    "europe": {
+      "countryName": "Europe",
+      "tagline1": "Taste the Culture.",
+      "tagline2": "See the Beauty.",
+      "title": "Across Europe",
+      "description": "Experience the sweet side of Europe, from the Black Forest to Vienna's grand coffeehouses. A journey through 5 countries of culinary delights."
+    },
+    "newzealand": {
+      "title": "New Zealand Adventures",
+      "description": "Discover the natural beauty and rich culinary culture of Aotearoa. From stunning landscapes to vibrant cities, experience New Zealand's food scene."
+    },
+    "france": {
+    "countryName": "France",
+    "tagline1": "Taste the Culture.",
+    "tagline2": "See the Beauty.",
+      "title": "French Gastronomy",
+      "description": "Explore some of the culinary treasures of France."
+    },
+    "germany": {
+    "countryName": "Germany",
+    "tagline1": "Taste the Culture.",
+    "tagline2": "See the Beauty.",
+      "title": "German Cuisine",
+      "description": "Discover the flavours of Germany."
+    },
+    "exploreTours": "Explore Our Tours",
+    "availableTours": "Available Tours",
+    "noToursAvailable": "No tours available for this region yet.",
+    "notFound": "Region Not Found",
+    "regionDoesNotExist": "The region you're looking for doesn't exist."
+  },
   "socialMedia": {
     "followOurJourney": "Follow our journey",
     "joinUsDescription": "Join us on social media for travel tips, behind-the-scenes moments, and Swiss inspiration"
@@ -66,8 +106,16 @@
     "faq": "FAQ",
     "about": "About",
     "contact": "Contact",
-    "terms": "Terms & Conditions"
-  },
+    "terms": "Terms & Conditions",
+    "gateway": "Gateway",
+    "switzerland": "Switzerland",
+    "europe": "Europe",
+    "newZealand": "New Zealand",
+    "aboutCompany": "About Appetite Journeys",
+    "aboutSwitzerland": "About Switzerland",
+    "aboutEurope": "About Europe",
+    "aboutNewZealand": "About New Zealand"
+   },
   "footer": {
     "about": "About",
     "contact": "Contact",
@@ -115,15 +163,17 @@
   "gateway": {
     "tagline": "Food & Wine Travel Specialists",
     "heroTitle": "Where Would You Like to Travel?",
-    "heroSub": "Intimate culinary journeyscrafted for travellers with taste.",
+    "heroSub": "Intimate culinary journeys crafted for travellers with taste.",
     "chooseDestination": "Choose your destination",
     "languageNote": "Guided throughout in English.",
     "europeTitle": "Choose Your European Destination",
-    "europeBack": "Back"
+    "europeBack": "Back",
+    "whyChooseUs": "Why Choose Appetite Journeys",
+    "whyChooseUsDescription": "Every journey is crafted with passion, authenticity, and attention to detail."
   },
   "nzHome": {
     "hero": {
-      "country": "Aotearoa - New Zealand",
+      "country": "New Zealand",
       "tagline1": "Taste the Culture.",
       "tagline2": "See the Beauty.",
       "sub": "Intimate culinary and scenic tours through Aotearoa - New Zealand. Limited to 12 guests for an unforgettable experience.",
