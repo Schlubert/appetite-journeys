@@ -130,7 +130,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Choucroute garnie et tarte flambée dans les traditionnels winstubs',
           'Des siècles d\'histoire fascinante à chaque coin de rue',
         ],
-        images: ['eu/france_1.jpg', 'eu/france_2.jpg', 'eu/france_3.jpg', 'eu/france_4.jpg'],
+        images: ['colmar.jpg', 'stras1.jpg', 'biscuiterie.jpg', 'StrasbourgCathedral.jpg'],
       },
       {
         name: 'Allemagne',
@@ -144,7 +144,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Konstanz - Ville lacustre époustouflante avec un mélange d\'influences allemandes et suisses',
           'Lindau - Ville insulaire pittoresque sur le lac de Constance avec une scène alimentaire dynamique',
         ],
-        images: ['eu/germany_1.jpg', 'eu/germany_2.jpg', 'eu/germany_3.jpg', 'eu/germany_4.jpg'],
+        images: ['black_forest_gat.jpg', 'triberg2.jpg', 'zugspitze.jpg', 'beer_bretzel.jpg'],
       },
       {
         name: 'Liechtenstein',
@@ -155,7 +155,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Vaduz - la charmante capitale',
           'Charme montagneux dramatique et alpin',
         ],
-        images: ['eu/liechtenstein_1.jpg', 'eu/liechtenstein_2.jpg', 'eu/liechtenstein_3.jpg', 'eu/liechtenstein_4.jpg'],
+        images: ['hoffkeller_li.jpg', 'vines_li.jpg', 'vaduz2.jpg', 'hoffkeller_li2.jpg'],
       },
       {
         name: 'Autriche',
@@ -168,7 +168,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Cuisine du gibier et traditions forestières',
           'Restaurants étoilés Michelin et établissements familiaux',
         ],
-        images: ['eu/austria_1.jpg', 'eu/austria_2.jpg', 'eu/austria_3.jpg', 'eu/austria_4.jpg'],
+        images: ['linzer.jpg', 'vienna5.jpg', 'wachau1.jpg', 'sacher1.jpg'],
       },
     ],
     whyVisitTitle: 'Ce Que Chaque Région Apporte au Voyage',
@@ -176,22 +176,22 @@ const CONTENT: Record<Lang, RegionContent> = {
       {
         country: 'France',
         reason: 'Excellence culinaire établie. La France a établi la norme pour la gastronomie fine et la culture du vin—visiter la France signifie expérimenter les fondations de la gastronomie moderne.',
-        image: 'eu/france_wine.jpg',
+        image: 'colmar.jpg',
       },
       {
         country: 'Allemagne',
         reason: 'Précision artisanale et authenticité. La culture alimentaire allemande récompense la curiosité—les petites boulangeries, les traditions forestières et les domaines vinicoles qui n\'ont jamais compromis la qualité.',
-        image: 'eu/germany_bread.jpg',
+        image: 'triberg2.jpg',
       },
       {
         country: 'Liechtenstein',
         reason: 'Expérience locale intime. Ce petit pays offre ce que les voisins plus grands ne peuvent pas : un accès direct sans infrastructure touristique.',
-        image: 'eu/liechtenstein_cheese.jpg',
+        image: 'vines_li.jpg',
       },
       {
         country: 'Autriche',
         reason: 'Sophistication élégante et chaleur. Des maisons de café viennoises aux auberges alpines, l\'hospitalité autrichienne équilibre le raffinement avec une chaleur humaine sincère.',
-        image: 'eu/austria_coffee.jpg',
+        image: 'hallstatt.jpg',
       },
     ],
     ctaText: 'Explorez Nos Voyages Européens',
@@ -215,7 +215,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Choucroute garnie und Tarte Flambée in traditionellen Weinstuben',
           'Jahrhunderte faszinierende Geschichte an jeder Ecke',
         ],
-        images: ['eu/france_1.jpg', 'eu/france_2.jpg', 'eu/france_3.jpg', 'eu/france_4.jpg'],
+        images: ['colmar.jpg', 'stras1.jpg', 'biscuiterie.jpg', 'StrasbourgCathedral.jpg'],
       },
       {
         name: 'Deutschland',
@@ -229,7 +229,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Konstanz - Wunderschöne Seenstadt mit einer Mischung aus deutschen und Schweizer Einflüssen',
           'Lindau - Malerische Inselstadt am Bodensee mit lebendiger Lebensmittelszene',
         ],
-        images: ['eu/germany_1.jpg', 'eu/germany_2.jpg', 'eu/germany_3.jpg', 'eu/germany_4.jpg'],
+        images: ['black_forest_gat.jpg', 'triberg2.jpg', 'zugspitze.jpg', 'beer_bretzel.jpg'],
       },
       {
         name: 'Liechtenstein',
@@ -240,7 +240,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Vaduz - die charmante Hauptstadt',
           'Dramatische Berglandschaft und alpiner Charme',
         ],
-        images: ['eu/liechtenstein_1.jpg', 'eu/liechtenstein_2.jpg', 'eu/liechtenstein_3.jpg', 'eu/liechtenstein_4.jpg'],
+        images: ['hoffkeller_li.jpg', 'vines_li.jpg', 'vaduz2.jpg', 'hoffkeller_li2.jpg'],
       },
       {
         name: 'Österreich',
@@ -253,7 +253,7 @@ const CONTENT: Record<Lang, RegionContent> = {
           'Wildküche und Waldtraditionen',
           'Mit Michelin-Sternen ausgezeichnete Restaurants und Familienestablishments',
         ],
-        images: ['eu/austria_1.jpg', 'eu/austria_2.jpg', 'eu/austria_3.jpg', 'eu/austria_4.jpg'],
+        images: ['linzer.jpg', 'vienna5.jpg', 'wachau1.jpg', 'sacher1.jpg'],
       },
     ],
     whyVisitTitle: 'Was Jede Region zur Reise Bringt',
@@ -261,22 +261,22 @@ const CONTENT: Record<Lang, RegionContent> = {
       {
         country: 'Frankreich',
         reason: 'Etablierte kulinarische Exzellenz. Frankreich setzte den Standard für Feinküche und Weinkultur—Frankreich zu besuchen bedeutet, die Grundlagen der modernen Gastronomie zu erleben.',
-        image: 'eu/france_wine.jpg',
+        image: 'colmar.jpg',
       },
       {
         country: 'Deutschland',
         reason: 'Handwerkliche Präzision und Authentizität. Die deutsche Esskultur belohnt Neugier—kleine Bäckereien, Waldtraditionen und Weingüter, die niemals Qualität kompromittiert haben.',
-        image: 'eu/germany_bread.jpg',
+        image: 'triberg2.jpg',
       },
       {
         country: 'Liechtenstein',
         reason: 'Intime lokale Erfahrung. Dieses winzige Land bietet, was größere Nachbarn nicht können: direkter Zugang ohne Tourismusinfrastruktur.',
-        image: 'eu/liechtenstein_cheese.jpg',
+        image: 'vines_li.jpg',
       },
       {
         country: 'Österreich',
         reason: 'Elegante Raffinesse und Wärme. Von Wiener Kaffeehäusern bis zu Alpengasthöfen balanciert österreichische Gastfreundschaft Raffinesse mit echter menschlicher Wärme.',
-        image: 'eu/austria_coffee.jpg',
+        image: 'hallstatt.jpg',
       },
     ],
     ctaText: 'Entdecken Sie Unsere Europäischen Reisen',
@@ -298,7 +298,7 @@ const EuropeAboutPage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[52vh] -mx-4 sm:-mx-2 lg:-mx-8 overflow-hidden">
         <img
-          src={getImagePath('eu/hero.jpg')}
+          src={getImagePath('schoenbrunn.jpg')}
           alt="European Alps"
           className="w-full h-full object-cover"
         />
