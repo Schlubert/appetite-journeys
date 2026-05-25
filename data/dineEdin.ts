@@ -130,7 +130,7 @@ de: [
   "Unterwegs können weitere Stopps eingelegt werden, und die Reiseroute kann je nach lokalen Veranstaltungen, saisonalen Angeboten und Wetterbedingungen angepasst werden. Diese Tour wurde entwickelt, um ein umfassendes und intensives Erlebnis der kulinarischen Szene Dunedins zu bieten und Gastronomie, Kultur und beeindruckende Landschaften in einem unvergesslichen Tag zu verbinden."
 ],
       },
-      images: [getImagePath('ch/schaffhausen3.jpg'), getImagePath('ch/gottlieben1.jpeg') ]
+      images: [getImagePath('nz/OFM.jpg'), getImagePath('nz/craft_distillers.jpg'), getImagePath('nz/station.jpg') ],
     },
   ],
     whatsIncluded: {

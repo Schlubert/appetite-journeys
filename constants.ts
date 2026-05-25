@@ -293,7 +293,7 @@ export const TOURS_DATA: Tour[] = [
       de: "Kommt bald"
     },
     departureDates: [
-      { date: "2027-12-05", status: "available", year: 2027 },
+      { date: "", status: "available", year: 2027 },
     ],
   },
   {
@@ -321,7 +321,7 @@ export const TOURS_DATA: Tour[] = [
       de: "Kommt bald"
     },
     departureDates: [
-      { date: "2027-12-05", status: "available", year: 2027 },
+      { date: "", status: "available", year: 2027 },
     ],
   },
   {
@@ -349,7 +349,7 @@ export const TOURS_DATA: Tour[] = [
       de: "Kommt bald"
     },
     departureDates: [
-      { date: "2027-12-05", status: "available", year: 2027 },
+      { date: "", status: "available", year: 2027 },
     ],
   },
 ];
