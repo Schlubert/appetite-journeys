@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link to="/gateway-preview" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img
               src={getImagePath('appetite_tours_logo.png')}
               alt="Appetite Journeys logo"

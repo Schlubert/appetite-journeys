@@ -355,7 +355,7 @@ export const TOURS_DATA: Tour[] = [
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Home', href: '/gateway-preview' },
+  { label: 'Home', href: '/' },
   { label: 'Tours', href: '/tours' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
