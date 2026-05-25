@@ -3,35 +3,30 @@
 // Gateway landing page for Appetite Journeys.
 // Visitors arrive here, choose their language (auto-detected from browser),
 // then select a destination region. Europe expands to a sub-region picker.
-//
-// SETUP
-// ─────
-// 1. Drop this file into your pages/ or routes/ folder.
-// 2. Add a route in your router:  <Route path="/" element={<GatewayPage />} />
-// 3. Update ROUTES below to match your actual URL structure.
-// 4. Replace the getImagePath() calls with your real hero/card images.
-//
+
 // DEPENDENCIES
 // ────────────
-// - react-router-dom (already assumed present)
-// - lucide-react      (already used in HomePage)
-// - tailwind + your existing index.css (alpine-green etc.)
+// - react-router-dom
+// - lucide-react   
+// - tailwind + existing index.css
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, Globe } from 'lucide-react';
 import { getImagePath } from '../utils/paths';
+import i18n from '@/i18n';
+import { useTranslation } from 'react-i18next';
 
 // ─── Supported languages ──────────────────────────────────────────────────────
 type Lang = 'en' | 'fr' | 'de';
 
 // ─── Route map — update paths to match your routing structure ────────────────
 const ROUTES: Record<string, (lang: Lang) => string> = {
-  'new-zealand': (lang) => `/${lang}/new-zealand`,
-  france:        (lang) => `/${lang}/france`,
-  germany:       (lang) => `/${lang}/germany`,
-  switzerland:   (lang) => `/${lang}/switzerland`,
-  europe:        (lang) => `/${lang}/europe`,
+  'new-zealand': (_lang) => `/new-zealand`,
+  france:        (_lang) => `/tours`,
+  germany:       (_lang) => `/tours`,
+  switzerland:   (_lang) => `/switzerland`,
+  europe:        (_lang) => `/europe`,
 };
 
 // ─── All UI copy in EN / FR / DE ─────────────────────────────────────────────
@@ -50,7 +45,7 @@ const COPY: Record<Lang, {
   en: {
     tagline:          'Food & Wine Travel Specialists',
     heroTitle:        'Where Would You Like to Travel?',
-    heroSub:          'Intimate culinary journeys — crafted for travellers with taste.',
+    heroSub:          'Intimate culinary journeys crafted for travellers with taste.',
     chooseDestination:'Choose your destination',
     languageNote:     'Guided throughout in English.',
     europeTitle:      'Choose Your European Destination',
@@ -60,25 +55,15 @@ const COPY: Record<Lang, {
       'new-zealand': {
         label: 'New Zealand',
         sub:   'Marlborough · Central Otago · Hawke\'s Bay',
-        image: getImagePath('nz-hero.jpg'),
+        image: getImagePath('nz/nz-hero.jpg'),
       },
       europe: {
         label: 'Europe',
-        sub:   'France · Germany · Switzerland · Multi-country',
-        image: getImagePath('europe-hero.jpg'),
+        sub:   'Switzerland · Multi-country',
+        image: getImagePath('ch/bern1.jpg'),
       },
     },
     europeRegions: {
-      france: {
-        label: 'France',
-        sub:   'Burgundy · Bordeaux · Provence · Alsace',
-        image: getImagePath('france-hero.jpg'),
-      },
-      germany: {
-        label: 'Germany',
-        sub:   'Bavaria · Rhine · Moselle · Baden',
-        image: getImagePath('germany-hero.jpg'),
-      },
       switzerland: {
         label: 'Switzerland',
         sub:   'Valais · Graubünden · Lake Geneva',
@@ -87,7 +72,7 @@ const COPY: Record<Lang, {
       europe: {
         label: 'Multi-country',
         sub:   'Grand European food & wine tours',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
@@ -95,7 +80,7 @@ const COPY: Record<Lang, {
   fr: {
     tagline:          'Spécialistes des voyages gastronomiques',
     heroTitle:        'Où souhaitez-vous voyager ?',
-    heroSub:          'Des voyages gastronomiques intimes — conçus pour les voyageurs passionnés.',
+    heroSub:          'Des voyages gastronomiques intimesconçus pour les voyageurs passionnés.',
     chooseDestination:'Choisissez votre destination',
     languageNote:     'Guidé en français tout au long du voyage.',
     europeTitle:      'Choisissez votre destination européenne',
@@ -105,25 +90,15 @@ const COPY: Record<Lang, {
       'new-zealand': {
         label: 'Nouvelle-Zélande',
         sub:   'Marlborough · Central Otago · Hawke\'s Bay',
-        image: getImagePath('nz-hero.jpg'),
+        image: getImagePath('nz/nz-hero.jpg'),
       },
       europe: {
         label: 'Europe',
         sub:   'France · Allemagne · Suisse · Multi-pays',
-        image: getImagePath('europe-hero.jpg'),
+        image: getImagePath('ch/bern1.jpg'),
       },
     },
     europeRegions: {
-      france: {
-        label: 'France',
-        sub:   'Bourgogne · Bordeaux · Provence · Alsace',
-        image: getImagePath('france-hero.jpg'),
-      },
-      germany: {
-        label: 'Allemagne',
-        sub:   'Bavière · Rhin · Moselle · Bade',
-        image: getImagePath('germany-hero.jpg'),
-      },
       switzerland: {
         label: 'Suisse',
         sub:   'Valais · Grisons · Lac Léman',
@@ -132,7 +107,7 @@ const COPY: Record<Lang, {
       europe: {
         label: 'Multi-pays',
         sub:   'Grands circuits gastronomiques européens',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
@@ -140,7 +115,7 @@ const COPY: Record<Lang, {
   de: {
     tagline:          'Spezialisten für kulinarische Reisen',
     heroTitle:        'Wohin möchten Sie reisen?',
-    heroSub:          'Exklusive Gourmetreisen — gestaltet für reiselustige Genießer.',
+    heroSub:          'Exklusive Gourmetreisengestaltet für reiselustige Genießer.',
     chooseDestination:'Wählen Sie Ihr Reiseziel',
     languageNote:     'Durchgehend auf Deutsch geführt.',
     europeTitle:      'Wählen Sie Ihr europäisches Reiseziel',
@@ -150,25 +125,15 @@ const COPY: Record<Lang, {
       'new-zealand': {
         label: 'Neuseeland',
         sub:   'Marlborough · Central Otago · Hawke\'s Bay',
-        image: getImagePath('nz-hero.jpg'),
+        image: getImagePath('nz/nz-hero.jpg'),
       },
       europe: {
         label: 'Europa',
         sub:   'Frankreich · Deutschland · Schweiz · Mehrere Länder',
-        image: getImagePath('europe-hero.jpg'),
+        image: getImagePath('ch/bern1.jpg'),
       },
     },
     europeRegions: {
-      france: {
-        label: 'Frankreich',
-        sub:   'Burgund · Bordeaux · Provence · Elsass',
-        image: getImagePath('france-hero.jpg'),
-      },
-      germany: {
-        label: 'Deutschland',
-        sub:   'Bayern · Rhein · Mosel · Baden',
-        image: getImagePath('germany-hero.jpg'),
-      },
       switzerland: {
         label: 'Schweiz',
         sub:   'Wallis · Graubünden · Genfersee',
@@ -177,7 +142,7 @@ const COPY: Record<Lang, {
       europe: {
         label: 'Mehrere Länder',
         sub:   'Große europäische Gourmetreisen',
-        image: getImagePath('europe-multi.jpg'),
+        image: getImagePath('europe_flag.png'),
       },
     },
   },
@@ -197,76 +162,138 @@ interface DestinationCardProps {
   sub: string;
   image: string;
   badge?: string;
-  onClick: () => void;
+  to?: string;
+  onClick?: () => void;
 }
 
-const DestinationCard: React.FC<DestinationCardProps> = ({ label, sub, image, badge, onClick }) => (
-  <button
-    onClick={onClick}
-    className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left w-full"
-  >
-    {/* Background image */}
-    <div className="relative h-64 sm:h-72 lg:h-80 w-full">
-      <img
-        src={image}
-        alt={label}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300" />
-    </div>
+const DestinationCard: React.FC<DestinationCardProps> = ({ label, sub, image, badge, to, onClick }) => {
+  const className = "group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left w-full";
 
-    {/* Badge (e.g. guide language note for NZ) */}
-    {badge && (
-      <div className="absolute top-4 left-4 bg-alpine-green/90 text-white text-xs font-medium px-3 py-1 rounded-full">
-        {badge}
+  const content = (
+    <>
+      {/* Background image */}
+      <div className="relative h-64 sm:h-72 lg:h-80 w-full">
+        <img
+          src={image}
+          alt={label}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-colors duration-300" />
       </div>
-    )}
 
-    {/* Text content */}
-    <div className="absolute bottom-0 left-0 right-0 p-5">
-      <div className="flex items-end justify-between">
-        <div>
-          <h3 className="text-2xl font-serif font-bold text-white drop-shadow-lg mb-1">
-            {label}
-          </h3>
-          <p className="text-sm text-white/75 font-light leading-relaxed">
-            {sub}
-          </p>
+      {/* Badge (e.g. guide language note for NZ) */}
+      {badge && (
+        <div className="absolute top-4 left-4 bg-alpine-green/90 text-white text-xs font-medium px-3 py-1 rounded-full">
+          {badge}
         </div>
-        <div className="ml-4 flex-shrink-0 bg-white/20 group-hover:bg-alpine-green transition-colors duration-300 rounded-full p-2">
-          <ArrowRight className="w-5 h-5 text-white" />
+      )}
+
+      {/* Text content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5">
+        <div className="flex items-end justify-between">
+          <div>
+            <h3 className="text-2xl font-serif font-bold text-white drop-shadow-lg mb-1">
+              {label}
+            </h3>
+            <p className="text-sm text-white/75 font-light leading-relaxed">
+              {sub}
+            </p>
+          </div>
+          <div className="ml-4 flex-shrink-0 bg-white/20 group-hover:bg-alpine-green transition-colors duration-300 rounded-full p-2">
+            <ArrowRight className="w-5 h-5 text-white" />
+          </div>
         </div>
       </div>
-    </div>
-  </button>
-);
+    </>
+  );
 
+  // If a route is provided, render as Link. Otherwise render as button
+  if (to) {
+    return (
+      <Link to={to} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={className}>
+      {content}
+    </button>
+  );
+};
+const GATEWAY_FEATURES: Record<Lang, Array<{
+  title: string;
+  description: string;
+}>> = {
+  en: [
+    {
+      title: 'Curated Journeys',
+      description: 'Handpicked destinations and experiences designed for discerning travelers who appreciate authentic culinary traditions.',
+    },
+    {
+      title: 'Local Expertise',
+      description: 'Travel with knowledgeable guides who know hidden food producers, family-run wineries, and secret neighborhood gems.',
+    },
+    {
+      title: 'Intimate Groups',
+      description: 'Small groups (max 12) ensure personalized attention and meaningful connections with locals and fellow travelers.',
+    },
+    {
+      title: 'Culinary Immersion',
+      description: 'Beyond restaurants—cook with locals, visit markets, taste wine from the source, and learn stories behind every meal.',
+    },
+  ],
+  fr: [
+    {
+      title: 'Voyages Sélectionnés',
+      description: 'Des destinations et expériences soigneusement choisies pour les voyageurs exigeants qui apprécient les traditions culinaires authentiques.',
+    },
+    {
+      title: 'Expertise Locale',
+      description: 'Voyagez avec des guides connaisseurs qui découvrent producteurs cachés, caves familiales et joyaux secrets des quartiers.',
+    },
+    {
+      title: 'Petits Groupes',
+      description: 'Groupes restreints (max 12) assurant une attention personnalisée et des connexions authentiques avec les locaux.',
+    },
+    {
+      title: 'Immersion Culinaire',
+      description: 'Au-delà des restaurants—cuisinez avec les habitants, visitez les marchés, dégustez le vin à la source, vivez chaque histoire.',
+    },
+  ],
+  de: [
+    {
+      title: 'Kuratierte Reisen',
+      description: 'Handverlesene Ziele und Erlebnisse für anspruchsvolle Reisende, die authentische kulinarische Traditionen schätzen.',
+    },
+    {
+      title: 'Lokales Fachwissen',
+      description: 'Reisen Sie mit kenntnisreichen Führern, die verborgene Produzenten, Familienbetriebe und lokale Geheimtipps kennen.',
+    },
+    {
+      title: 'Kleine Gruppen',
+      description: 'Kleine Gruppen (max. 12) ermöglichen persönliche Betreuung und authentische Verbindungen mit Einheimischen.',
+    },
+    {
+      title: 'Kulinarisches Eintauchen',
+      description: 'Jenseits von Restaurants—kochen Sie mit Einheimischen, besuchen Sie Märkte, probieren Sie Wein an der Quelle.',
+    },
+  ],
+};
 // ─── Main page component ──────────────────────────────────────────────────────
 const GatewayPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [lang, setLang] = useState<Lang>(detectLanguage);
-  const [step, setStep] = useState<'destinations' | 'europe'>('destinations');
-
+  const { t, i18n } = useTranslation();
+  const lang = (['en', 'fr', 'de'].includes(i18n.language) ? i18n.language : 'en') as Lang;
   const copy = COPY[lang];
+  const [step, setStep] = useState<'destinations' | 'europe'>('destinations');
 
   // Signal to navbar (matching the pattern used in HomePage)
   useEffect(() => {
     document.body.setAttribute('data-page', 'gateway');
     return () => document.body.removeAttribute('data-page');
   }, []);
-
-  const handleDestinationSelect = (key: string) => {
-    if (key === 'europe') {
-      setStep('europe');
-    } else {
-      navigate(ROUTES[key](lang));
-    }
-  };
-
-  const handleRegionSelect = (key: string) => {
-    navigate(ROUTES[key](lang));
-  };
 
   const LANG_LABELS: Record<Lang, string> = { en: 'EN', fr: 'FR', de: 'DE' };
 
@@ -276,32 +303,14 @@ const GatewayPage: React.FC = () => {
       {/* ── Hero Banner ──────────────────────────────────────────────────────── */}
       <section className="relative h-[45vh] sm:h-[52vh] -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden">
         <img
-          src={getImagePath('niesen.jpeg')}
+          src={getImagePath('about-banner.jpg')}
           alt="Appetite Journeys"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center px-4 text-center">
 
-          {/* Language toggle — top right of hero */}
-          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-1 bg-black/30 backdrop-blur-sm rounded-lg px-1 py-1">
-            <Globe className="w-3.5 h-3.5 text-white/60 ml-1 mr-0.5" />
-            {(['en', 'fr', 'de'] as Lang[]).map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`px-3 py-1 rounded-md text-xs font-medium tracking-widest uppercase transition-all duration-200 ${
-                  lang === l
-                    ? 'bg-alpine-green text-white'
-                    : 'text-white/60 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {LANG_LABELS[l]}
-              </button>
-            ))}
-          </div>
-
           {/* Wordmark */}
-          <p className="text-white/80 text-sm font-light tracking-[0.3em] uppercase mb-3">
+          <p className="text-white/80 text-4xl lg:text-5xl font-light tracking-[0.3em] uppercase mb-3">
             Appetite Journeys
           </p>
 
@@ -342,7 +351,7 @@ const GatewayPage: React.FC = () => {
 
         {/* ── Main destination cards ─────────────────────────────────────────── */}
         {step === 'destinations' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {Object.entries(copy.destinations).map(([key, dest]) => (
               <DestinationCard
                 key={key}
@@ -350,7 +359,8 @@ const GatewayPage: React.FC = () => {
                 sub={dest.sub}
                 image={dest.image}
                 badge={key === 'new-zealand' ? copy.nzGuideBadge : undefined}
-                onClick={() => handleDestinationSelect(key)}
+                to={key === 'new-zealand' ? ROUTES[key](lang) : undefined}
+                onClick={key === 'europe' ? () => setStep('europe') : undefined}
               />
             ))}
           </div>
@@ -358,31 +368,42 @@ const GatewayPage: React.FC = () => {
 
         {/* ── Europe sub-region cards ────────────────────────────────────────── */}
         {step === 'europe' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
             {Object.entries(copy.europeRegions).map(([key, region]) => (
               <DestinationCard
                 key={key}
                 label={region.label}
                 sub={region.sub}
                 image={region.image}
-                onClick={() => handleRegionSelect(key)}
+                to={ROUTES[key](lang)}
               />
             ))}
           </div>
         )}
       </section>
 
-      {/* ── What Makes Us Different (reused from HomePage) ───────────────────── */}
-      <section className="py-7 bg-gray-200 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-serif font-bold text-alpine-green mb-4">
-            About Appetite Journeys
-          </h2>
-          <p className="text-lg text-rock-gray leading-relaxed">
-            Every tour is crafted with the eyes of a local and more than 50 years of combined culinary and hospitality expertise. Whether you're discovering New Zealand's world-class wine regions or exploring the food traditions of Europe, we ensure you experience the authentic — in your own language.
-          </p>
+      {/* ── Why Choose Appetite Journeys ──────────────────────────────────── */}
+<section className="py-12 bg-gray-200 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl sm:text-5xl font-serif font-bold text-alpine-green mb-4">
+        {t('gateway.whyChooseUs')}
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        {t('gateway.whyChooseUsDescription')}
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {GATEWAY_FEATURES[lang].map((feature, idx) => (
+        <div key={idx} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <h3 className="text-xl font-bold text-alpine-green mb-3">{feature.title}</h3>
+          <p className="text-slate-600 leading-relaxed text-sm">{feature.description}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
     </div>
   );

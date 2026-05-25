@@ -17,13 +17,22 @@ import { cakes, OptionalActivity } from "@/data/cake";
 import { TOURS_DATA } from "@/constants";
 import { Bed, CheckCircle2, PlusCircle, Utensils, ChevronDown, ChevronUp, Clock, Check, AlertCircle } from "lucide-react";
 import BookNowButton from "@/components/BookNowButton";
+import { useTranslation } from 'react-i18next';
+import { formatDateForLanguage } from '@/utils/formatDate';
 
+// ===== HELPER TYPES =====
 type InfoItemProps = {
   icon: React.ReactNode;
   title: string;
   children: React.ReactNode;
 };
 
+type OptionalActivityCardProps = {
+  activity: OptionalActivity;
+  dayNumber: number;
+};
+
+// ===== HELPER COMPONENTS =====
 const InfoItem: React.FC<InfoItemProps> = ({ icon, title, children }) => (
   <div className="flex flex-col items-center text-center">
     <div className="w-8 h-8 text-alpine-green mb-2">{icon}</div>
@@ -32,13 +41,10 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, title, children }) => (
   </div>
 );
 
-type OptionalActivityCardProps = {
-  activity: OptionalActivity;
-  dayNumber: number;
-};
-
 const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, dayNumber }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useTranslation();
+
   return (
     <div className="border-2 border-alpine-green rounded-lg overflow-hidden bg-alpine-green-50/30 hover:border-alpine-green-300 transition-all">
       <button
@@ -49,7 +55,7 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">
-                OPTIONAL
+                {t('tourPage.optional')}
               </span>
             </div>
             <h4 className="text-lg font-bold text-slate-800 mb-1">{activity.name}</h4>
@@ -81,10 +87,10 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
               <div className="bg-white rounded-lg p-4 border border-amber-100">
                 <h5 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
                   <Check className="w-5 h-5 text-alpine-green" />
-                  What's Included
+                  {t('tourPage.whatsIncludedLabel')}
                 </h5>
                 <ul className="space-y-2">
-                  {activity.included.map((item, idx) => (
+                  {activity.included.map((item: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
                       <span className="text-alpine-green mt-0.5">•</span>
                       <span>{item}</span>
@@ -96,18 +102,18 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
 
             <div className="bg-white rounded-lg p-2 border border-amber-100 space-y-3">
               <div>
-                <h5 className="font-bold text-slate-800 mb-2">Extra Charge</h5>
+                <h5 className="font-bold text-slate-800 mb-2">{t('tourPage.extraCharge')}</h5>
                 <p className="text-md font-bold text-alpine-green">{activity.price}</p>
                 {activity.duration && (
-                  <p className="text-sm text-slate-600 mt-1">Duration: {activity.duration}</p>
+                  <p className="text-sm text-slate-600 mt-1">{t('tourPage.duration')}: {activity.duration}</p>
                 )}
               </div>
-              
+
               {activity.bookingNote && (
                 <div className="pt-3 border-t border-amber-100">
                   <h5 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
                     <AlertCircle className="w-5 h-5 text-amber-600" />
-                    Important Notes
+                    {t('tourPage.importantNotes')}
                   </h5>
                   <p className="text-sm text-slate-700">{activity.bookingNote}</p>
                 </div>
@@ -126,15 +132,18 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
   );
 };
 
+// ===== MAIN COMPONENT =====
 const Cakes: React.FC = () => {
   const [openDay, setOpenDay] = React.useState<string>("day-1");
   const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const { t, i18n } = useTranslation();
+  const lang = (['en', 'fr', 'de'].includes(i18n.language) ? i18n.language : 'en') as 'en' | 'fr' | 'de';
 
-  const tourData = TOURS_DATA.find(t => t.id === 'cake');
+  const tourData = TOURS_DATA.find(tour => tour.id === 'cake');
 
   const handleValueChange = (value: string) => {
     setOpenDay(value);
-    
+
     if (value && dayRefs.current[value]) {
       setTimeout(() => {
         const element = dayRefs.current[value];
@@ -155,13 +164,13 @@ const Cakes: React.FC = () => {
   return (
     <>
       <SEO {...seoConfig.cake} />
-      
+
       {/* Floating Book Button */}
-      <FloatingBookButton 
+      <FloatingBookButton
         tourName={cakes.name}
-        price={tourData?.price}
+        price={tourData?.price?.[lang]}
       />
-      
+
       <div className="space-y-10 p-6">
         <HeroHeader
           images={cakes.heroImages}
@@ -173,53 +182,54 @@ const Cakes: React.FC = () => {
 
         <div className="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           <div className="lg:col-span-2 space-y-3">
-            {cakes.summary.map((para, idx) => (
+            {cakes.summary[lang].map((para: string, idx: number) => (
               <p key={idx} className="text-slate-600">{para}</p>
             ))}
           </div>
 
           <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
-            <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
+            <h2 className="text-lg font-semibold text-alpine-green mb-2">{t('tourPage.keyDetails')}</h2>
 
             {/* Price - from constants.ts via tourData */}
             {tourData?.price && (
               <div className="text-slate-700 mb-2">
                 <p>
-                  <strong>Price:</strong> {tourData.price}
+                  <strong>{t('tourPage.price')}:</strong> {tourData.price?.[lang]}
                 </p>
-                <p className="ml-6 text-sm text-slate-600">per person (twin share)</p>
+                <p className="ml-6 text-sm text-slate-600">{t('tourPage.perPersonTwinShare')}</p>
               </div>
             )}
 
             {/* Single Supplement - from constants.ts via tourData */}
             {tourData?.singleSupplement && (
               <p className="text-slate-700 mb-2">
-                <strong>Single Supplement:</strong> {tourData.singleSupplement}
+                <strong>{t('tourPage.singleSupplement')}:</strong> {tourData.singleSupplement?.[lang]}
               </p>
             )}
 
             {/* Departure Dates - from constants.ts via tourData */}
             {tourData?.departureDates && tourData.departureDates.length > 0 && (
               <div className="mt-3">
-                <strong>Departure Dates:</strong>
+                <strong>{t('tourPage.departureDates')}:</strong>
                 <ul className="mt-2 space-y-1">
                   {tourData.departureDates.slice(0, 3).map((dep, idx) => {
                     const isSold = dep.status === "sold-out";
                     const isLimited = dep.status === "limited";
+                    const formattedDate = formatDateForLanguage(dep.date, lang);
                     return (
                       <li key={idx} className="text-sm">
                         <span className={isSold ? "line-through text-slate-500" : "text-slate-700"}>
-                          {dep.date}
+                          {formattedDate}
                         </span>
-                        {isSold && <span className="ml-2 text-red-600 font-semibold">Sold Out</span>}
-                        {isLimited && <span className="ml-2 text-orange-600 font-semibold">Limited</span>}
+                        {isSold && <span className="ml-2 text-red-600 font-semibold">{t('tourPage.soldOut')}</span>}
+                        {isLimited && <span className="ml-2 text-orange-600 font-semibold">{t('tourPage.limited')}</span>}
                       </li>
                     );
                   })}
                 </ul>
                 {tourData.departureDates.length > 3 && (
                   <p className="text-xs text-slate-500 mt-2">
-                    + {tourData.departureDates.length - 3} more dates available
+                    + {tourData.departureDates.length - 3} {t('tourPage.moreDates')}
                   </p>
                 )}
               </div>
@@ -232,33 +242,33 @@ const Cakes: React.FC = () => {
         </div>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">Daily Itinerary</h2>
-          <Accordion 
-            type="single" 
-            collapsible 
+          <h2 className="text-2xl font-bold mb-4">{t('tourPage.dailyItinerary')}</h2>
+          <Accordion
+            type="single"
+            collapsible
             value={openDay}
             onValueChange={handleValueChange}
           >
             {cakes.itinerary.map((day) => (
-              <AccordionItem 
-                key={day.day} 
+              <AccordionItem
+                key={day.day}
                 value={`day-${day.day}`}
                 ref={(el) => { dayRefs.current[`day-${day.day}`] = el; }}
               >
                 <AccordionTrigger>
-                  Day {day.day}: {day.title}
+                  {t('tourPage.day')} {day.day}: {day.title[lang]}
                 </AccordionTrigger>
                 <AccordionContent>
-                  {day.description.map((paragraph, i) => (
+                  {day.description[lang].map((paragraph: string, i: number) => (
                     <p key={i} className="mb-4 text-slate-700">{paragraph}</p>
                   ))}
 
                   {day.optionalActivitiesDetailed && day.optionalActivitiesDetailed.length > 0 && (
                     <div className="my-4 space-y-2">
-                      {day.optionalActivitiesDetailed.map((activity, idx) => (
-                        <OptionalActivityCard 
-                          key={idx} 
-                          activity={activity} 
+                      {day.optionalActivitiesDetailed.map((activity: OptionalActivity, idx: number) => (
+                        <OptionalActivityCard
+                          key={idx}
+                          activity={activity}
                           dayNumber={day.day}
                         />
                       ))}
@@ -268,27 +278,35 @@ const Cakes: React.FC = () => {
                   <ImageGallery images={day.images} />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-4">
-                    {day.accommodation && day.accommodation !== "-" && (
-                      <InfoItem icon={<Bed />} title="Accommodation">{day.accommodation}</InfoItem>
+                    {day.accommodation && day.accommodation[lang] !== "-" && (
+                      <InfoItem icon={<Bed />} title={t('tourPage.accommodation')}>
+                        {day.accommodation[lang]}
+                      </InfoItem>
                     )}
                     {day.includedActivities && (
-                      <InfoItem icon={<CheckCircle2 />} title="Included Activities">
+                      <InfoItem icon={<CheckCircle2 />} title={t('tourPage.includedActivities')}>
                         <ul className="list-disc list-inside">
-                          {day.includedActivities.map((a, idx) => <li key={idx}>{a}</li>)}
+                          {day.includedActivities[lang].map((a: string, idx: number) => (
+                            <li key={idx}>{a}</li>
+                          ))}
                         </ul>
                       </InfoItem>
                     )}
                     {day.meals && (
-                      <InfoItem icon={<Utensils />} title="Meals">
+                      <InfoItem icon={<Utensils />} title={t('tourPage.meals')}>
                         <div className="space-y-1">
-                          {Array.isArray(day.meals) ? day.meals.map((m, idx) => <div key={idx}>{m}</div>) : <div>{day.meals}</div>}
+                          {day.meals[lang].map((m: string, idx: number) => (
+                            <div key={idx}>{m}</div>
+                          ))}
                         </div>
                       </InfoItem>
                     )}
-                    {day.optionalActivities && day.optionalActivities[0] !== "-" && (
-                      <InfoItem icon={<PlusCircle />} title="Optional Activities">
+                    {day.optionalActivities && day.optionalActivities[lang][0] !== "-" && (
+                      <InfoItem icon={<PlusCircle />} title={t('tourPage.optionalActivities')}>
                         <ul className="list-disc list-inside">
-                          {day.optionalActivities.map((a, idx) => <li key={idx}>{a}</li>)}
+                          {day.optionalActivities[lang].map((a: string, idx: number) => (
+                            <li key={idx}>{a}</li>
+                          ))}
                         </ul>
                       </InfoItem>
                     )}
@@ -299,37 +317,23 @@ const Cakes: React.FC = () => {
           </Accordion>
         </section>
 
+        {/* Tour Route Map */}
+        {cakes.mapImage && (
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t('tourPage.tourRoute')}</h2>
+            <ImageGallery images={[cakes.mapImage]} />
+          </section>
+        )}
+
         <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
-          <h2 className="text-2xl font-bold mb-2">What's Included</h2>
+          <h2 className="text-2xl font-bold mb-2">{t('tourPage.whatsIncluded')}</h2>
           <ul className="list-disc pl-5 text-slate-700 space-y-1">
-            <li>Services of an experienced tour leader born and raised in Switzerland and fluent in the languages of all 5 countries you'll visit</li>
-            <li>Insights and explanations from a baker and chef with more than 30 years experience in the food industry</li>
-            <li>Hotel accommodation (twin share)</li>
-            <li>Daily breakfasts</li>
-            <li>6 dinners and a multitude of delicacies along the way</li>
-            <li>
-              Activities and entries including:
-              <ul className="list-[circle] pl-6 mt-1 space-y-1">
-                <li>Transportation in an air-conditioned coach</li>
-                <li>Cake and chocolate making class in Switzerland</li>
-                <li>Traditional Austrian dessert class in Salzurg</li>
-                <li>Linzer Torte class in Linz</li>
-                <li>Strudel making demonstration in Vienna</li>
-                <li>Tours and tastings at 3 distilleries and 2 wineries</li>
-                <li>Tour of a salt mine</li>
-                <li>Cablecar up the highest peak in Germany</li>
-                <li>Cruise on the Danube River</li>
-              </ul>
-            </li>
-            <li>Guided walking tours of destinations including Strasbourg, Salzburg, and Vienna</li>
-            <li>All applicable taxes</li>
-            <li>Luggage transfers between hotels</li>
-            <li>Advice and support prior to and during the tour including travel tips, plus lots of foodie and insider recommendations</li>
-            <li>Small group size (max 12)</li>
-            <li>A few extra surprises and mementos along the way</li>
+            {cakes.whatsIncluded?.[lang].map((item: string, idx: number) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ul>
-        </section>   
-        
+        </section>
+
         {tourData && tourData.departureDates && (
           <section>
             <AvailabilityDisplay departureDates={tourData.departureDates} compact={false} />

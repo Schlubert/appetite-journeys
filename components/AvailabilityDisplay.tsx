@@ -1,5 +1,7 @@
 import React from 'react';
 import { Calendar, Users, AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import DateDisplay from '@/components/DateDisplay';
 
 export interface DepartureDate {
   date: string;
@@ -13,9 +15,10 @@ interface AvailabilityDisplayProps {
 }
 
 const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({ 
-  departureDates, 
+    departureDates, 
   compact = false 
 }) => {
+  const { t } = useTranslation();
   // Group dates by year
   const groupedByYear = departureDates.reduce((acc, dep) => {
     const year = dep.year || new Date(dep.date).getFullYear();
@@ -37,19 +40,19 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
           <div className="flex items-start gap-2 bg-alpine-green bg-opacity-10 rounded-lg p-3">
             <Calendar className="w-5 h-5 text-alpine-green flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-semibold text-alpine-green">Next Departure</p>
+              <p className="text-sm font-semibold text-alpine-green">{t('tourPage.nextDeparture')}</p>
               <p className="text-sm text-rock-gray">{nextAvailable.date}</p>
               {nextAvailable.status === 'limited' && (
                 <span className="text-xs text-orange-600 font-medium flex items-center gap-1 mt-1">
                   <AlertCircle className="w-3 h-3" />
-                  Only a few spots left
+                  {t('tourPage.onlyAFewSpotsLeft')}
                 </span>
               )}
             </div>
           </div>
         )}
         <p className="text-sm text-slate-600">
-          {departureDates.length} departure dates available
+          {t('tourPage.departureDatesAvailable', { count: departureDates.length })}
         </p>
       </div>
     );
@@ -60,7 +63,7 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
     <div className="space-y-6">
       <div className="flex items-center gap-2 mb-4">
         <Calendar className="w-6 h-6 text-alpine-green" />
-        <h3 className="text-xl font-bold text-rock-gray">Departure Dates</h3>
+        <h3 className="text-xl font-bold text-rock-gray">{t('tourPage.departureDates')}</h3>
       </div>
 
       {/* Next Available Highlight */}
@@ -69,13 +72,13 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-sm font-semibold text-alpine-green uppercase tracking-wide mb-1">
-                Next Available Departure
+                {t('tourPage.nextDeparture')}
               </p>
               <p className="text-2xl font-bold text-rock-gray mb-2">{nextAvailable.date}</p>
               {nextAvailable.status === 'limited' && (
                 <div className="flex items-center gap-2 text-orange-600">
                   <Users className="w-4 h-4" />
-                  <span className="text-sm font-medium">Limited spaces remaining</span>
+                  <span className="text-sm font-medium">{t('tourPage.limitedSpacesRemaining')}</span>
                 </div>
               )}
             </div>
@@ -83,7 +86,7 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
               href="/contact" 
               className="bg-alpine-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition whitespace-nowrap"
             >
-              Book Now
+              {t('tourPage.bookNow')}
             </a>
           </div>
         </div>
@@ -96,7 +99,7 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
           .map(([year, dates]) => (
             <div key={year} className="border border-slate-200 rounded-lg overflow-hidden">
               <div className="bg-slate-50 px-4 py-2 border-b border-slate-200">
-                <h4 className="font-bold text-lg text-rock-gray">{year} Departures</h4>
+                <h4 className="font-bold text-lg text-rock-gray">{year} {t('tourPage.departures')}</h4>
               </div>
               <div className="divide-y divide-slate-100">
                 {dates.map((dep, idx) => (
@@ -108,24 +111,23 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
                   >
                     <div className="flex items-center gap-3">
                       <Calendar className="w-4 h-4 text-slate-400" />
-                      <span
-                        className={`font-medium ${
-                          dep.status === 'sold-out' ? 'line-through text-slate-500' : 'text-rock-gray'
-                        }`}
-                      >
-                        {dep.date}
-                      </span>
+                      <DateDisplay
+                      date={dep.date}
+                      className={`font-medium ${
+                        dep.status === 'sold-out' ? 'line-through text-slate-500' : 'text-rock-gray'
+                      }`}
+                    />
                     </div>
                     <div>
                       {dep.status === 'sold-out' ? (
-                        <span className="text-sm text-red-600 font-semibold">Sold Out</span>
+                        <span className="text-sm text-red-600 font-semibold">{t('tourPage.soldOut')}</span>
                       ) : dep.status === 'limited' ? (
                         <span className="text-sm text-orange-600 font-semibold flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
-                          Limited Availability
+                          {t('tourPage.limitedAvailability')}
                         </span>
                       ) : (
-                        <span className="text-sm text-alpine-green font-semibold">Available</span>
+                        <span className="text-sm text-alpine-green font-semibold">{t('tourPage.available')}</span>
                       )}
                     </div>
                   </div>
@@ -138,13 +140,13 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
       {/* Join Waitlist for future years */}
       <div className="bg-slate-50 rounded-lg p-6 text-center">
         <p className="text-rock-gray mb-3">
-          Looking for dates beyond {Math.max(...Object.keys(groupedByYear).map(Number))}?
+          {t('tourPage.lookingForDatesBeyond', { year: Math.max(...Object.keys(groupedByYear).map(Number)) })}
         </p>
         <a 
           href="/contact?subject=Waitlist" 
           className="text-alpine-green font-semibold hover:underline"
         >
-          Join our waitlist for future departures →
+          {t('tourPage.joinWaitlist')}
         </a>
       </div>
     </div>

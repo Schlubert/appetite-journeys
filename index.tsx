@@ -4,6 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "leaflet/dist/leaflet.css";
 import "./src/index.css";
+import "./i18n";
+import { formatDateForLanguage } from '@/utils/formatDate';
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {

@@ -1,0 +1,223 @@
+{ 
+  
+  "regions": {
+    "switzerland": {
+      "countryName": "Switzerland",
+      "tagline1": "Taste the Culture.",
+      "tagline2": "See the Beauty.",
+      "title": "Discover Switzerland",
+      "description": "Intimate culinary and scenic tours through the heart of Switzerland. Limited to 12 guests for an unforgettable experience."
+    },
+    "europe": {
+      "countryName": "Europe",
+      "tagline1": "Taste the Culture.",
+      "tagline2": "See the Beauty.",
+      "title": "Across Europe",
+      "description": "Experience the sweet side of Europe, from the Black Forest to Vienna's grand coffeehouses. A journey through 5 countries of culinary delights."
+    },
+    "newzealand": {
+      "title": "New Zealand Adventures",
+      "description": "Discover the natural beauty and rich culinary culture of Aotearoa. From stunning landscapes to vibrant cities, experience New Zealand's food scene."
+    },
+    "france": {
+    "countryName": "France",
+    "tagline1": "Taste the Culture.",
+    "tagline2": "See the Beauty.",
+      "title": "French Gastronomy",
+      "description": "Explore some of the culinary treasures of France."
+    },
+    "germany": {
+    "countryName": "Germany",
+    "tagline1": "Taste the Culture.",
+    "tagline2": "See the Beauty.",
+      "title": "German Cuisine",
+      "description": "Discover the flavours of Germany."
+    },
+    "exploreTours": "Explore Our Tours",
+    "availableTours": "Available Tours",
+    "noToursAvailable": "No tours available for this region yet.",
+    "notFound": "Region Not Found",
+    "regionDoesNotExist": "The region you're looking for doesn't exist."
+  },
+  "socialMedia": {
+    "followOurJourney": "Follow our journey",
+    "joinUsDescription": "Join us on social media for travel tips, behind-the-scenes moments, and Swiss inspiration"
+    },
+
+  "about": {
+  "heroTitle": "Meet Your Hosts",
+  "philosophy": "Our Philosophy"
+},
+  "faq": {
+  "title": "Frequently Asked Questions"
+},
+  "chHome": {
+  "hero": {
+    "country": "Switzerland",
+    "tagline1": "Taste the Culture.",
+    "tagline2": "See the Beauty.",
+    "sub": "Intimate culinary and scenic tours through the heart of Switzerland. Limited to 12 guests for an unforgettable experience.",
+    "cta": "Explore Our Tours"
+  },
+  "tours": {
+    "title": "Our Featured Tours",
+    "sub": "Designed for travellers with taste."
+  },
+  "different": {
+    "title": "What Makes Us Different",
+    "sub": "We're not just another tour company. Our deep Swiss roots and passion for authentic experiences create journeys that connect you with the real Switzerland."
+  },
+  "promise": {
+    "title": "The Appetite Journey's Promise",
+    "body": "Every tour is crafted with the eyes of a local, and the expertise of more than 30 years in the international culinary industry. We don't just show you Switzerland - we help you taste, feel, and understand it. From the distiller who becomes your friend to the chocolatier who shares family recipes, these are connections that last long after you return home."
+  },
+  "features": {
+    "smallGroups": {
+      "title": "Small Groups Only",
+      "description": "Maximum 12 guests ensures personalized attention and authentic experiences."
+    },
+    "culinary": {
+      "title": "Culinary Expertise",
+      "description": "With more than 50 years combined culinary and hospitality experience, we know food and travel. We have the knowledge and connections to create unforgettable experiences."
+    },
+    "hiddenGems": {
+      "title": "Hidden Gems",
+      "description": "Visit places tourists seldom see - from family-run distilleries to traditional artisans practicing centuries-old crafts. Discover the authentic Switzerland."
+    },
+    "localKnowledge": {
+      "title": "Local Knowledge",
+      "description": "Benefit from the knowledge of someone who was born and raised in Switzerland mixed with the insight of an internationally experienced industry professional."
+    }
+  }
+},
+  "toursPage": {
+      "title": "Our Tours",
+      "sub": "Handcrafted journeys designed for travellers with taste.",
+      "switzerland": "Switzerland",
+      "newZealand": "New Zealand",
+      "europe": "Europe",
+      "switzerlandSub": "Food, wine and culture in the heart of the Alps.",
+      "newZealandSub": "Culinary adventures through Aotearoa.",
+      "europeSub": "Multi-country journeys across Europe's finest food regions."
+    },
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact",
+    "terms": "Terms & Conditions",
+    "gateway": "Gateway",
+    "switzerland": "Switzerland",
+    "europe": "Europe",
+    "newZealand": "New Zealand",
+    "aboutCompany": "About Appetite Journeys",
+    "aboutSwitzerland": "About Switzerland",
+    "aboutEurope": "About Europe",
+    "aboutNewZealand": "About New Zealand"
+   },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "copyright": "Appetite Journeys. All Rights Reserved.",
+    "ggroup": "Part of The Gilbert's Group"
+  },
+  "tourPage": {
+    "keyDetails": "Key Details",
+    "price": "Price",
+    "perPersonTwinShare": "per person (twin share)",
+    "singleSupplement": "Single Supplement",
+    "departureDates": "Departure Dates",
+    "soldOut": "Sold Out",
+    "limited": "Limited",
+    "dailyItinerary": "Daily Itinerary",
+    "whatsIncluded": "What's Included",
+    "tourRoute": "Tour Route",
+    "day": "Day",
+    "accommodation": "Accommodation",
+    "includedActivities": "Included Activities",
+    "optionalActivities": "Optional Activities",
+    "meals": "Meals",
+    "extraCharge": "Extra Charge",
+    "importantNotes": "Important Notes",
+    "whatsIncludedLabel": "What's Included",
+    "optional": "OPTIONAL",
+    "bookNow": "Book Now",
+    "duration": "Duration",
+    "comingSoon": "Coming Soon",
+    "nextDeparture": "Next Departure",
+    "departureDatesAvailable": "Departure Dates Available",
+    "limitedAvailability": "Limited Availability",
+    "available": "Available",
+    "lookingForDatesBeyond": "Looking for dates beyond {year}?",
+    "joinWaitlist": "Join our waitlist for future departures →",
+    "pricePerPerson": "Per person (twin share)",
+    "departureDate": "departure Date",
+    "departureStatus": "departure Status",
+    "viewDetails": "View Details",
+    "departures": "Departures"
+
+  },
+  "gateway": {
+    "tagline": "Food & Wine Travel Specialists",
+    "heroTitle": "Where Would You Like to Travel?",
+    "heroSub": "Intimate culinary journeys crafted for travellers with taste.",
+    "chooseDestination": "Choose your destination",
+    "languageNote": "Guided throughout in English.",
+    "europeTitle": "Choose Your European Destination",
+    "europeBack": "Back",
+    "whyChooseUs": "Why Choose Appetite Journeys",
+    "whyChooseUsDescription": "Every journey is crafted with passion, authenticity, and attention to detail."
+  },
+  "nzHome": {
+    "hero": {
+      "country": "New Zealand",
+      "tagline1": "Taste the Culture.",
+      "tagline2": "See the Beauty.",
+      "sub": "Intimate culinary and scenic tours through Aotearoa - New Zealand. Limited to 12 guests for an unforgettable experience.",
+      "cta": "Explore Our Tours"
+    },
+    "tours": {
+      "title": "Our Featured Tours",
+      "sub": "Designed for travellers with taste."
+    },
+    "different": {
+      "title": "What Makes Us Different",
+      "sub": "We're not just another tour company. Our passion for authentic experiences creates journeys that connect you with the real New Zealand."
+    },
+    "promise": {
+      "title": "The Appetite Journey's Promise",
+      "body": "Every tour is crafted with local knowledge and more than 50 years of combined culinary and hospitality expertise. We don't just show you New Zealand - we help you taste, feel, and understand it."
+    },
+    "features": {
+      "smallGroups": {
+        "title": "Small Groups Only",
+        "description": "Maximum 12 guests ensures personalized attention and authentic experiences."
+      },
+      "culinary": {
+        "title": "Culinary Expertise",
+        "description": "With more than 50 years combined culinary and hospitality experience, we know food and travel. We have the knowledge and connections to create unforgettable experiences."
+      },
+      "hiddenGems": {
+        "title": "Hidden Gems",
+        "description": "Visit places tourists seldom see - from family-run wineries to traditional artisans. Discover authentic New Zealand."
+      },
+      "localKnowledge": {
+        "title": "Local Knowledge",
+        "description": "Benefit from the insight of an internationally experienced industry professional who knows New Zealand intimately."
+      }    
+    }    
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "We'd love to hear from you! Whether you have a question about our tours, or just want to say hello, feel free to reach out.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Thank you for reaching out! We'll get back to you soon.",
+    "info": "Contact Information"
+  } 
+}

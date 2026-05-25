@@ -8,6 +8,6 @@ export const getAssetPath = (path: string) => {
 };
 
 // Specific helper for images
-export const getImagePath = (imageName: string) => {
-  return getAssetPath(`images/${imageName}`);
+export const getImagePath = (path: string) => {
+  return getAssetPath(`images/${path}`);
 };

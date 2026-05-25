@@ -1,0 +1,220 @@
+{
+  "regions": {
+    "switzerland": {
+      "countryName": "Suisse",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Découvrez la Suisse",
+      "description": "Des voyages culinaires et panoramiques intimistes au cœur de la Suisse. Limités à 12 participants pour une expérience inoubliable."
+    },
+    "europe": {
+      "countryName": "Europe",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "À travers l’Europe",
+      "description": "Découvrez le côté gourmand de l’Europe, de la Forêt-Noire aux grands cafés viennois. Un voyage à travers 5 pays riches en saveurs culinaires."
+    },
+    "newzealand": {
+      "title": "Aventures en Nouvelle-Zélande",
+      "description": "Découvrez la beauté naturelle et la riche culture culinaire d’Aotearoa. Des paysages spectaculaires aux villes dynamiques, vivez la scène gastronomique néo-zélandaise."
+    },
+    "france": {
+      "countryName": "France",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Gastronomie française",
+      "description": "Explorez quelques-uns des trésors culinaires de la France."
+    },
+    "germany": {
+      "countryName": "Allemagne",
+      "tagline1": "Goûtez à la culture.",
+      "tagline2": "Admirez la beauté.",
+      "title": "Cuisine allemande",
+      "description": "Découvrez les saveurs de l’Allemagne."
+    },
+    "exploreTours": "Découvrez nos voyages",
+    "availableTours": "Voyages disponibles",
+    "noToursAvailable": "Aucun voyage n’est encore disponible pour cette région.",
+    "notFound": "Région introuvable",
+    "regionDoesNotExist": "La région que vous recherchez n’existe pas."
+  },
+  "socialMedia": {
+    "followOurJourney": "Suivez notre aventure",
+    "joinUsDescription": "Rejoignez-nous sur les réseaux sociaux pour des conseils de voyage, des coulisses et de l’inspiration suisse"
+  },
+
+  "about": {
+  "heroTitle": "Rencontrez vos hôtes",
+  "philosophy": "Notre philosophie"
+},
+"faq": {
+  "title": "Questions fréquemment posées"
+},
+  "chHome": {
+  "hero": {
+    "country": "Suisse",
+    "tagline1": "Goûtez la Culture.",
+    "tagline2": "Découvrez la Beauté.",
+    "sub": "Des circuits gastronomiques et panoramiques intimes à travers la Suisse. Limités à 12 invités pour une expérience inoubliable.",
+    "cta": "Découvrez nos circuits"
+  },
+  "tours": {
+    "title": "Nos Circuits phares",
+    "sub": "Conçus pour les voyageurs qui ont du goût."
+  },
+  "different": {
+    "title": "Ce qui nous distingue",
+    "sub": "Nous ne sommes pas une simple société de voyages. Nos racines suisses profondes et notre passion pour les expériences authentiques créent des voyages qui vous connectent au vrai Suisse."
+  },
+  "promise": {
+    "title": "La Promesse d'Appetite Journeys",
+    "body": "Chaque circuit est élaboré avec une connaissance locale et plus de 30 ans d'expertise dans l'industrie culinaire internationale. Nous ne vous montrons pas seulement la Suisse - nous vous aidons à la goûter, la ressentir et la comprendre. Du distillateur qui devient votre ami au chocolatier qui partage des recettes familiales, ce sont des connexions qui durent longtemps après votre retour à la maison."
+  },
+  "features": {
+    "smallGroups": {
+      "title": "Petits groupes uniquement",
+      "description": "Un maximum de 12 voyageurs garantit une attention personnalisée et des expériences authentiques."
+    },
+    "culinary": {
+      "title": "Expertise culinaire",
+      "description": "Avec plus de 50 ans d'expérience combinée en cuisine et en hospitalité, nous connaissons la nourriture et le voyage. Nous avons les connaissances et les contacts nécessaires pour créer des expériences inoubliables."
+    },
+    "hiddenGems": {
+      "title": "Trésors cachés",
+      "description": "Visitez des endroits que les touristes voient rarement - des distilleries familiales aux artisans traditionnels pratiquant des métiers séculaires. Découvrez la Suisse authentique."
+    },
+    "localKnowledge": {
+      "title": "Connaissance locale",
+      "description": "Bénéficiez de la connaissance de quelqu'un qui a grandi en Suisse, combinée à l'expertise d'un professionnel international."
+    }
+  }
+},
+  "toursPage": {
+  "title": "Nos Circuits",
+  "sub": "Des voyages artisanaux conçus pour les voyageurs passionnés.",
+  "switzerland": "Suisse",
+  "newZealand": "Nouvelle-Zélande",
+  "europe": "Europe",
+  "switzerlandSub": "Gastronomie, vins et culture au cœur des Alpes.",
+  "newZealandSub": "Aventures culinaires à travers l'Aotearoa.",
+  "europeSub": "Circuits multi-pays à travers les meilleures régions gastronomiques d'Europe."
+},
+"nav": {
+  "home": "Accueil",
+  "tours": "Voyages",
+  "faq": "FAQ",
+  "about": "À propos",
+  "contact": "Contact",
+  "terms": "Conditions générales",
+  "gateway": "Portail",
+  "switzerland": "Suisse",
+  "europe": "Europe",
+  "newZealand": "Nouvelle-Zélande",
+  "aboutCompany": "À propos d’Appetite Journeys",
+  "aboutSwitzerland": "À propos de la Suisse",
+  "aboutEurope": "À propos de l’Europe",
+  "aboutNewZealand": "À propos de la Nouvelle-Zélande"
+  },
+  "footer": {
+    "about": "À propos",
+    "contact": "Contact",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "copyright": "Appetite Journeys. Tous droits réservés.",
+    "ggroup": "Partie du Gilbert's Group"
+  },
+  "tourPage": {
+    "keyDetails": "Informations clés",
+    "price": "Prix",
+    "perPersonTwinShare": "par personne (chambre double)",
+    "singleSupplement": "Supplément chambre individuelle",
+    "departureDates": "Dates de départ",
+    "soldOut": "Complet",
+    "limited": "Places limitées",
+    "dailyItinerary": "Programme jour par jour",
+    "whatsIncluded": "Ce qui est inclus",
+    "tourRoute": "Itinéraire",
+    "day": "Jour",
+    "accommodation": "Hébergement",
+    "includedActivities": "Activités incluses",
+    "optionalActivities": "Activités optionnelles",
+    "meals": "Repas",
+    "extraCharge": "Supplément",
+    "importantNotes": "Notes importantes",
+    "whatsIncludedLabel": "Ce qui est inclus",
+    "optional": "OPTIONNEL",
+    "bookNow": "Réserver",
+    "duration": "Durée",
+    "comingSoon": "Bientôt disponible",
+    "nextDeparture": "Prochain départ",
+    "departureDatesAvailable": "Dates de départ disponibles",
+    "limitedAvailability": "Disponibilité limitée",
+    "available": "Disponible",
+    "moreDates": "dates supplémentaires disponibles",
+    "lookingForDatesBeyond": "Vous cherchez des dates au-delà de {year} ?",
+    "joinWaitlist": "Rejoignez notre liste d'attente pour les départs futurs →",
+    "pricePerPerson": "Par personne (chambre double)",
+    "viewDetails": "Voir les détails",
+    "departures": "Départs"
+  },
+  "gateway": {
+    "tagline": "Spécialistes des voyages gastronomiques",
+    "heroTitle": "Où souhaitez-vous voyager ?",
+    "heroSub": "Des voyages gastronomiques intimesconçus pour les voyageurs passionnés.",
+    "chooseDestination": "Choisissez votre destination",
+    "languageNote": "Guidé en français tout au long du voyage.",
+    "europeTitle": "Choisissez votre destination européenne",
+    "europeBack": "Retour",
+    "whyChooseUs": "Pourquoi choisir Appetite Journeys ?",
+    "whyChooseUsDescription": "Chez Appetite Journeys, nous ne sommes pas une agence de voyage ordinaire. Nous sommes des passionnés de voyages gastronomiques, dédiés à créer des expériences authentiques et inoubliables pour les voyageurs qui ont du goût. Voici ce qui nous distingue :"
+  },
+  "nzHome": {
+    "hero": {
+      "country": "Nouvelle-Zélande",
+      "tagline1": "Goûtez la Culture.",
+      "tagline2": "Découvrez la Beauté.",
+      "sub": "Des circuits gastronomiques et panoramiques intimes à travers l'Aotearoa - Nouvelle-Zélande. Limités à 12 invités pour une expérience inoubliable.",
+      "cta": "Découvrez nos circuits"
+    },
+    "tours": {
+      "title": "Nos circuits phares",
+      "sub": "Conçus pour les voyageurs qui ont du goût."
+    },
+    "different": {
+      "title": "Ce qui nous distingue",
+      "sub": "Nous ne sommes pas une agence de voyage ordinaire. Notre passion pour les expériences authentiques crée des voyages qui vous connectent à la vraie Nouvelle-Zélande."
+    },
+    "promise": {
+      "title": "La Promesse d'Appetite Journeys",
+      "body": "Chaque circuit est élaboré avec une connaissance locale et plus de 50 ans d'expertise culinaire et hôtelière combinée. Nous ne vous montrons pas seulement la Nouvelle-Zélandenous vous aidons à la goûter, la ressentir et la comprendre."
+    },
+    "features": {
+      "smallGroups": {
+        "title": "Petits groupes uniquement",
+        "description": "Un maximum de 12 invités garantit une attention personnalisée et des expériences authentiques."
+      },
+      "culinary": {
+        "title": "Expertise culinaire",
+        "description": "Avec plus de 50 ans d'expérience culinaire et hôtelière combinée, nous maîtrisons l'art du voyage gastronomique. Nous avons les connaissances et les contacts pour créer des expériences inoubliables."
+      },
+      "hiddenGems": {
+        "title": "Trésors cachés",
+        "description": "Visitez des endroits que les touristes voient rarementdes domaines viticoles familiaux aux artisans traditionnels. Découvrez la Nouvelle-Zélande authentique."
+      },
+      "localKnowledge": {
+        "title": "Connaissance locale",
+        "description": "Profitez de l'expertise d'un professionnel chevronné de l'industrie qui connaît intimement la Nouvelle-Zélande."
+      }     
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Nous aimerions avoir de vos nouvelles ! Que vous ayez une question sur nos circuits, ou que vous souhaitiez simplement dire bonjour, n'hésitez pas à nous contacter.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "message": "Message",
+    "submit": "Envoyer le message",
+    "success": "Merci de nous avoir contactés ! Nous vous répondrons bientôt.",
+    "info": "Informations de contact"
+  } 
+}

@@ -7,9 +7,11 @@ import SocialMediaSection from '../components/SocialMediaSection';
 import { Users, MapPin, ChefHat, Award } from 'lucide-react';
 import { getImagePath } from '../utils/paths';
 import BookNowButton from "@/components/BookNowButton";
+import { useTranslation } from 'react-i18next';
 
 const HomePage: React.FC = () => {
-  // Signal to navbar that we're on homepage
+  const { t } = useTranslation();
+
   useEffect(() => {
     document.body.setAttribute('data-page', 'home');
     return () => {
@@ -20,36 +22,37 @@ const HomePage: React.FC = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Small Groups Only",
-      description: "Maximum 12 guests ensures personalized attention and authentic experiences"
+      title: t('chHome.features.smallGroups.title'),
+      description: t('chHome.features.smallGroups.description'),
     },
     {
       icon: <ChefHat className="w-8 h-8" />,
-      title: "Culinary Expertise",
-      description: "With more than 50 years combined culinary and hospitality experience, we know food and travel. We have the knowledge and connections to create unforgettable experiences."
+      title: t('chHome.features.culinary.title'),
+      description: t('chHome.features.culinary.description'),
     },
     {
       icon: <MapPin className="w-8 h-8" />,
-      title: "Hidden Gems",
-      description: "Visit places tourists seldom see - from family-run distilleries to traditional artisans practicing centuries-old crafts. Discover the authentic Switzerland."
+      title: t('chHome.features.hiddenGems.title'),
+      description: t('chHome.features.hiddenGems.description'),
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Local Knowledge",
-      description: "Benefit from the knowledge of someone who was born and raised in Switzerland mixed with the insight of an internationally experienced industry professional."
-    }
+      title: t('chHome.features.localKnowledge.title'),
+      description: t('chHome.features.localKnowledge.description'),
+    },
   ];
 
   return (
     <>
       <div className="space-y-16">
+
         {/* Hero Section */}
         <section className="relative h-[52vh] sm:h-[52vh] lg:h-[52vh] mt-1 -mx-4 sm:-mx-2 lg:-mx-8 overflow-hidden">
           <div className="w-full h-full grid grid-cols-3 gap-2">
             {[
-              getImagePath("niesen.jpeg"),
-              getImagePath("cailler2.jpg"),
-              getImagePath("bern1.jpg")
+              getImagePath("ch/niesen.jpeg"),
+              getImagePath("ch/cailler2.jpg"),
+              getImagePath("ch/bern1.jpg"),
             ].map((src, idx) => (
               <img
                 key={idx}
@@ -60,82 +63,74 @@ const HomePage: React.FC = () => {
             ))}
           </div>
 
-          {/* Overlay text box */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/40 px-4 sm:px-6 lg:px-12">
             <div className="text-center text-white max-w-4xl mx-auto">
 
-              {/* Mobile: Flag above Switzerland */}
+              {/* Mobile: Flag above country name */}
               <div className="sm:hidden flex flex-col items-center gap-2 mb-2">
                 <img
-                  src={getImagePath("swiss_flag.png")}
+                  src={getImagePath("ch/swiss_flag.png")}
                   alt="Swiss flag"
                   className="h-8 w-auto drop-shadow-md"
                 />
                 <span className="text-3xl font-semibold drop-shadow-2xl leading-tight">
-                  Switzerland
+                  {t('chHome.hero.country')}
                 </span>
               </div>
 
-              {/* Desktop: Flag to the left of Switzerland */}
+              {/* Desktop: Flag inline with country name */}
               <div className="hidden sm:flex justify-center -mb-1">
                 <div className="relative mb-1">
                   <img
-                    src={getImagePath("swiss_flag.png")}
+                    src={getImagePath("ch/swiss_flag.png")}
                     alt="Swiss flag"
                     className="h-10 md:h-12 w-auto absolute left-1/2 -translate-x-[calc(200%+2.5rem)] md:-translate-x-[calc(200%+4.5rem)] top-1/2 -translate-y-1/2 drop-shadow-md"
                   />
                   <span className="text-5xl md:text-6xl lg:text-6xl font-semibold drop-shadow-2xl leading-tight">
-                    Switzerland
+                    {t('chHome.hero.country')}
                   </span>
                 </div>
               </div>
 
               {/* Main headline */}
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold drop-shadow-2xl mb-1 sm:mb-1 leading-tight">
-                Taste the Culture.<br />See the Beauty.
+                {t('chHome.hero.tagline1')}<br />{t('chHome.hero.tagline2')}
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto drop-shadow-lg mb-1 sm:mb-1 lg:mb-1 leading-relaxed">
-                Intimate culinary and scenic tours through the heart of Switzerland. Limited to 12 guests for an unforgettable experience.
+                {t('chHome.hero.sub')}
               </p>
 
-              <a 
+              <a
                 href="#tours"
                 className="inline-block bg-alpine-green hover:bg-opacity-90 text-white text-base sm:text-lg md:text-xl font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-2xl transition-all transform hover:scale-105"
               >
-                Explore Our Tours
+                {t('chHome.hero.cta')}
               </a>
             </div>
           </div>
         </section>
 
         {/* Tours Section */}
-<section id="tours" className="scroll-mt-20 relative">
-  <div className="text-center mb-3 relative">
-    {/* Title */}
-    <h2 className="text-5xl font-serif font-bold text-alpine-green mb-2">
-      Our Featured Tours
-    </h2>
+        <section id="tours" className="scroll-mt-20 relative">
+          <div className="text-center mb-3 relative">
+            <h2 className="text-5xl font-serif font-bold text-alpine-green mb-2">
+              {t('chHome.tours.title')}
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              {t('chHome.tours.sub')}
+            </p>
+            <div className="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 mt-4 sm:mt-0">
+              <BookNowButton size="sm" />
+            </div>
+          </div>
 
-    {/* Subtitle */}
-    <p className="text-lg text-gray-600 mb-6">
-      Designed for travellers with taste.
-    </p>
-
-    {/* Book Now button (floats right on desktop, below on mobile) */}
-    <div className="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 mt-4 sm:mt-0">
-      <BookNowButton size="sm" />
-    </div>
-  </div>
-
-  {/* Tour cards */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-    {TOURS_DATA.slice(0, 3).map((tour) => (
-      <TourCard key={tour.id} tour={tour} />
-    ))}
-  </div>
-</section>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {TOURS_DATA.filter(t => t.region === 'switzerland').slice(0, 3).map((tour) => (
+              <TourCard key={tour.id} tour={tour} />
+            ))}
+          </div>
+        </section>
 
         {/* Social Media Section */}
         <SocialMediaSection />
@@ -144,9 +139,11 @@ const HomePage: React.FC = () => {
         <section className="py-7 bg-gray-200 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-5xl font-serif font-bold text-alpine-green mb-6">What Makes Us Different</h2>
+              <h2 className="text-5xl font-serif font-bold text-alpine-green mb-6">
+                {t('chHome.different.title')}
+              </h2>
               <p className="text-xl text-rock-gray max-w-3xl mx-auto">
-                We're not just another tour company. Our deep Swiss roots and passion for authentic experiences create journeys that connect you with the real Switzerland.
+                {t('chHome.different.sub')}
               </p>
             </div>
 
@@ -164,17 +161,19 @@ const HomePage: React.FC = () => {
 
             <div className="mt-16 text-center">
               <div className="bg-white rounded-xl p-10 max-w-4xl mx-auto shadow-lg">
-                <h3 className="text-3xl font-serif font-bold text-alpine-green mb-4">The Appetite Journey’s Promise</h3>
+                <h3 className="text-3xl font-serif font-bold text-alpine-green mb-4">
+                  {t('chHome.promise.title')}
+                </h3>
                 <p className="text-lg text-rock-gray leading-relaxed">
-                  Every tour is crafted with the eyes of a local, and the expertise of more than 30 years in the international culinary industry. We don't just show you Switzerland - we help you taste, feel, and understand it. From the distiller who becomes your friend to the chocolatier who shares family recipes, these are connections that last long after you return home.
+                  {t('chHome.promise.body')}
                 </p>
               </div>
             </div>
           </div>
         </section>
+
       </div>
 
-      {/* Floating Contact Button - Only on Homepage */}
       <FloatingContactButton onlyOnHomepage={true} />
     </>
   );

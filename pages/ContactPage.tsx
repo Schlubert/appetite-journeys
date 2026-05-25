@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import { seoConfig } from '../config/seoConfig';
 import React, { useState } from 'react';
 import { SOCIAL_LINKS } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const socialIconProps = {
     className: "w-8 h-8",
@@ -37,7 +38,7 @@ const SocialIcons: { [key: string]: React.ReactNode } = {
 
 const ContactPage: React.FC = () => {
     const [submitted, setSubmitted] = useState(false);
-
+    const { t } = useTranslation();
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
@@ -61,16 +62,16 @@ const ContactPage: React.FC = () => {
         <>
         <SEO {...seoConfig.contact} />
         <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-alpine-green mb-4 text-center">Get in Touch</h1>
-            <p className="text-lg text-center text-rock-gray mb-10">We'd love to hear from you! Whether you have a question about our tours, or just want to say hello, feel free to reach out.</p>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-alpine-green mb-4 text-center">{t('contact.title')}</h1>
+            <p className="text-lg text-center text-rock-gray mb-10">{t('contact.description')}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 {/* Contact Form */}
                 <div>
-                    <h2 className="text-3xl font-serif font-semibold text-alpine-green mb-6">Send Us a Message</h2>
+                    <h2 className="text-3xl font-serif font-semibold text-alpine-green mb-6">{t('contact.submit')}</h2>
                     {submitted ? (
                         <div className="bg-alpine-green/10 border-l-4 border-alpine-green text-alpine-green p-6 rounded-r-lg h-full flex flex-col justify-center items-center">
-                            <h3 className="text-2xl font-serif font-semibold">Thank You!</h3>
+                            <h3 className="text-2xl font-serif font-semibold">{t('contact.success')}</h3>
                             <p className="mt-2 text-center">Your message has been sent. We'll get back to you shortly.</p>
                         </div>
                     ) : (
@@ -79,20 +80,20 @@ const ContactPage: React.FC = () => {
                             <input type="hidden" name="bot-field" />
                             
                             <div>
-                                <label htmlFor="name" className="block text-lg font-semibold text-rock-gray mb-2">Full Name</label>
+                                <label htmlFor="name" className="block text-lg font-semibold text-rock-gray mb-2">{t('contact.name')}</label>
                                 <input type="text" id="name" name="name" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mountain-blue focus:border-mountain-blue transition" />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-lg font-semibold text-rock-gray mb-2">Email Address</label>
+                                <label htmlFor="email" className="block text-lg font-semibold text-rock-gray mb-2">{t('contact.email')}</label>
                                 <input type="email" id="email" name="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mountain-blue focus:border-mountain-blue transition" />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-lg font-semibold text-rock-gray mb-2">Message</label>
+                                <label htmlFor="message" className="block text-lg font-semibold text-rock-gray mb-2">{t('contact.message')}</label>
                                 <textarea id="message" name="message" rows={5} required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mountain-blue focus:border-mountain-blue transition"></textarea>
                             </div>
                             <div>
                                 <button type="submit" className="w-full bg-swiss-red text-white font-bold py-3 px-6 rounded-full hover:bg-red-700 transition-colors duration-300 text-lg">
-                                    Send Message
+                                    {t('contact.submit')}
                                 </button>
                             </div>
                         </form>
@@ -102,7 +103,7 @@ const ContactPage: React.FC = () => {
                 {/* Contact Info & Socials */}
                 <div className="space-y-8">
                     <div>
-                        <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-3">Contact Information</h3>
+                        <h3 className="text-2xl font-serif font-semibold text-alpine-green mb-3">{t('contact.info')}</h3>
                         <p className="text-lg text-rock-gray mb-3"><strong>Email:</strong> office@appetitejourneys.nz</p>
                                             
                     

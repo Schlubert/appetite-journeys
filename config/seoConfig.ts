@@ -1,5 +1,8 @@
 // config/seoConfig.ts
 
+import { slowRoad } from "@/data/slowRoad";
+import { southernDelights } from "@/data/southernDelights";
+
 export const seoConfig = {
   home: {
     title: 'Appetite Journeys | Swiss Food & Wine Tours',
@@ -30,13 +33,13 @@ export const seoConfig = {
 
   cheeseChocolateRiviera: {
     title: 'Cheese, Chocolate & Swiss Riviera Tour | 12-Day Culinary Journey',
-    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,990.',
+    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$15,200.',
     keywords: 'Swiss Riviera tour, chocolate tour Switzerland, cheese tour Switzerland',
     image: 'https://appetitejourneys.nz/images/cheese-chocolate-riviera.jpg'
   },
   waterfallsWalnuts: {
     title: 'Waterfalls, Whiskey, and Walnuts | 12-Day Culinary Journey',
-    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$14,990.',
+    description: 'Experience Switzerland\'s finest on this 12-day food tour. From NZ$15,200.',
     keywords: 'Swiss Riviera tour, chocolate tour Switzerland, cheese tour Switzerland',
     image: 'https://appetitejourneys.nz/images/waterfallswalnuts.jpg'
   },
@@ -46,7 +49,18 @@ export const seoConfig = {
     keywords: 'Cakes tour Europe, Tortes tour Europe, Gateaux tour Europe, Coffeehouses tour Europe',
     image: 'https://appetitejourneys.nz/images/black_forest_gat.jpg'
   },
-
+  southernDelights: {
+    title: 'Southern Delights | 10-Day Culinary Journey',
+    description: 'Explore the sweet side of Europe on this 17-day food tour. From NZ$20,990.',
+    keywords: 'Cakes tour Europe, Tortes tour Europe, Gateaux tour Europe, Coffeehouses tour Europe',
+    image: 'https://appetitejourneys.nz/images/black_forest_gat.jpg'
+  },
+  slowRoad: {
+    title: 'Slow Road to the South | 12 Day Culinary Journey around Aotearoa New Zealand',
+    description: 'Discover the flavors of New Zealand\'s South Island on this 12-day culinary journey.',
+    keywords: 'New Zealand food tour, culinary journey New Zealand, slow road tour',
+    image: 'https://appetitejourneys.nz/images/mtCook.jpg'
+  },
   about: {
     title: 'About Appetite Journeys | Swiss-Born Chef & Tour Leader',
     description: 'Meet Esther Gilbert, your Swiss tour guide. Born and raised in Switzerland who, along with her baker and chef husband, will take you through an unforgettable culinary journey as you discover the culture and flavours of Switzerland.',
