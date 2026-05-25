@@ -125,7 +125,7 @@ export const slowRoad: Tour = {
         fr: ["Dîner"],
         de: ["Abendessen"]
       },
-      images: [getImagePath('ch/schaffhausen3.jpg'), getImagePath('ch/gottlieben1.jpeg')]
+      images: [getImagePath('nz/curio-bay.jpg'), getImagePath('nz/purakaunui-falls.jpg'), getImagePath('nz/te-anau.jpg')]
     },
     {
       day: 2,

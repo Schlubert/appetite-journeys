@@ -122,7 +122,7 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
                 <div className="pt-3 border-t border-amber-100">
                   <h5 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
                     <AlertCircle className="w-5 h-5 text-amber-600" />
-                    Important Notes
+                    {t('tourPage.importantNotes')}
                   </h5>
                   <p className="text-sm text-slate-700">{activity.bookingNote}</p>
                 </div>
@@ -199,57 +199,61 @@ const DineEdin: React.FC = () => {
           </div>
 
           <aside className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm">
-            <h2 className="text-lg font-semibold text-alpine-green mb-2">Key Details</h2>
+  <h2 className="text-lg font-semibold text-alpine-green mb-2">
+    {t('tourPage.keyDetails')}
+  </h2>
 
-            {/* Price - from constants.ts via tourData */}
-            {tourData?.price && (
-              <div className="text-slate-700 mb-2">
-                <p>
-                  <strong>{t('tourPage.price')}:</strong> {tourData.price?.[lang]}
-                </p>
-                <p className="ml-6 text-sm text-slate-600">per person (twin share)</p>
-              </div>
-            )}
+  {tourData?.price && (
+    <div className="text-slate-700 mb-2">
+      <p>
+        <strong>{t('tourPage.price')}:</strong>{' '}
+        {tourData.price[lang] === 'Coming Soon' ? t('tourPage.comingSoon') : tourData.price[lang]}
+      </p>
+      <p className="ml-6 text-sm text-slate-600">{t('tourPage.perPersonTwinShare')}</p>
+    </div>
+  )}
 
-            {/* Single Supplement - from constants.ts via tourData */}
-            {tourData?.singleSupplement && (
-              <p className="text-slate-700 mb-2">
-                <strong>{t('tourPage.singleSupplement')}:</strong> {tourData.singleSupplement?.[lang]}
-              </p>
-            )}
+  {tourData?.singleSupplement && (
+    <p className="text-slate-700 mb-2">
+      <strong>{t('tourPage.singleSupplement')}:</strong> {tourData.singleSupplement[lang]}
+    </p>
+  )}
 
-            {/* Departure Dates - from constants.ts via tourData */}
-            {tourData?.departureDates && tourData.departureDates.length > 0 && (
-              <div className="mt-3">
-                <strong>{t('tourPage.departureDates')}:</strong>
-                <ul className="mt-2 space-y-1">
-                  {tourData.departureDates.slice(0, 3).map((dep, idx) => {
-                    const isSold = dep.status === "sold-out";
-                    const isLimited = dep.status === "limited";
-                    return (
-                      <li key={idx} className="text-sm">
-                        <DateDisplay 
-                          date={dep.date} 
-                          className={isSold ? "line-through text-slate-500" : "text-slate-700"}
-                        />
-                        {isSold && <span className="ml-2 text-red-600 font-semibold">{t('tourPage.soldOut')}</span>}
-                        {isLimited && <span className="ml-2 text-orange-600 font-semibold">{t('tourPage.limitedAvailability')}</span>}
-                      </li>
-                    );
-                  })}
-                </ul>
-                {tourData.departureDates.length > 3 && (
-                  <p className="text-xs text-slate-500 mt-2">
-                    + {tourData.departureDates.length - 3} {t('tourPage.moreDates')}
-                  </p>
-                )}
-              </div>
-            )}
+  {tourData?.departureDates && tourData.departureDates.length > 0 && (
+    <div className="mt-3">
+      <strong>{t('tourPage.departureDates')}:</strong>
+      <ul className="mt-2 space-y-1">
+        {tourData.departureDates.slice(0, 3).map((dep, idx) => {
+          const isSold = dep.status === "sold-out";
+          const isLimited = dep.status === "limited";
+          return (
+            <li key={idx} className="text-sm">
+              <DateDisplay 
+                date={dep.date} 
+                className={isSold ? "line-through text-slate-500" : "text-slate-700"}
+              />
+              {isSold && (
+                <span className="ml-2 text-red-600 font-semibold">{t('tourPage.soldOut')}</span>
+              )}
+              {isLimited && (
+                <span className="ml-2 text-orange-600 font-semibold">{t('tourPage.limited')}</span>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      {tourData.departureDates.length > 3 && (
+        <p className="text-xs text-slate-500 mt-2">
+          + {tourData.departureDates.length - 3} more dates available
+        </p>
+      )}
+    </div>
+  )}
 
-            <div className="text-center mt-6">
-              <BookNowButton size="md" />
-            </div>
-          </aside>
+  <div className="text-center mt-6">
+    <BookNowButton size="md" />
+  </div>
+</aside>
         </div>
 
         <section>
@@ -310,13 +314,13 @@ const DineEdin: React.FC = () => {
             ))}
           </Accordion>
         </section>
-{/* Tour Route Map */}
+{/* Tour Route Map
 {dineEdin.mapImage && (
   <section>
     <h2 className="text-2xl font-bold mb-4">{t('tourPage.tourRoute')}</h2>
     <ImageGallery images={[dineEdin.mapImage]} />
   </section>
-)}
+)} */}
         <section className="bg-gray-200 border border-slate-200 rounded-xl p-6 shadow-sm">
           <h2 className="text-2xl font-bold mb-2">{t('tourPage.whatsIncluded')}</h2>
           <ul className="list-disc pl-5 text-slate-700 space-y-1">
