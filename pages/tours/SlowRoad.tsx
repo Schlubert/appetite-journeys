@@ -29,6 +29,8 @@ import {
 import BookNowButton from "@/components/BookNowButton";
 import { useTranslation } from 'react-i18next';
 import DateDisplay from '@/components/DateDisplay';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type InfoItemProps = {
   icon: React.ReactNode;
@@ -141,10 +143,18 @@ const OptionalActivityCard: React.FC<OptionalActivityCardProps> = ({ activity, d
 };
 
 const SlowRoad: React.FC = () => {
+  const navigate = useNavigate();
   const [openDay, setOpenDay] = React.useState<string>("day-1");
   const dayRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const { t, i18n } = useTranslation();
   const lang = (['en', 'fr', 'de'].includes(i18n.language) ? i18n.language : 'en') as 'en' | 'fr' | 'de';
+
+   useEffect(() => {
+    const tourData = TOURS_DATA.find(tour => tour.id === 'slow-road');
+    if (!tourData || tourData.active === false) {
+      navigate('/tours');
+    }
+  }, [navigate]);
 
   // Get tour data from constants.ts
   const tourData = TOURS_DATA.find(tour => tour.id === 'slow-road');
