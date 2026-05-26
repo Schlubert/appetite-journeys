@@ -2,6 +2,8 @@ import SEO from '../components/SEO';
 import { seoConfig } from '../config/seoConfig';
 import React, { useState, useMemo } from "react";
 import { TOURS_DATA } from '../constants';
+import { useTranslation } from 'react-i18next';
+
 
 // --- Configuration: Which fields are required ---
 const REQUIRED_FIELDS = {
@@ -38,6 +40,13 @@ interface FormData {
 }
 
 const BookingForm: React.FC = () => {
+  const { i18n } = useTranslation();
+  
+  const lang = (
+    ['en', 'fr', 'de'].includes(i18n.language)
+      ? i18n.language
+      : 'en'
+  ) as 'en' | 'fr' | 'de';
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
@@ -126,7 +135,7 @@ const BookingForm: React.FC = () => {
     
     // Filter out sold-out dates and return available dates
     return selectedTour.departureDates
-      .filter(dep => dep.status !== 'sold-out')
+      .filter(dep => dep.status !== 'sold-out' && dep.date !== '')
       .map(dep => ({
         date: dep.date,
         status: dep.status
@@ -231,9 +240,9 @@ const BookingForm: React.FC = () => {
                   className="w-full border border-slate-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-alpine-green outline-none"
                 >
                   <option value="" disabled>Select a tour</option>
-                  {TOURS_DATA.map(tour => (
+                  {TOURS_DATA.filter(tour => tour.active !== false).map(tour => (
                     <option key={tour.id} value={tour.id}>
-                      {tour.name}
+                      {tour.name[lang]}
                     </option>
                   ))}
                 </select>
@@ -456,5 +465,4 @@ const BookingForm: React.FC = () => {
     </>
   );
 };
-
 export default BookingForm;

@@ -131,7 +131,7 @@ const lang = (['en', 'fr', 'de'].includes(i18n.language) ? i18n.language : 'en')
 
   {/* Tour cards */}
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-    {TOURS_DATA.filter(t => t.region === 'new-zealand').map(tour => (
+    {TOURS_DATA.filter(t => t.region === 'new-zealand'&& t.active !== false).map(tour => (
       <TourCard key={tour.id} tour={tour} />
     ))}
   </div>

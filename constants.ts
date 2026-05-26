@@ -16,6 +16,7 @@ export interface DepartureDate {
 export interface Tour {
   id: string;
   region: 'switzerland' | 'new-zealand' | 'france' | 'germany' | 'europe';
+  active?: boolean;
   name: { en: string; fr: string; de: string };
   summary: SummaryLine[];
   heroImage: string;
@@ -35,7 +36,6 @@ export interface SocialLink {
   label: string;
   href: string;
 }
-
 export const TOURS_DATA: Tour[] = [
   {
     id: "cheese-chocolate-trail",
@@ -274,20 +274,15 @@ export const TOURS_DATA: Tour[] = [
     summary: [
       {
         text: {
-          en: "Discover the natural beauty and rich culture of Aotearoa - New Zealand. From the stunning landscapes of the South Island to the vibrant cities of the North Island, this tour offers an immersive experience.",
-          fr: "Découvrez la beauté naturelle et la riche culture d'Aotearoa - Nouvelle-Zélande. Des paysages époustouflants de l'île du Sud aux villes animées de l'île du Nord.",
-          de: "Entdecken Sie die natürliche Schönheit und reiche Kultur von Aotearoa - Neuseeland.",
+          en: "Explore the vibrant culinary scene of Dunedin, New Zealand's city of 'firsts'. From iconic eateries to hidden gems, experience a day filled with diverse flavors, local culture, and unforgettable dining experiences.",
+          fr: "Explorez la scène culinaire vibrante de Dunedin, la ville des 'premières' de Nouvelle-Zélande. Des restaurants emblématiques aux joyaux cachés, vivez une journée remplie de saveurs diverses, de culture locale et d'expériences culinaires inoubliables.",
+          de: "Erkunden Sie die lebendige kulinarische Szene von Dunedin, Neuseelands Stadt der 'Ersten'. Von ikonischen Restaurants bis hin zu versteckten Juwelen erleben Sie einen Tag voller vielfältiger Aromen, lokaler Kultur und unvergesslicher kulinarischer Erlebnisse.",
         }
       },
     ],
     heroImage: getImagePath("nz/station.jpg"),
     route: "/tours/dine-edin",
     price: {
-      en: "Coming Soon",
-      fr: "À venir",
-      de: "Kommt bald"
-    },
-    singleSupplement: {
       en: "Coming Soon",
       fr: "À venir",
       de: "Kommt bald"
@@ -327,6 +322,7 @@ export const TOURS_DATA: Tour[] = [
   {
     id: "slow-road",
     region: "new-zealand",
+    active: false,
     name: {
       en: "Slow road to Queenstown",
       fr: "Route lente vers Queenstown",
