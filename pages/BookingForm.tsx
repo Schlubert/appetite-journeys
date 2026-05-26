@@ -4,15 +4,6 @@ import React, { useState, useMemo } from "react";
 import { TOURS_DATA } from '../constants';
 import { useTranslation } from 'react-i18next';
 
-const BookingForm: React.FC = () => {
-  const { i18n } = useTranslation();
-  
-  const lang = (
-    ['en', 'fr', 'de'].includes(i18n.language)
-      ? i18n.language
-      : 'en'
-  ) as 'en' | 'fr' | 'de';
-
 
 // --- Configuration: Which fields are required ---
 const REQUIRED_FIELDS = {
@@ -49,6 +40,13 @@ interface FormData {
 }
 
 const BookingForm: React.FC = () => {
+  const { i18n } = useTranslation();
+  
+  const lang = (
+    ['en', 'fr', 'de'].includes(i18n.language)
+      ? i18n.language
+      : 'en'
+  ) as 'en' | 'fr' | 'de';
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
@@ -137,7 +135,7 @@ const BookingForm: React.FC = () => {
     
     // Filter out sold-out dates and return available dates
     return selectedTour.departureDates
-      .filter(dep => dep.status !== 'sold-out')
+      .filter(dep => dep.status !== 'sold-out' && dep.date !== '')
       .map(dep => ({
         date: dep.date,
         status: dep.status
@@ -467,5 +465,4 @@ const BookingForm: React.FC = () => {
     </>
   );
 };
-}
 export default BookingForm;
