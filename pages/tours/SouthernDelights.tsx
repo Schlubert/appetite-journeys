@@ -354,8 +354,6 @@ const SouthernDelights: React.FC = () => {
           </section>
         )}
 
-        {/* Travel Partner */}
-        <TravelPartner />
 
       </div>
     </>
