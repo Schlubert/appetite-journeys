@@ -24,6 +24,9 @@ import RegionPage from './pages/RegionPage';
 import SwitzerlandAboutPage from './pages/about/SwitzerlandAboutPage';
 import EuropeAboutPage from './pages/about/EuropeAboutPage';
 import NewZealandAboutPage from './pages/about/NewZealandAboutPage';
+import AgentLogin from "./pages/agent-portal/AgentLogin";
+import AgentDashboard from "./pages/agent-portal/AgentDashboard";
+import AgentWebinar from "./pages/agent-portal/AgentWebinar";
 
 function App(): React.ReactNode {
   return (
@@ -52,6 +55,9 @@ function App(): React.ReactNode {
         <Route path="/about/switzerland" element={<SwitzerlandAboutPage />} />
         <Route path="/about/europe" element={<EuropeAboutPage />} />
         <Route path="/about/new-zealand" element={<NewZealandAboutPage />} />
+        <Route path="/agent-portal" element={<AgentLogin />} />
+        <Route path="/agent-portal/dashboard" element={<AgentDashboard />} />
+        <Route path="/agent-portal/webinar/:id" element={<AgentWebinar />} />
 
         {/* Catch-all for dynamic regions (switzerland, europe, etc.) */}
         <Route path="/:region" element={<RegionPage />} />

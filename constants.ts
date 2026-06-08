@@ -302,9 +302,9 @@ export const TOURS_DATA: Tour[] = [
     summary: [
       {
         text: {
-          en: "Spend 11 days exploring the culinary delights of New Zealand's South Island. From the rugged coastlines and majestic fjords to the vibrant cities and charming towns, this tour offers an unforgettable journey through the mainland of Aotearoa.",
-          fr: "Passez 11 jours à explorer les délices culinaires de l'île du Sud de la Nouvelle-Zélande. Des côtes accidentées et des fjords majestueux aux villes animées et aux charmantes bourgades.",
-          de: "Verbringen Sie 11 Tage damit, die kulinarischen Köstlichkeiten der Südinsel Neuseelands zu erkunden.",
+          en: "Spend 12 days exploring the culinary delights of New Zealand's South Island. From the rugged coastlines and majestic fjords to the vibrant cities and charming towns, this tour offers an unforgettable journey through the mainland of Aotearoa.",
+          fr: "Passez 12 jours à explorer les délices culinaires de l'île du Sud de la Nouvelle-Zélande. Des côtes accidentées et des fjords majestueux aux villes animées et aux charmantes bourgades.",
+          de: "Verbringen Sie 12 Tage damit, die kulinarischen Köstlichkeiten der Südinsel Neuseelands zu erkunden.",
         }
       },
     ],
