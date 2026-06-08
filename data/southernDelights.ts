@@ -50,7 +50,7 @@ export const southernDelights: Tour = {
   mapImage: getImagePath('nz/nz-south-island.png'),
   summary: {
     en: [
-      "Spend 11 days exploring the culinary delights of New Zealand's South Island. From the rugged coastlines and majestic fjords to the vibrant cities and charming towns, this tour offers an unforgettable journey through the mainland of Aotearoa.",
+      "Spend 12 days exploring the culinary delights of New Zealand's South Island. From the rugged coastlines and majestic fjords to the vibrant cities and charming towns, this tour offers an unforgettable journey through the mainland of Aotearoa.",
       "Discover world-class wineries in Central Otago, meet the artisans behind some of New Zealand's finest food products, and experience the incredible landscapes that make the South Island one of the most spectacular destinations on earth.",
       "From Christchurch to Bluff and back again, this is New Zealand at its most delicious.",
     ],
@@ -171,7 +171,7 @@ export const southernDelights: Tour = {
         fr: ["Dîner"],
         de: ["Abendessen"],
       },
-      images: [getImagePath('nz/christchurch.jpg'), getImagePath('nz/botanic.jpg')],
+      images: [getImagePath('nz/ChchArtCentre.webp'), getImagePath('nz/ChchTerrace.webp'), getImagePath('nz/puntingAvon.webp')],
     },
     {
       day: 2,
@@ -183,7 +183,7 @@ export const southernDelights: Tour = {
       description: {
         en: [
           "This morning we first head towards the stunning river canyon of Rakaia Gorge, where we will stop for a walk and plenty of chances to take in the views and snap some photos of the turquoise waters and dramatic cliffs.",
-          "Saying Ka Kite Ano (see you again) to the Rakaia River we continue on to Geraldine, a charming town and home to Barker's Foodstore, a wonderful artisan food producer and shop where we will stop for a tasting and something to eat.",
+          "Saying Ka Kite Ano (see you again) to the Rakaia River we continue on to Geraldine, a charming town and home to Barker's Foodstore, a wonderful food producer and shop where we will stop for a tasting and something to eat.",
           "Then we continue on to the Mackenzie Country, and the world famous Fairlie Bakehouse, where we will stop for another bite to eat (there is a lot of grazing on a food tour). The Fairlie Bakehouse is an institution in the South Island and is best known for serving up delicious pies since 2009.",
           "finally, we head to our accommodation in Tekapo, a small town on the shores of the stunning Lake Tekapo and surrounded by the majestic Southern Alps.",
         ],
@@ -220,7 +220,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner"],
         de: ["Frühstück"],
       },
-      images: [getImagePath('nz/kaikoura.jpg'), getImagePath('nz/kaikoura2.jpg')],
+      images: [getImagePath('nz/rakaia.jpg'), getImagePath('nz/fairlie_pie.webp'), getImagePath('nz/mackenzie1.jpg')],
     },
     {
       day: 3,
@@ -267,7 +267,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Déjeuner"],
         de: ["Frühstück", "Mittagessen"],
       },
-      images: [getImagePath('nz/marlborough.jpg'), getImagePath('nz/marlborough2.jpg')],
+      images: [getImagePath('nz/tekapoSign.jpg'), getImagePath('nz/resurrection.webp'), getImagePath('nz/mtCook.jpg')],
     },
     {
       day: 4,
@@ -313,7 +313,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Dîner"],
         de: ["Frühstück", "Abendessen"],
       },
-      images: [getImagePath('nz/sounds.jpg'), getImagePath('nz/nelson.jpg')],
+      images: [getImagePath('nz/cromwellFruit.jpg'), getImagePath('nz/mtD.webp'), getImagePath('nz/queenstown.jpg')],
     },
     {
       day: 5,
@@ -360,7 +360,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner"],
         de: ["Frühstück"],
       },
-      images: [getImagePath('nz/nelson2.jpg'), getImagePath('nz/nelson3.jpg')],
+      images: [getImagePath('nz/arrowtown.jpg'), getImagePath('nz/moraWines.webp'), getImagePath('nz/chardFarm.jpg')],
     },
     {
       day: 6,
@@ -403,7 +403,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Dîner"],
         de: ["Frühstück", "Abendessen"],
       },
-      images: [getImagePath('nz/westcoast.jpg'), getImagePath('nz/alps.jpg')],
+      images: [getImagePath('nz/queenstown.jpg'), getImagePath('nz/queenstown2a.jpg'), getImagePath('nz/dart.webp')],
     },
     {
       day: 7,
@@ -449,7 +449,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner"],
         de: ["Frühstück"],
       },
-      images: [getImagePath('nz/franzjosef.jpg'), getImagePath('nz/rainforest.jpg')],
+      images: [getImagePath('nz/mitrePeakCruise.jpeg'), getImagePath('nz/milford2.jpg'), getImagePath('nz/te-anau.jpg'),],
     },
     {
       day: 8,
@@ -492,7 +492,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Dîner"],
         de: ["Frühstück", "Abendessen"],
       },
-      images: [getImagePath('nz/wanaka.jpg'), getImagePath('nz/haast.jpg')],
+      images: [getImagePath('nz/auldFarm.jpg'), getImagePath('nz/riverton.jpg'), getImagePath('nz/gemstone.jpg')],
     },
     {
       day: 9,
@@ -541,7 +541,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Déjeuner"],
         de: ["Frühstück", "Mittagessen"],
       },
-      images: [getImagePath('nz/centralotago.jpg'), getImagePath('nz/pinotnoir.jpg')],
+      images: [getImagePath('nz/bluff-signpost.jpg'), getImagePath('nz/curio-bay.jpg'), getImagePath('nz/purakaunui-falls.jpg')],
     },
     {
       day: 10,
@@ -587,7 +587,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner", "Dîner"],
         de: ["Frühstück", "Abendessen"],
       },
-      images: [getImagePath('nz/dunedin.jpg'), getImagePath('nz/remarkables.jpg')],
+      images: [getImagePath('nz/station.jpg'), getImagePath('nz/craft_distillers.jpg'), getImagePath('nz/cheese-rolls.jpg')],
     },
     {
       day: 11,
@@ -598,15 +598,15 @@ export const southernDelights: Tour = {
       },
       description: {
         en: [
-          "A day to explore Dunedin at your own pace. Maybe take a tour of the Speight's Brewery, visit the Otago Museum, or simply wander the streets and soak up the unique atmosphere of this vibrant city.",
+          "A day to explore Dunedin at your own pace. Maybe start with a visit to the Otago Farmer's Market, take a tour of the Speight's Brewery, visit the Otago Museum, visit Lan Yuan - a traditional Chinese garden celebrating the city's Chinese heritage, or simply wander the streets and soak up the unique atmosphere of this vibrant city.",
           "There are a multitude of activities on offer in and around Dunedin, from wildlife tours to art galleries, so there is something for everyone to enjoy.",
         ],
         fr: [
-          "Une journée pour explorer Dunedin à votre rythme. Vous pouvez visiter la brasserie Speight's, rendre visite au musée Otago ou simplement flâner dans les rues et profiter de l'atmosphère unique de cette ville vibrante.",
+          "Une journée pour explorer Dunedin à votre rythme. Peut-être commencer par une visite du marché de producteurs d'Otago, faire une visite de la brasserie Speight's, visiter le musée d'Otago, visiter Lan Yuan - un jardin chinois traditionnel célébrant l'héritage chinois de la ville, ou simplement flâner dans les rues et profiter de l'atmosphère unique de cette ville vibrante.",
           "De nombreuses activités sont proposées dans et autour de Dunedin, des visites de la faune aux galeries d'art, il y en a pour tous les goûts.",
         ],
         de: [
-          "Ein Tag, um Dunedin in Ihrem eigenen Tempo zu erkunden. Vielleicht besuchen Sie die Speight's Brewery, besuchen Sie das Otago Museum oder schlendern einfach durch die Straßen und atmen die einzigartige Atmosphäre dieser lebhaften Stadt.",
+          "Ein Tag, um Dunedin in Ihrem eigenen Tempo zu erkunden. Vielleicht beginnen Sie mit einem Besuch des Otago Farmers Market, machen eine Tour durch die Speight's Brewery, besuchen das Otago Museum, besuchen Lan Yuan - einen traditionellen chinesischen Garten, der das chinesische Erbe der Stadt feiert, oder schlendern einfach durch die Straßen und genießen die einzigartige Atmosphäre dieser lebendigen Stadt.",
           "Es gibt eine Vielzahl von Aktivitäten in und um Dunedin, von Wildtierführungen bis hin zu Kunsthallen, es gibt für jeden etwas.",
         ],
       },
@@ -630,7 +630,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner"],
         de: ["Frühstück"],
       },
-      images: [getImagePath('nz/queenstown2.jpg'), getImagePath('nz/earnslaw.jpg')],
+      images: [getImagePath('nz/OFM2.jpg'), getImagePath('nz/penguins.jpg'), getImagePath('nz/lanYuan.jpg')],
     },
     {
       day: 12,
@@ -671,7 +671,7 @@ export const southernDelights: Tour = {
         fr: ["Petit-déjeuner"],
         de: ["Frühstück"],
       },
-      images: [getImagePath('nz/arrowtown.jpg'), getImagePath('nz/queenstown3.jpg')],
+      images: [getImagePath('nz/moerakiBoulders.jpg'), getImagePath('nz/oamaru.jpg'), getImagePath('nz/oamaruSteampunk.jpg')],
     },
   ],
 };
