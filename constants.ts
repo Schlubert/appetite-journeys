@@ -98,10 +98,8 @@ export const TOURS_DATA: Tour[] = [
       de: "NZ$5,775",
     },
     departureDates: [
-      { date: "2026-09-27", status: "available", year: 2026 },
-      { date: "2027-04-04", status: "available", year: 2027 },
-      { date: "2027-07-18", status: "available", year: 2027 },
-      { date: "2027-11-14", status: "available", year: 2027 },
+      { date: "March 30th, 2027 ", status: "available", year: 2027 },
+      { date: "September 5th, 2027 ", status: "available", year: 2027 },
     ],
   },
   {
@@ -165,10 +163,7 @@ export const TOURS_DATA: Tour[] = [
       de: "NZ$5,775",
     },
     departureDates: [
-      { date: "2026-09-13", status: "available", year: 2026 },
-      { date: "2027-03-14", status: "available", year: 2027 },
-      { date: "2027-07-04", status: "available", year: 2027 },
-      { date: "2027-10-31", status: "available", year: 2027 },
+      { date: "August 22nd, 2027 ", status: "available", year: 2027 },
     ],
   },
   {
@@ -232,7 +227,7 @@ export const TOURS_DATA: Tour[] = [
       de: "NZ$6,951",
     },
     departureDates: [
-      { date: "2027-06-13", status: "available", year: 2027 },
+      { date: "September 25th, 2027 ", status: "available", year: 2027 },
     ],
   },
   {
@@ -260,7 +255,7 @@ export const TOURS_DATA: Tour[] = [
       de: "Kommt bald"
     },
     departureDates: [
-      { date: "2027-12-05", status: "available", year: 2027 },
+      { date: "December 9th, 2028 ", status: "available", year: 2028 },
     ],
   },
   {

@@ -46,7 +46,7 @@ export const waterfallsWalnuts: Tour = {
   durationDays: 12,
   price: ["From NZ$14,990", "per person (twin share)"],
   singleSupplement: "NZ$5,775",
-  departureDates: [{ date: "September 13th, 2026", status: "limited" }],
+  departureDates: [{ date: "August 27th, 2027", status: "available" }],
   mapImage: getImagePath('ch/East.png'),
   summary: {
     en: [

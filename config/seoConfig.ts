@@ -6,7 +6,7 @@ import { southernDelights } from "@/data/southernDelights";
 export const seoConfig = {
   home: {
     title: 'Appetite Journeys | Swiss Food & Wine Tours',
-    description: 'Discover Switzerland through its finest food and wine. Small-group culinary tours (max 12 guests). Explore chocolate factories, cheese makers, vineyards & Alpine cuisine. Book your 2026 Swiss food tour today.',
+    description: 'Discover Switzerland through its finest food and wine. Small-group culinary tours (max 12 guests). Explore chocolate factories, cheese makers, vineyards & Alpine cuisine. Book your Swiss food tour today.',
     keywords: 'Switzerland tours, Multi-day food tours, Switzerland food yours, Swiss food tours, chocolate tours Switzerland, cheese tours, wine tours Switzerland, culinary tours, Multi-day tours Switzerland, small group tours, Alpine tours, Zurich tours, Lucerne tours, Interlaken tours, Bern tours, Geneva tours, Swiss Riviera',
     image: 'https://appetitejourneys.nz/images/hero-composite.jpg',
     schema: {
@@ -25,9 +25,9 @@ export const seoConfig = {
   },
 
   tours: {
-    title: 'Swiss Food & Wine Tours 2026 | Small Group Culinary Adventures',
+    title: 'Swiss Food & Wine Tours | Small Group Culinary Adventures',
     description: 'Browse our collection of intimate Swiss food tours. Maximum 12 guests per tour. Visit chocolate factories, cheese makers, distilleries & vineyards.',
-    keywords: 'Switzerland food tours 2026, Swiss culinary tours, chocolate factory tours',
+    keywords: 'Switzerland food tours, Swiss culinary tours, chocolate factory tours',
     image: 'https://appetitejourneys.nz/tours/images/tours-overview.jpg'
   },
 
@@ -85,7 +85,7 @@ export const seoConfig = {
   booking: {
     title: 'Book Your Swiss Food Tour | Appetite Journeys',
     description: 'Reserve your spot on an unforgettable Swiss culinary journey. Small groups of maximum 12 guests.',
-    keywords: 'book Switzerland tour, reserve Swiss food tour, 2026 tours',
+    keywords: 'book Switzerland tour, reserve Swiss food tour',
     image: 'https://appetitejourneys.nz/images/og-image.jpg'
   }
 };
