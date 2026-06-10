@@ -55,8 +55,7 @@ export const cakes: Tour = {
     de: "NZ$6.450",
   },
   departureDates: [
-    { date: "2026-05-15", status: "available" },
-    { date: "2026-09-10", status: "limited" }
+    { date: "2027-07-15", status: "available" },
   ],
   mapImage: getImagePath('Cake.png'),
   summary: {

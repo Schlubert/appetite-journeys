@@ -37,11 +37,10 @@ const WEBINARS = [
 // ─── Upcoming departures ──────────────────────────────────────────────────────
 // Update this list as departures change
 const DEPARTURES = [
-  { tour: 'Waterfalls, Whiskey & Walnuts', date: 'September 13, 2026', status: 'available', spaces: 8 },
-  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'September 27, 2026', status: 'available', spaces: 10 },
-  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'April 4, 2027', status: 'available', spaces: 12 },
-  { tour: 'Waterfalls, Whiskey & Walnuts', date: 'March 14, 2027', status: 'available', spaces: 12 },
-  { tour: 'Cakes, Tortes & Coffeehouses', date: 'June 13, 2027', status: 'available', spaces: 12 },
+  { tour: 'Waterfalls, Whiskey & Walnuts', date: 'August 22, 2027', status: 'available', spaces: 10 },
+  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'March 30, 2027', status: 'available', spaces: 10 },
+  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'September 5, 2027', status: 'available', spaces: 10 },
+  { tour: 'Cakes, Tortes & Coffeehouses', date: 'September 25, 2027', status: 'available', spaces: 10 },
 ];
 
 // ─── Downloads ────────────────────────────────────────────────────────────────
@@ -58,17 +57,17 @@ const DOWNLOADS = [
 // ─── Updates ─────────────────────────────────────────────────────────────────
 const UPDATES = [
   {
-    date: 'June 2025',
+    date: '8th June 2026',
     title: 'New tour announced — Slow Road to Queenstown',
     body: 'Our third New Zealand itinerary is now confirmed for 2027. Fact sheet and pricing coming soon.',
   },
   {
-    date: 'May 2025',
+    date: '5th May 2026',
     title: 'Additional 2027 departure dates released',
     body: 'Due to strong demand we have added extra departures for the Cheese, Chocolate & Swiss Riviera and Waterfalls tours in 2027.',
   },
   {
-    date: 'April 2025',
+    date: '12th April 2026',
     title: 'Commission structure updated',
     body: 'Standard agent commission has increased to 10% for all bookings made before 31 December 2025. See the Commission Guide for details.',
   },
@@ -162,13 +161,13 @@ const AgentDashboard: React.FC = () => {
             </div>
           ))}
         </div>
-
+        <section className="grid lg:grid-cols-2 gap-8 items-start">
         {/* ── Updates ──────────────────────────────────────────────────────── */}
-        <section>
+        <div>
           <div className="flex items-center gap-2 mb-6">
-            <Bell className="w-5 h-5 text-alpine-green" />
             <SectionHeading>News & Updates</SectionHeading>
           </div>
+          
           <div className="space-y-4">
             {UPDATES.map((update, idx) => (
               <div key={idx} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
@@ -182,14 +181,16 @@ const AgentDashboard: React.FC = () => {
               </div>
             ))}
           </div>
-        </section>
+          </div>
+        
 
         {/* ── Upcoming departures ───────────────────────────────────────────── */}
-        <section>
+       <div>
           <div className="flex items-center gap-2 mb-6">
-            <Calendar className="w-5 h-5 text-alpine-green" />
             <SectionHeading>Upcoming Departures</SectionHeading>
           </div>
+          
+          <div className="space-y-4">
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-200">
@@ -215,12 +216,14 @@ const AgentDashboard: React.FC = () => {
           <p className="text-xs text-gray-400 mt-3">
             Availability updates daily. Contact us to hold space for a client.
           </p>
+          </div>
+          </div>
+          
         </section>
 
         {/* ── Commission & booking ──────────────────────────────────────────── */}
         <section>
           <div className="flex items-center gap-2 mb-6">
-            <DollarSign className="w-5 h-5 text-alpine-green" />
             <SectionHeading>Commission & Booking</SectionHeading>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -269,7 +272,6 @@ const AgentDashboard: React.FC = () => {
         {/* ── Webinar library ───────────────────────────────────────────────── */}
         <section>
           <div className="flex items-center gap-2 mb-6">
-            <Play className="w-5 h-5 text-alpine-green" />
             <SectionHeading>Webinar Library</SectionHeading>
           </div>
           <p className="text-gray-500 mb-8 -mt-4">
@@ -313,7 +315,6 @@ const AgentDashboard: React.FC = () => {
         {/* ── Downloads ─────────────────────────────────────────────────────── */}
         <section>
           <div className="flex items-center gap-2 mb-6">
-            <Download className="w-5 h-5 text-alpine-green" />
             <SectionHeading>Downloads</SectionHeading>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -346,14 +347,14 @@ const AgentDashboard: React.FC = () => {
               {
                 name: 'Kevin Gilbert',
                 role: 'Co-founder & Culinary Director',
-                email: 'hello@appetitejourneys.com',
+                email: 'hello@appetitejourneys.nz',
                 phone: '+64 (0)27 485 9001',
                 note: 'Tour content, itinerary questions, culinary expertise',
               },
               {
                 name: 'Esther Gilbert',
                 role: 'Co-founder & Tour Director',
-                email: 'hello@appetitejourneys.com',
+                email: 'hello@appetitejourneys.nz',
                 phone: '+64 (0)27 353 6303',
                 note: 'Bookings, availability, agent support, general enquiries',
               },
