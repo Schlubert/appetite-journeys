@@ -148,13 +148,12 @@ const TravelPartnersPage: React.FC = () => {
       <section className="bg-gradient-to-br from-alpine-green to-alpine-green/80 rounded-xl p-8 text-white text-center">
         <h2 className="text-3xl font-bold mb-3">How to book your tour</h2>
         <p className="text-lg opacity-90 max-w-xl mx-auto mb-8">
-          Your Appetite Journeys experience is booked directly through us — either via our website 
-          or by getting in touch. Your travel agent handles everything else.
+          Your Appetite Journeys experience either be booked directly through us — or contact your local travel agent for a wider package including flights and activities either end of your Appetite Journeys tour.
         </p>
         <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
           {[
-            { step: '1', title: 'Book your tour', body: 'Reserve your place on an Appetite Journeys tour through our website or by contacting us directly.' },
-            { step: '2', title: 'Contact a travel agent', body: 'Share your tour start date and location. They\'ll arrange flights, insurance, and any extra stays.' },
+            { step: '1', title: 'Choose your tour', body: 'Browse our range of tours and select the one that excites you. Check the tour start date, and remember the name.' },
+            { step: '2', title: 'Book your tour', body: 'Reserve your place on an Appetite Journeys tour through our website or by contacting your local travel agent.' },
             { step: '3', title: 'Enjoy the journey', body: 'Arrive at the starting point and leave the rest to us. We take care of everything from there.' },
           ].map(item => (
             <div key={item.step} className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
