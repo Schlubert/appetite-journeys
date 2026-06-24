@@ -21,10 +21,10 @@ const Footer: React.FC = () => {
           <a href="mailto:info@appetitejourneys.com" aria-label="Email us" className="hover:text-swiss-red transition-colors">
             <Mail className="w-4 h-4" />
           </a>
-          <a href="https://facebook.com/appetitejourneys" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-swiss-red transition-colors">
+          <a href="https://facebook.com/appetite_journeys" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-swiss-red transition-colors">
             <Facebook className="w-4 h-4" />
           </a>
-          <a href="https://instagram.com/appetitejourneys" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-swiss-red transition-colors">
+          <a href="https://instagram.com/appetite_journeys" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-swiss-red transition-colors">
             <Instagram className="w-4 h-4" />
           </a>
         </div>
