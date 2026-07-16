@@ -7,7 +7,7 @@ const WEBINARS: Record<string, { title: string; description: string; youtubeId: 
   '1': {
     title: 'Introduction to Appetite Journeys',
     description: 'An overview of our tours, our story, and why your clients will love travelling with us.',
-    youtubeId: 'TfkcbfA6SHk',
+    youtubeId: 'mWT_VY-7SkU',
   },
   '2': {
     title: 'Switzerland Tours Deep Dive',
