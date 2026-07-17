@@ -67,6 +67,7 @@ const DOWNLOADS = [
   { title: 'Appetite Journeys — Client Brochure', subtitle: '1-page overview of CH & EU tours, PDF', href: '/images/flyer.pdf', image: '/images/flyer.jpg' },
   { title: 'Appetite Journeys — ', titleBold: 'AGENT BROCHURE', subtitle: '2-page overview of all tours with greater detail including maps, PDF', href: '/images/agentflyer.pdf', image: '/images/agentflyer.jpg' },
   { title: 'Terms and Conditions', subtitle: 'A PDF of our terms and conditions for easier printing and reference', href: '/images/terms.pdf', image: '/images/terms.jpg' },
+  { title: 'Webinar slide deck', subtitle: 'A PDF of the slides used in our webinar for reference', href: '/images/webinar slide deck.pdf', image: '/images/ch/pdf.png' },
 ];
 
 // ─── Updates ─────────────────────────────────────────────────────────────────
