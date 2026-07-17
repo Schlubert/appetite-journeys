@@ -56,10 +56,10 @@ const FAQS = [
 
 // ─── Upcoming departures ──────────────────────────────────────────────────────
 const DEPARTURES = [
-  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'March 30, 2027', status: 'available', spaces: 8 },
-  { tour: 'Waterfalls, Whiskey & Walnuts', date: 'August 22, 2027', status: 'available', spaces: 10 },
-  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: 'September 5, 2027', status: 'available', spaces: 12 },
-  { tour: 'Cakes, Tortes & Coffeehouses', date: 'September 25, 2027', status: 'available', spaces: 10 },
+  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: '30 March 2027', status: 'available', spaces: 8 },
+  { tour: 'Waterfalls, Whiskey & Walnuts', date: '22 August 2027', status: 'available', spaces: 10 },
+  { tour: 'Cheese, Chocolate & the Swiss Riviera', date: '5 September 2027', status: 'available', spaces: 12 },
+  { tour: 'Cakes, Tortes & Coffeehouses', date: '25 September 2027', status: 'available', spaces: 10 },
 ];
 
 // ─── Downloads ────────────────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ const DOWNLOADS = [
   { title: 'Appetite Journeys — Client Brochure', subtitle: '1-page overview of CH & EU tours, PDF', href: '/images/flyer.pdf', image: '/images/flyer.jpg' },
   { title: 'Appetite Journeys — ', titleBold: 'AGENT BROCHURE', subtitle: '2-page overview of all tours with greater detail including maps, PDF', href: '/images/agentflyer.pdf', image: '/images/agentflyer.jpg' },
   { title: 'Terms and Conditions', subtitle: 'A PDF of our terms and conditions for easier printing and reference', href: '/images/terms.pdf', image: '/images/terms.jpg' },
-  { title: 'Webinar slide deck', subtitle: 'A PDF of the slides used in our webinar for reference', href: '/images/webinar slide deck.pdf', image: '/images/ch/pdf.png' },
+  { title: 'Webinar slide deck', subtitle: 'A PDF of the slides used in our webinar for reference', href: '/images/Webinar slide deck.pdf', image: '/images/ch/pdf.png' },
 ];
 
 // ─── Updates ─────────────────────────────────────────────────────────────────
