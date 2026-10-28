@@ -23,6 +23,8 @@ export interface Tour {
   route: string;
   price?: { en: string; fr: string; de: string };
   departureDates: DepartureDate[];
+  departureNote?: { en: string; fr: string; de: string };
+  departureContact?: string;
   singleSupplement?: { en: string; fr: string; de: string };
   durationDays?: number;
 }
@@ -36,6 +38,11 @@ export interface SocialLink {
   label: string;
   href: string;
 }
+export const DEFAULT_DEPARTURE_NOTE = {
+  en: "We plan each journey around the season and the people travelling. To find out what's coming up, or to be first to hear about new dates, get in touch.",
+  fr: "Nous planifions chaque voyage en fonction de la saison et des personnes qui voyagent. Pour savoir ce qui se prépare, ou pour être parmi les premiers informés des nouvelles dates, contactez-nous.",
+  de: "Wir planen jede Reise passend zur Jahreszeit und zu den Reisenden. Um zu erfahren, was ansteht, oder um zu den Ersten zu gehören, die von neuen Terminen erfahren, nehmen Sie Kontakt mit uns auf.",
+};
 export const TOURS_DATA: Tour[] = [
   {
     id: "cheese-chocolate-trail",
@@ -97,10 +104,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "NZ$5,775",
       de: "NZ$5,775",
     },
-    departureDates: [
-      { date: "March 30th, 2027 ", status: "available", year: 2027 },
-      { date: "September 5th, 2027 ", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
   {
     id: "waterfalls",
@@ -162,9 +166,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "NZ$5,775",
       de: "NZ$5,775",
     },
-    departureDates: [
-      { date: "August 22nd, 2027 ", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
   {
     id: "cake",
@@ -226,9 +228,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "NZ$6,951",
       de: "NZ$6,951",
     },
-    departureDates: [
-      { date: "September 25th, 2027 ", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
   {
     id: "christmas",
@@ -254,9 +254,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "À venir",
       de: "Kommt bald"
     },
-    departureDates: [
-      { date: "December 9th, 2028 ", status: "available", year: 2028 },
-    ],
+    departureDates: [],
   },
   {
     id: "Dine-edin",
@@ -282,9 +280,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "À venir",
       de: "Kommt bald"
     },
-    departureDates: [
-      { date: "", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
   {
     id: "southern-delights",
@@ -310,9 +306,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "À venir",
       de: "Kommt bald"
     },
-    departureDates: [
-      { date: "", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
   {
     id: "slow-road",
@@ -339,9 +333,7 @@ export const TOURS_DATA: Tour[] = [
       fr: "À venir",
       de: "Kommt bald"
     },
-    departureDates: [
-      { date: "", status: "available", year: 2027 },
-    ],
+    departureDates: [],
   },
 ];
 
