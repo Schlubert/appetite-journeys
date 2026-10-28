@@ -14,7 +14,7 @@ const BookNowButton: React.FC<{ size?: "sm" | "md" | "lg" }> = ({ size = "md" })
 
   return (
     <Link
-      to="/book"
+      to="/contact"
       className={`inline-flex items-center justify-center gap-2 bg-alpine-green text-white font-semibold rounded-full shadow-md hover:bg-opacity-90 hover:scale-105 transition-all duration-300 ${sizeClasses}`}
     >
       <CalendarHeart className="w-5 h-5" />

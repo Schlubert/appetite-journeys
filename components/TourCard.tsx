@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Tour, SummaryLine } from "../constants";
+import { Tour, SummaryLine, DEFAULT_DEPARTURE_NOTE  } from "../constants";
 import AvailabilityDisplay from "./AvailabilityDisplay";
 import { useTranslation } from "react-i18next";
 
@@ -59,15 +59,14 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             ))}
           </div>
 
-          {/* Availability Display */}
-          {tour.departureDates && tour.departureDates.length > 0 && (
-            <div className="mt-4 pt-4 border-t border-slate-200">
-              <AvailabilityDisplay
-                departureDates={tour.departureDates}
-                compact={true}
-              />
-            </div>
-          )}
+         {/* Availability Display */}
+<div className="mt-4 pt-4 border-t border-slate-200">
+      <AvailabilityDisplay
+      departureDates={tour.departureDates}
+      compact={true}
+    />
+ 
+</div>
 
           <div className="flex justify-end items-center mt-4">
             <span className="text-alpine-green font-semibold hover:underline">

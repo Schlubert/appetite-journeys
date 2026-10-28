@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, Users, AlertCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import DateDisplay from '@/components/DateDisplay';
+import { DEFAULT_DEPARTURE_NOTE } from '../constants';
 
 export interface DepartureDate {
   date: string;
@@ -12,13 +13,15 @@ export interface DepartureDate {
 interface AvailabilityDisplayProps {
   departureDates: DepartureDate[];
   compact?: boolean;
+  note?: string;
 }
 
 const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({ 
     departureDates, 
-  compact = false 
+  compact = false,
+  note 
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   // Group dates by year
   const groupedByYear = departureDates.reduce((acc, dep) => {
     const year = dep.year || new Date(dep.date).getFullYear();
@@ -31,7 +34,41 @@ const AvailabilityDisplay: React.FC<AvailabilityDisplayProps> = ({
   const nextAvailable = departureDates.find(
     dep => dep.status !== 'sold-out'
   );
+if (departureDates.length === 0) {
+    const lang = (['en', 'fr', 'de'].includes(i18n.language)
+      ? i18n.language
+      : 'en') as 'en' | 'fr' | 'de';
+    const message = note ?? DEFAULT_DEPARTURE_NOTE[lang];
 
+    if (compact) {
+      // Card version: no email link, because the card is already a <Link>
+      return (
+        <div className="flex items-start gap-2 bg-alpine-green bg-opacity-10 rounded-lg p-3">
+          <Calendar className="w-5 h-5 text-alpine-green flex-shrink-0 mt-0.5" />
+          <p className="text-sm text-rock-gray">{message}</p>
+        </div>
+      );
+    }
+
+    // Detail page version
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <Calendar className="w-6 h-6 text-alpine-green" />
+          <h3 className="text-xl font-bold text-rock-gray">{t('tourPage.departures')}</h3>
+        </div>
+        <div className="bg-alpine-green bg-opacity-10 border-2 border-alpine-green rounded-xl p-6">
+          <p className="text-rock-gray mb-3">{message}</p>
+          <a
+            href="mailto:hello@gilberts.nz"
+            className="text-alpine-green font-semibold hover:underline"
+          >
+            hello@gilberts.nz
+          </a>
+        </div>
+      </div>
+    );
+  }
   if (compact) {
     // Compact view for tour cards
     return (
